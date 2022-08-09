@@ -18,6 +18,6 @@
 
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/noname2544)
 
-## 🎧 Какая-то моя недавно прослушанная музыка
+## 🎧 Моя недавно прослушанная музыка
 
 ![](https://spotify-recently-played-readme.vercel.app/api?user=jdex6213e4kct1lmdg1f7t6qq&unique={true|1|on|yes})
