@@ -6,13 +6,13 @@
 
 ## ⌛ Моя статистика в WakaTime ([![wakatime](https://wakatime.com/badge/user/2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2.svg)](https://wakatime.com/@2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2))
 
-[![](https://github-readme-stats.vercel.app/api/wakatime?username=kravets&custom_title=kravets%27%20WakaTime%20stats&theme=jolly&hide_title=true)](https://wakatime.com/@kravets/)
+[![](https://github-readme-stats.vercel.app/api/wakatime?username=kravets&theme=jolly&hide_title=true)](https://wakatime.com/@kravets/)
 
 ## 👉 Мои проекты
 
-#### 1. [`PAYOK`] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
+#### 1. [[`PAYOK`](https://github.com/kravetsone/payok)] - NODE JS модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
 
-#### 1. [`enkaNetwork`] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и картинки.
+#### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и картинки.
 
 И множество других `мёртвых` или пока не `опубликованных` проектов
 
@@ -20,6 +20,6 @@
 
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/noname2544)
 
-## 🎧 Какая-то моя недавно прослушанная музыка
+## 🎧 Моя недавно прослушанная музыка
 
 [![](https://spotify-recently-played-readme.vercel.app/api?user=jdex6213e4kct1lmdg1f7t6qq&unique=1)](https://open.spotify.com/user/jdex6213e4kct1lmdg1f7t6qq?si=42a42941db0d4afc)
