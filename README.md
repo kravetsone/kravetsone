@@ -2,7 +2,7 @@
 
 ## 📖 Моя статистика в GitHub (![](https://komarev.com/ghpvc/?username=kravetsine&color=a960ff))
 
-[![](https://github-readme-stats.vercel.app/api?username=kravetsone&theme=jolly&show_icons=true&hide_title=tru)](https://github.com/kravetsone/)
+[![](https://github-readme-stats.vercel.app/api?username=kravetsone&theme=jolly&show_icons=true&hide_title=true&count_private=true&locale=ru)](https://github.com/kravetsone/)
 
 ## ⌛ Моя статистика в WakaTime ([![wakatime](https://wakatime.com/badge/user/2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2.svg)](https://wakatime.com/@2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2))
 
@@ -10,7 +10,7 @@
 
 ## 👉 Мои проекты
 
-#### 1. [[`PAYOK`](https://github.com/kravetsone/payok)] - NODE JS модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
+#### 1. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
 
 #### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и картинки.
 
