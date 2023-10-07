@@ -10,15 +10,24 @@
 
 ## 👉 Мои проекты
 
-#### 1. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
+#### 1. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с ассетами.
 
-#### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и картинки.
+#### 2. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
 
 И множество других `мёртвых` или пока не `опубликованных` проектов
 
 ## ❓ Как со мной связаться?
 
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/noname2544)
+
+## 🧑‍💻 Хакатоны и другие мероприятия
+Учавствую в разных активностях вместе со своей командой «Безымянные»
+![imgonline-com-ua-Resize-taqQNVNFI1X](https://github.com/kravetsone/kravetsone/assets/57632712/5d94c8f2-bbc2-4d50-b027-437192ab1153)
+
+Наш телеграм канал - [@team_noname](https://t.me/team_noname) ([пост с победами](https://t.me/team_noname/137))
+
+Наш GitHub - [@noname-to](https://github.com/noname-to/)
+
 
 ## 🎧 Моя недавно прослушанная музыка
 
