@@ -1,5 +1,18 @@
 # Привет, я [Kravets](https://github.com/kravetsone/) 👋
 
+## 👉 Мои проекты
+
+#### 1. [[`Мемология`](https://vk.com/app51712852)] - VK MINI APPS, который не одержал победы в VK FRESH CODE 2023.
+
+-   [Бекенд](https://github.com/kravetsone/memology-backend]). Fastify, TypeScript, Prisma, Protobuf over HTTP
+-   [Фронтенд](https://github.com/localhostov2/memology). React, TypeScript, Effector, Protobuf
+
+#### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с ассетами.
+
+#### 3. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
+
+И множество других `мёртвых` или пока не `опубликованных` проектов
+
 ## 📖 Моя статистика в GitHub (![](https://komarev.com/ghpvc/?username=kravetsine&color=a960ff))
 
 [![](https://github-readme-stats.vercel.app/api?username=kravetsone&theme=jolly&show_icons=true&hide_title=true&count_private=true&locale=ru)](https://github.com/kravetsone/)
@@ -7,19 +20,6 @@
 ## ⌛ Моя статистика в WakaTime ([![wakatime](https://wakatime.com/badge/user/2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2.svg)](https://wakatime.com/@2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2))
 
 [![](https://github-readme-stats.vercel.app/api/wakatime?username=kravets&theme=jolly&hide_title=true)](https://wakatime.com/@kravets/)
-
-## 👉 Мои проекты
-
-#### 1. [[`Мемология`](https://vk.com/app51712852)] - VK MINI APPS, который не одержал победы в VK FRESH CODE 2023.
-
--   [Бекенд](https://github.com/kravetsone/memology-backend]) для этого приложения. Fastify, TypeScript, prisma, protobuf over HTTP
--   [Фронтенд](https://github.com/localhostov2/memology). Представляет из себя React приложение. React,TypeScript, Effector, protobuf
-
-#### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с ассетами.
-
-#### 3. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
-
-И множество других `мёртвых` или пока не `опубликованных` проектов
 
 ## ❓ Как со мной связаться?
 
