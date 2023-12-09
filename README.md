@@ -4,7 +4,7 @@
 
 #### 1. [[`Мемология`](https://vk.com/app51712852)] - VK MINI APPS, который не одержал победы в VK FRESH CODE 2023.
 
--   [Бекенд](https://github.com/kravetsone/memology-backend]). Fastify, TypeScript, Prisma, Protobuf over HTTP
+-   [Бекенд](https://github.com/kravetsone/memology-backend). Fastify, TypeScript, Prisma, Protobuf over HTTP
 -   [Фронтенд](https://github.com/localhostov2/memology). React, TypeScript, Effector, Protobuf
 
 #### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с ассетами.
