@@ -10,9 +10,14 @@
 
 ## 👉 Мои проекты
 
-#### 1. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с ассетами.
+#### 1. [[`Мемология`](https://vk.com/app51712852)] - VK MINI APPS, который не одержал победы в VK FRESH CODE 2023.
 
-#### 2. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
+-   [Бекенд](https://github.com/kravetsone/memology-backend]) для этого приложения. Fastify, TypeScript, prisma, protobuf over HTTP
+-   [Фронтенд](https://github.com/localhostov2/memology). Представляет из себя React приложение. React,TypeScript, Effector, protobuf
+
+#### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с ассетами.
+
+#### 3. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
 
 И множество других `мёртвых` или пока не `опубликованных` проектов
 
@@ -21,13 +26,13 @@
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/noname2544)
 
 ## 🧑‍💻 Хакатоны и другие мероприятия
+
 Учавствую в разных активностях вместе со своей командой «Безымянные»
 ![imgonline-com-ua-Resize-taqQNVNFI1X](https://github.com/kravetsone/kravetsone/assets/57632712/5d94c8f2-bbc2-4d50-b027-437192ab1153)
 
 Наш телеграм канал - [@team_noname](https://t.me/team_noname) ([пост с победами](https://t.me/team_noname/137))
 
 Наш GitHub - [@noname-to](https://github.com/noname-to/)
-
 
 ## 🎧 Моя недавно прослушанная музыка
 
