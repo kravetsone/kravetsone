@@ -2,16 +2,18 @@
 
 ## 👉 Мои проекты
 
-#### 1. [[`Мемология`](https://vk.com/app51712852)] - VK MINI APPS, который не одержал победы в VK FRESH CODE 2023.
+#### 1. [[`Мемология`](https://vk.com/app51712852)] - VK MINI APPS, который не одержал победы в VK FRESH CODE 2023
 
 -   [Бекенд](https://github.com/kravetsone/memology-backend). Fastify, TypeScript, Prisma, Protobuf over HTTP
 -   [Фронтенд](https://github.com/localhostov2/memology). React, TypeScript, Effector, Protobuf
 
 #### 2. [[`elysia-autoload`](https://github.com/kravetsone/elysia-autoload)] - Плагин для [Elysia](https://elysiajs.com), который загружает все endpoints в папке и генерирует типы для [Eden](https://elysiajs.com/eden/overview.html)
 
-#### 3. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами.
+#### 3. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами
 
-#### 4. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
+#### 4. [[`elysia-msgpack`](https://github.com/kravetsone/elysia-msgpack)] - Плагин для [Elysia](https://elysiajs.com), который сериализует/десериализует [MessagePack](https://msgpack.org) в зависимости от переданных заголовков
+
+#### 5. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
 
 И множество других `мёртвых` или пока не `опубликованных` проектов
 
