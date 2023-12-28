@@ -7,9 +7,11 @@
 -   [Бекенд](https://github.com/kravetsone/memology-backend). Fastify, TypeScript, Prisma, Protobuf over HTTP
 -   [Фронтенд](https://github.com/localhostov2/memology). React, TypeScript, Effector, Protobuf
 
-#### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами.
+#### 2. [[`elysia-autoload`](https://github.com/kravetsone/elysia-autoload)] - Плагин для [Elysia](https://elysiajs.com), который загружает все endpoints в папке и генерирует типы для [Eden](https://elysiajs.com/eden/overview.html)
 
-#### 3. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
+#### 3. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами.
+
+#### 4. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
 
 И множество других `мёртвых` или пока не `опубликованных` проектов
 
