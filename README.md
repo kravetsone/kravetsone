@@ -7,7 +7,7 @@
 -   [Бекенд](https://github.com/kravetsone/memology-backend). Fastify, TypeScript, Prisma, Protobuf over HTTP
 -   [Фронтенд](https://github.com/localhostov2/memology). React, TypeScript, Effector, Protobuf
 
-#### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с ассетами.
+#### 2. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами.
 
 #### 3. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/).
 
@@ -27,7 +27,7 @@
 
 ## 🧑‍💻 Хакатоны и другие мероприятия
 
-Учавствую в разных активностях вместе со своей командой «Безымянные»
+Участвую в разных активностях вместе со своей командой «Безымянные»
 ![imgonline-com-ua-Resize-taqQNVNFI1X](https://github.com/kravetsone/kravetsone/assets/57632712/5d94c8f2-bbc2-4d50-b027-437192ab1153)
 
 Наш телеграм канал - [@team_noname](https://t.me/team_noname) ([пост с победами](https://t.me/team_noname/137))
