@@ -9,17 +9,19 @@
 
 #### 2. [[`elysia-autoload`](https://github.com/kravetsone/elysia-autoload)] - Плагин для [Elysia](https://elysiajs.com), который загружает все endpoints в папке и генерирует типы для [Eden](https://elysiajs.com/eden/overview.html)
 
-#### 3. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами
+#### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Этот модуль позволяет развернуть проект с [Elysia](https://elysiajs.com) фреймворком и настроить его окружение. `bunx create elysiajs`. Из окружения поддерживаются пока только линтеры ESLint и Biome
 
-#### 4. [[`elysia-msgpack`](https://github.com/kravetsone/elysia-msgpack)] - Плагин для [Elysia](https://elysiajs.com), который сериализует/десериализует [MessagePack](https://msgpack.org) в зависимости от переданных заголовков
+#### 4. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (Например, авто-обновление)
 
-#### 5. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
+#### 5. [[`elysia-msgpack`](https://github.com/kravetsone/elysia-msgpack)] - Плагин для [Elysia](https://elysiajs.com), который сериализует/десериализует [MessagePack](https://msgpack.org) в зависимости от переданных заголовков
+
+#### 6. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
 
 ### Проекты с [хакатонов](#-хакатоны-и-другие-мероприятия)
 
-#### 6. [[`driveIT-backend`](https://github.com/kravetsone/driveIT-backend)] - Бекенд для веб-платформы ЦОДД, который публикует телеметрию судов и отдаёт различную информацию (REST, WEBSOCKET, PROTOBUF)
+#### 7. [[`driveIT-backend`](https://github.com/kravetsone/driveIT-backend)] - Бекенд для веб-платформы ЦОДД, который публикует телеметрию судов и отдаёт различную информацию (REST, WEBSOCKET, PROTOBUF)
 
-#### 7. [[`rosatom-backend`](https://github.com/kravetsone/rosatom-backend)] - Бекенд для управления сущностями (CRUD с импортом и экспортом) и формированием телеметрии судов
+#### 8. [[`rosatom-backend`](https://github.com/kravetsone/rosatom-backend)] - Бекенд для управления сущностями (CRUD с импортом и экспортом) и формированием телеметрии судов
 
 И множество других `мёртвых` или пока не `опубликованных` проектов
 
