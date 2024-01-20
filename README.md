@@ -9,7 +9,7 @@
 
 #### 2. [[`elysia-autoload`](https://github.com/kravetsone/elysia-autoload)] - Плагин для [Elysia](https://elysiajs.com), который загружает все endpoints в папке и генерирует типы для [Eden](https://elysiajs.com/eden/overview.html)
 
-#### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Из окружения поддерживаются пока только линтеры ESLint и Biome
+#### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle
 
 #### 4. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (Например, авто-обновление)
 
