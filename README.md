@@ -31,7 +31,7 @@
 
 ## ⌛ Моя статистика в WakaTime ([![wakatime](https://wakatime.com/badge/user/2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2.svg)](https://wakatime.com/@2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2))
 
-[![](https://github-readme-stats.vercel.app/api/wakatime?username=kravets&theme=jolly&hide_title=true)](https://wakatime.com/@kravets/)
+[![](https://github-readme-stats.vercel.app/api/wakatime?username=kravets&theme=jolly&hide_title=true)](https://wakatime.com/@2e9f39d3-4b8e-42c3-a3c5-4b4b8adfbff2)
 
 ## ❓ Как со мной связаться?
 
