@@ -17,7 +17,7 @@
 
 -   [[`types`](https://github.com/gramiojs/types)] - Авто-обновляемая и кодогенерируемая библиотека с типами [Telegram Bot Api](https://core.telegram.org/bots/api) с помощью Github Actions
 
--   [[`documentation`](https://github.com/gramiojs/documentation)] - Документация на [VitePress](https://vitepress.dev/) с авто-деплоем на [Netlify](https://www.netlify.com/)
+-   [[`documentation`](https://gramio.netlify.app/)] - Документация на [VitePress](https://vitepress.dev/) с авто-деплоем на [Netlify](https://www.netlify.com/)
 
 #### 5. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
