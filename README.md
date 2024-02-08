@@ -11,11 +11,13 @@
 
 #### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle, Husky и выбор плагинов. Авто-обновление зависимостей (включая те которые используются в генерации шаблона) с помощью Renovate
 
-#### 4. [[`gramio`](https://github.com/gramiojs)] - WIP
+#### 4. [[`GramIO`](https://github.com/gramiojs)] - WIP
 
 -   [[`keyboards`](https://github.com/gramiojs/keyboards)] - Фреймворк-агностик библиотека для создания клавиатур телеграм ботам с многими классными возможностями!
 
--   [[`types`](https://github.com/gramiojs/types)] - Авто-обновляемая и кодогенерируемая библиотека с типами [Telegram Bot Api](https://core.telegram.org/bots/api) с помощью Github Actions
+-   [[`types`](https://github.com/gramiojs/types)] - Авто-обновляемая и кодогенерируемая библиотека с типами [Telegram Bot API](https://core.telegram.org/bots/api) с помощью Github Actions
+
+-   [[`files`](https://github.com/gramiojs/files)] - Библиотека для удобной работой с загрузкой файлов для Telegram Bot API (работает под капотом GramIO)
 
 -   [[`documentation`](https://gramio.netlify.app/)] - Документация на [VitePress](https://vitepress.dev/) с авто-деплоем на [Netlify](https://www.netlify.com/)
 
@@ -23,7 +25,7 @@
 
 #### 6. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
-#### 7. [[`Code Syntax Highlighter`](https://github.com/kravetsone/Code-Syntax-Highlighter)] - Плагин/Виджет для [фигмы](https://www.figma.com/) который отрендерит текст с подсветкой синтаксиса. Поддерживаются многие языки и множество тем.
+#### 7. [[`Code Syntax Highlighter`](https://github.com/kravetsone/Code-Syntax-Highlighter)] - Плагин/Виджет для [Figma](https://www.figma.com/) который отрендерит текст с подсветкой синтаксиса. Поддерживаются многие языки и множество тем.
 
 #### 8. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
 
