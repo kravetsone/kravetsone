@@ -17,6 +17,8 @@
 
 -   [[`types`](https://github.com/gramiojs/types)] - Авто-обновляемая и кодогенерируемая библиотека с типами [Telegram Bot API](https://core.telegram.org/bots/api) с помощью Github Actions
 
+-   [[`format`](https://github.com/gramiojs/format)] - Библиотека для форматирования текста
+
 -   [[`files`](https://github.com/gramiojs/files)] - Библиотека для удобной работой с загрузкой файлов для Telegram Bot API (работает под капотом GramIO)
 
 -   [[`documentation`](https://gramio.netlify.app/)] - Документация на [VitePress](https://vitepress.dev/) с авто-деплоем на [Netlify](https://www.netlify.com/)
