@@ -1,11 +1,12 @@
 <script setup lang="ts">
 const props = defineProps<{
-    framework: "ExpressJS",
+    framework: "ExpressJS" | "KoaJS",
     title: string
 }>()
 
 const logos: Record<typeof props["framework"], string> = {
-    ExpressJS: "/express-logo.png"
+    ExpressJS: "/express-logo.png",
+    KoaJS: "/koa-logo.png"
 }
 </script>
 
