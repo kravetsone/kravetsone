@@ -1,16 +1,20 @@
 <script setup lang="ts">
 const props = defineProps<{
-    title: "ExpressJS"
+    framework: "ExpressJS",
+    title: string
 }>()
 
-const logos: Record<typeof props["title"], string> = {
+const logos: Record<typeof props["framework"], string> = {
     ExpressJS: "/express-logo.png"
 }
 </script>
 
 <template>
     <div class="flex flex-row items-center font-bold">
-        <img width="50px" :src="logos[props.title]" />
-        <span class="text-xl">{{ props.title }}</span>
+        <img width="50px" :src="logos[props.framework]" />
+        <span class="text-xl">{{ props.framework }} - </span>
+        <span class="ml-1 text-elysia-purple">
+            {{ props.title }}
+        </span>
     </div>
 </template>

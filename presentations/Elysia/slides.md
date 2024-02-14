@@ -8,7 +8,7 @@ layout: cover
 ---
 layout: default
 ---
-<SlideLogo title="ExpressJS"/>
+<SlideLogo framework="ExpressJS" title="Плюсы и минусы"/>
 
 <p class="text-green">Плюсы</p>
 
