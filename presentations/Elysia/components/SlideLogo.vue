@@ -1,17 +1,19 @@
 <script setup lang="ts">
 const props = defineProps<{
-    framework: "ExpressJS" | "KoaJS",
+    framework: "ExpressJS" | "KoaJS" | "FastifyJS",
     title: string
 }>()
 
 const logos: Record<typeof props["framework"], string> = {
     ExpressJS: "/express-logo.png",
-    KoaJS: "/koa-logo.png"
+    KoaJS: "/koa-logo.png",
+    FastifyJS: "/fastify-logo.png"
 }
 // TODO: поправить размеры и отступы
 const widths: Record<typeof props["framework"], string> = {
     ExpressJS: "50px",
-    KoaJS: "43px"
+    KoaJS: "43px",
+    FastifyJS: "50px"
 }
 
 </script>

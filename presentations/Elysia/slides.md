@@ -89,6 +89,9 @@ layout: default
 <div class="mt-7"/>
 
 ```ts twoslash
+/** Какая-то асинхронная операция по поиску юзера */
+function findUser() {}
+// ---cut---
 import Express from "express";
 import "express-async-errors";
 
@@ -96,6 +99,8 @@ const app = Express();
 
 app.use(async (req, res) => {
 	if (!req.headers.authorization) throw new Error("No access");
+
+    await findUser();
 });
 // Да-да кривые типы экспресса с примером из доки - https://expressjs.com/en/guide/error-handling.html#error-handling
 app.use((err, req, res, next) => {
@@ -138,3 +143,23 @@ layout: default
 - Middleware
 - Плохая типизация
 - Плохая работа с валидацией
+
+---
+layout: default
+---
+
+<SlideLogo framework="FastifyJS" title="Плюсы и минусы"/>
+
+<p class="text-green">Плюсы</p>
+
+- Современный
+- Life-cycle hooks
+- Производительный
+- fast-json-stringify
+- Построен на JSON Schema и AJV
+- Отличный DX и swagger одной строчкой
+- express-compatibility plugin
+
+<p class="text-red">Минусы</p>
+
+- Не идеал типизации
