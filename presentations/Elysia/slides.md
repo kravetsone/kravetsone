@@ -121,3 +121,20 @@ layout: default
 - 4.1.1 - 5 лет назад
 
 // TODO: Придумать как обыграть покрасивее
+
+---
+layout: default
+---
+
+<SlideLogo framework="KoaJS" title="Плюсы и минусы"/>
+
+<p class="text-green">Плюсы</p>
+
+- Написан командой ExpressJS
+- Значительно быстрее ExpressJS
+
+<p class="text-red">Минусы</p>
+
+- Middleware
+- Плохая типизация
+- Плохая работа с валидацией

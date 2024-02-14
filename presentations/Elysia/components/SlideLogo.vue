@@ -8,11 +8,17 @@ const logos: Record<typeof props["framework"], string> = {
     ExpressJS: "/express-logo.png",
     KoaJS: "/koa-logo.png"
 }
+// TODO: поправить размеры и отступы
+const widths: Record<typeof props["framework"], string> = {
+    ExpressJS: "50px",
+    KoaJS: "43px"
+}
+
 </script>
 
 <template>
     <div class="flex flex-row items-center font-bold">
-        <img width="50px" :src="logos[props.framework]" />
+        <img :width="widths[props.framework]" :src="logos[props.framework]" />
         <span class="text-xl">{{ props.framework }} - </span>
         <span class="ml-1 text-elysia-purple">
             {{ props.title }}
