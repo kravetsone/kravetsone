@@ -76,7 +76,7 @@ app.get("/", (req, res) => {
 });
 
 app.use((req, res) => {
-	console.log("after handler");
+	console.log("after handler never executes...");
 });
 ```
 
@@ -163,3 +163,11 @@ layout: default
 <p class="text-red">Минусы</p>
 
 - Не идеал типизации
+
+---
+layout: default
+---
+
+<SlideLogo framework="FastifyJS" title="Life-cycle hooks"/>
+
+Request => Routing => Logger => onRequest Hook => preParsing Hook => Parsing => preValidation Hook => Validation => preHandler Hook => User Handler => Reply => preSerialization Hook => onSend Hook => Response => onResponse Hook
