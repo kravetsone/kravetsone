@@ -79,3 +79,26 @@ app.use((req, res) => {
 	console.log("after handler");
 });
 ```
+
+---
+layout: default
+---
+
+<SlideLogo framework="ExpressJS" title="Написан в эру мамонтов + костыльный"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import Express from "express";
+import "express-async-errors";
+
+const app = Express();
+
+app.use(async (req, res) => {
+	if (!req.headers.authorization) throw new Error("No access");
+});
+// Да-да кривые типы экспресса с примером из доки - https://expressjs.com/en/guide/error-handling.html#error-handling
+app.use((err, req, res, next) => {
+	return res.status(400).json(err.message);
+});
+```
