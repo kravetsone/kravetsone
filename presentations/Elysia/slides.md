@@ -171,3 +171,39 @@ layout: default
 <SlideLogo framework="FastifyJS" title="Life-cycle hooks"/>
 
 Request => Routing => Logger => onRequest Hook => preParsing Hook => Parsing => preValidation Hook => Validation => preHandler Hook => User Handler => Reply => preSerialization Hook => onSend Hook => Response => onResponse Hook
+
+// TODO: flow chart
+
+---
+layout: default
+---
+
+<SlideLogo framework="FastifyJS" title="Валидация и сериализация"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+// @noErrors
+import { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
+import { Type } from "@sinclair/typebox";
+import Fastify from "fastify";
+
+const fastify = Fastify().withTypeProvider<TypeBoxTypeProvider>();
+
+fastify.get(
+	"/route",
+	{
+		schema: {
+			querystring: Type.Object({
+				foo: Type.Number(),
+				fooBar: Type.String(),
+			}),
+		},
+	},
+	(request, reply) => {
+		request.query.f; // type safe!
+        //       ^|
+	},
+);
+
+```
