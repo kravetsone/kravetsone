@@ -26,3 +26,12 @@ layout: default
 - Написан в эру мамонтов
 - Костыльный
 - Разработчики забили
+
+---
+layout: default
+---
+<SlideLogo framework="ExpressJS" title="Медленный"/>
+
+// TODO: Сделать свой чарт
+
+<img class="mt-7" src="/benchmark.png"/>
