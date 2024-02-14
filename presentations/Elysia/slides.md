@@ -1,1 +1,6 @@
-# Elysia
+---
+theme: elysia
+layout: cover
+---
+
+<CoverContent/>
