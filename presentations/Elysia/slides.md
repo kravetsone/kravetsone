@@ -207,3 +207,38 @@ fastify.get(
 );
 
 ```
+
+---
+layout: default
+---
+
+<SlideLogo framework="FastifyJS" title="Миграция с Express"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import fastifyExpress from "@fastify/express";
+import Express from "express";
+import Fastify from "fastify";
+
+const fastify = Fastify();
+
+await fastify.register(fastifyExpress);
+
+const router = Express.Router();
+fastify.use(router);
+
+router.use((req, res, next) => {
+	res.setHeader("x-custom", "fastify + express");
+	next();
+});
+
+router.get("/hello", (req, res) => {
+	res.status(201).json({ hello: "world" });
+});
+router.use("*", (req, res) => {
+	res.status(404).json({ msg: "not found" });
+});
+
+fastify.listen({ port: 3000 }, console.log);
+```
