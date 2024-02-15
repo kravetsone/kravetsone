@@ -250,3 +250,39 @@ layout: default
 <SlideLogo framework="ElysiaJS" title="Фичи"/>
 
 <img src="/feature-sheet.webp"/>
+
+---
+layout: default
+---
+
+<SlideLogo framework="ElysiaJS" title="Быстрый"/>
+
+// TODO: 
+
+---
+layout: default
+---
+
+<SlideLogo framework="ElysiaJS" title="Валидация"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+new Elysia().post(
+	"/moscowjs/question",
+	({ body }) => ({ message: "Question created!" }),
+	// ^?
+	{
+		body: t.Object({
+			presenter: t.TemplateLiteral("{Доклад 1|Доклад 2}"),
+			text: t.String(),
+		}),
+		response: t.Object({
+			message: t.String(),
+		}),
+	},
+);
+
+```
