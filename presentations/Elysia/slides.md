@@ -242,3 +242,11 @@ router.use("*", (req, res) => {
 
 fastify.listen({ port: 3000 }, console.log);
 ```
+
+---
+layout: default
+---
+
+<SlideLogo framework="ElysiaJS" title="Фичи"/>
+
+<img src="/feature-sheet.webp"/>
