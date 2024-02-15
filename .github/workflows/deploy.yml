@@ -1,8 +1,6 @@
 name: Build and Deploy presentation to Netlify
 
 on:
-    push:
-    pull_request:
     workflow_dispatch:
 
 jobs:
@@ -18,15 +16,15 @@ jobs:
                   node-version: 20.x
 
             - name: Install modules
-              run: npm install
+              run: cd ./presentations/Elysia &&  npm install
 
             - name: Build
-              run: cd ./presentations/Elysia && npm run build
+              run: npm run build
 
             - name: Deploy to Netlify
               uses: nwtgck/actions-netlify@v2.0
               with:
-                  publish-dir: "./presentations/Elysia/dist"
+                  publish-dir: "./dist"
                   production-branch: main
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   deploy-message: "Deploy from GitHub Actions"
