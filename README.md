@@ -25,13 +25,11 @@
 
 #### 5. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
-#### 6. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
+#### 6. [[`Code Syntax Highlighter`](https://github.com/kravetsone/Code-Syntax-Highlighter)] - Плагин/Виджет для [Figma](https://www.figma.com/) который отрендерит текст с подсветкой синтаксиса. Поддерживаются многие языки и множество тем.
 
-#### 7. [[`Code Syntax Highlighter`](https://github.com/kravetsone/Code-Syntax-Highlighter)] - Плагин/Виджет для [Figma](https://www.figma.com/) который отрендерит текст с подсветкой синтаксиса. Поддерживаются многие языки и множество тем.
+#### 7. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
 
-#### 8. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
-
-#### 9. [[`rustore_notify`](https://github.com/kravetsone/rustore_notify)] - Телеграм бот написанный на [Rust](https://www.rust-lang.org/) с использованием [teloxide](https://github.com/teloxide/teloxide) (магазин приложений **RuSt**ore в виде бота)
+#### 8. [[`rustore_notify`](https://github.com/kravetsone/rustore_notify)] - Телеграм бот написанный на [Rust](https://www.rust-lang.org/) с использованием [teloxide](https://github.com/teloxide/teloxide) (магазин приложений **RuSt**ore в виде бота)
 
 ### Проекты с [хакатонов](#-хакатоны-и-другие-мероприятия)
 
