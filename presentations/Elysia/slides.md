@@ -288,3 +288,278 @@ new Elysia().post(
 );
 
 ```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="OpenAPI / Swagger"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+// @filename: routes.ts
+import { Elysia } from "elysia";
+
+export const feed = new Elysia();
+export const users = new Elysia();
+// @filename: index.ts
+// ---cut---
+import { swagger } from "@elysiajs/swagger";
+import { Elysia, t } from "elysia";
+import { feed, users } from "./routes";
+
+new Elysia()
+  .use(swagger())
+  .use(feed)
+  .use(users)
+  .listen(3000);
+
+```
+
+---
+layout: full
+---
+
+<img src="/scalar-dark-mode.webp" />
+
+---
+
+<SlideLogo framework="ElysiaJS" title="e2e type-safety | TODO: лучше разместить"/>
+
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+const app = new Elysia()
+	.post("/yandex/employee", () => {}, {
+		body: t.Object({
+			name: t.String(),
+			stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
+		}),
+	})
+	.listen(1997);
+
+export type App = typeof app;
+```
+
+
+```ts twoslash
+// @filename: server.ts
+import { Elysia, t } from "elysia";
+
+const app = new Elysia()
+	.post("/yandex/employee", () => {}, {
+		body: t.Object({
+			name: t.String(),
+			stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
+		}),
+	}).post("/yandex/another", () => {}, {
+		body: t.Object({
+			name: t.String(),
+			stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
+		}),
+	})
+	.listen(1997);
+
+export type App = typeof app;
+// @filename: index.ts
+// ---cut---
+import { edenTreaty } from "@elysiajs/eden";
+import type { App } from "./server";
+
+const eden = edenTreaty<App>("http://localhost:1997");
+
+await eden.yandex.employee.post({
+    //            ^|
+	name: "Всеволод",
+	stack: ["Elysia", "Svelte"],
+});
+
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="WinterCG"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia } from "elysia";
+import { Hono } from "hono";
+// ---cut---
+const elysia = new Elysia()
+    .get("/", 'Hello from Elysia inside Hono inside Elysia')
+
+const hono = new Hono()
+    .get('/', (c) => c.text('Hello from Hono!'))
+    .mount('/elysia', elysia.fetch)
+
+const main = new Elysia()
+    .get('/', () => 'Hello from Elysia')
+    .mount('/hono', hono.fetch)
+    .listen(3000)
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Context"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+const app = new Elysia();
+// ---cut---
+app.get(
+	"/:type",
+	({ query: { pageSize }, params: { type }, set }) => {
+		set.status = "I'm a teapot";
+		set.headers["Content-Type"] = "application/x-teapot";
+	},
+	{
+		query: t.Object({
+			pageSize: t.Numeric(),
+		}),
+	},
+);
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="State & Decorate"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+const app = new Elysia();
+// ---cut---
+app
+	.state("requests", 1)
+	.get("/increment", ({ store }) => ++store.requests);
+```
+
+<br/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+const app = new Elysia();
+class Logger {
+    log(text: string) {}
+}
+// ---cut---
+app
+  .decorate("logger", new Logger())
+  .get("/", ({ logger }) => {
+    	logger.log("hi");
+
+    	return "hi";
+});
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Derive"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+const app = new Elysia();
+// ---cut---
+app
+	.derive(({ headers }) => {
+		const auth = headers.Authorization;
+
+		return {
+			bearer: auth?.startsWith("Bearer ") ? auth.slice(7) : null,
+		};
+	})
+	.get("/", ({ bearer }) => bearer);
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Affix"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia } from "elysia";
+
+// ---cut---
+const setup = new Elysia({ name: 'setup' })
+    .decorate({
+        argon: 'a',
+        boron: 'b',
+        carbon: 'c'
+    })
+
+const app = new Elysia()
+    .use(
+        setup
+            .prefix('decorator', 'setup')
+    )
+    .get('/', ({ setupCarbon }) => setupCarbon)
+    //                              ^?
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Elysia plugin"/>
+
+<div class="mt-7"/>
+
+TODO: переделать кнш
+
+<img width="500" src="/new-elysia-twitter.png" />
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Elysia plugin"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia } from "elysia";
+
+const app = new Elysia();
+
+class YandexController {
+    createEvent(name: string) {}
+}
+// ---cut---
+const plugin = new Elysia()
+	.decorate("yandex", new YandexController())
+	.get("/", () => "Hello, Yandex!");
+
+app
+	.use(plugin)
+	.post("/event", ({ yandex }) => yandex.createEvent("Я 💛 Фронтенд"))
+	.listen(3000);
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Elysia plugin - дедупликация"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia } from "elysia";
+
+const pluginOptions = {}
+// ---cut---
+const somePlugin = new Elysia({
+    name: "elysia-some",
+    seed: pluginOptions
+});
+
+const yandexPlugin = new Elysia().use(somePlugin);
+const elytriumPlugin = new Elysia().use(somePlugin);
+
+const app = new Elysia().use(yandexPlugin).use(elytriumPlugin);
+```
