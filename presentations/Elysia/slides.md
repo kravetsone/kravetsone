@@ -2,6 +2,8 @@
 theme: elysia
 highlighter: shiki
 layout: cover
+addons:
+  - slidev-component-progress
 ---
 
 <CoverContent/>
@@ -54,7 +56,7 @@ layout: default
 ```ts twoslash
 declare module "express-serve-static-core" {
     interface Request {
-        user: { name: "MoscowJS" }
+        user: { name: "Yandex" }
     }
 }
 // ---cut---
@@ -65,7 +67,7 @@ const app = Express();
 app.use((req, res, next) => {
 	if (!req.headers.authorization) return res.send("No access");
     
-	req.user = { name: "MoscowJS" };
+	req.user = { name: "Yandex" };
 	console.log("before handler");
 
 	next();
@@ -271,7 +273,7 @@ layout: default
 import { Elysia, t } from "elysia";
 
 new Elysia().post(
-	"/moscowjs/question",
+	"/yandex/question",
 	({ body }) => ({ message: "Question created!" }),
 	// ^?
 	{
