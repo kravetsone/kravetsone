@@ -542,24 +542,334 @@ app
 	.listen(3000);
 ```
 
+
+
+---
+layout: full
 ---
 
-<SlideLogo framework="ElysiaJS" title="Elysia plugin - дедупликация"/>
+<img src="/lifecycle.webp" />
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Lyfe-cycle"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { isHtml } from "@elysiajs/html";
+import { Elysia } from "elysia";
+
+// ---cut---
+new Elysia()
+	.get("/none", () => "<h1>Hello World</h1>")
+	.onAfterHandle(({ response, set }) => {
+		if (isHtml(response))
+			set.headers["Content-Type"] = "text/html; charset=utf8";
+	})
+	.get("/", () => "<h1>Hello World</h1>")
+	.get("/hi", () => "<h1>Hello World</h1>")
+	.listen(3000);
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Guard"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+const signIn = (body: any) => "";
+const signUp = (body: any) => "";  
+// ---cut---
+new Elysia()
+	.guard(
+		{
+			body: t.Object({
+				username: t.String(),
+				password: t.String(),
+			}),
+		},
+		(app) =>
+			app
+				.post("/sign-up", ({ body }) => signUp(body))
+				.post("/sign-in", ({ body }) => signIn(body)),
+	)
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Scoped плагины"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { isHtml } from "@elysiajs/html";
+import { Elysia } from "elysia";
+
+// ---cut---
+const html = new Elysia({ scoped: true })
+	.onAfterHandle(({ set, response }) => {
+		if (isHtml(response))
+			set.headers["Content-Type"] = "text/html; charset=utf8";
+	})
+	.get("/inner", () => "<h1>Hello World</h1>");
+
+new Elysia()
+	.get("/", () => "<h1>Hello World</h1>")
+	.use(html)
+	.get("/outer", () => "<h1>Hello World</h1>")
+	.listen(3000);
+```
+
+---
+layout: full
+---
+
+<img src="elysia-migration-issue.png" />
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Загрузка файлов"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+// ---cut---
+new Elysia().post(
+	"/upload/avatar",
+	async ({ body: { avatar } }) => {
+		await Bun.write(process.cwd()+"/имя-файла.ext"/**путёк добавить */, avatar);
+	},
+	{
+		body: t.Object({
+			description: t.String(),
+			avatar: t.File({
+				type: "image/png",
+				maxSize: "5m",
+			}),
+		}),
+	},
+);
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Error handling"/>
 
 <div class="mt-7"/>
 
 ```ts twoslash
 import { Elysia } from "elysia";
 
-const pluginOptions = {}
 // ---cut---
-const somePlugin = new Elysia({
-    name: "elysia-some",
-    seed: pluginOptions
+class APIError extends Error {
+	constructor(public typeSafeCode: "UNAUTHORIZED" | "NOT_TEAPOT") {
+		super();
+		this.message = "An APIError occurred";
+	}
+}
+
+new Elysia()
+	.error({
+		APIError,
+	})
+	.onError(({ code, error }) => {
+		if (code === "APIError") {
+			console.error(error.typeSafeCode);
+		}
+	})
+	.get("/teapot", () => {
+		throw new APIError("NOT_TEAPOT");
+	});
+
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Cookie"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+const app = new Elysia();
+// ---cut---
+app.get(
+	"/",
+	({ cookie: { user } }) => {
+		user.value = {
+			id: 1,
+			company: "Yandex",
+			name: "Summoning 101",
+		};
+	},
+	{
+		cookie: t.Cookie({
+			user: t.Object({
+				id: t.Numeric(),
+				company: t.TemplateLiteral("{Yandex|Elytrium}"),
+				name: t.String(),
+			}),
+		}),
+	},
+);
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="WebSocket"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+// ---cut---
+new Elysia()
+    .ws('/ws', {
+        body: t.Object({
+            message: t.String()
+        }),
+        message(ws, { message }) {
+            ws.send({
+                message,
+                time: Date.now()
+            })
+        }
+    })
+    .listen(8080)
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Tests with eden"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { edenTreaty } from "@elysiajs/eden";
+import { Elysia } from "elysia";
+import { describe, it, expect } from "bun:test";
+
+// ---cut---
+const app = new Elysia().get("/", () => "hi").listen(3000);
+
+const api = edenTreaty<typeof app>("http://localhost:3000");
+
+describe("Elysia", () => {
+	it("return a response", async () => {
+		const { data } = await api.get();
+
+		expect(data).toBe("hi");
+	});
+});
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Macro"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia } from "elysia";
+
+// ---cut---
+const plugin = new Elysia({ name: "plugin" }).macro(({ onBeforeHandle }) => {
+	return {
+		hi(word: string) {
+			onBeforeHandle(() => {
+				console.log(word);
+			});
+		},
+	};
 });
 
-const yandexPlugin = new Elysia().use(somePlugin);
-const elytriumPlugin = new Elysia().use(somePlugin);
+const app = new Elysia().use(plugin).get("/", () => "hi", {
+	hi: "Elysia",
+});
+```
 
-const app = new Elysia().use(yandexPlugin).use(elytriumPlugin);
+---
+
+<SlideLogo framework="ElysiaJS" title="Websocket e2e type-safety"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+// ---cut---
+const app = new Elysia()
+	.ws("/chat", {
+		message(ws, message) {
+			ws.send(message);
+		},
+		body: t.String(),
+		response: t.String(),
+	})
+	.listen(8080);
+
+export type App = typeof app;
+```
+
+<br/>
+
+```ts twoslash
+import { edenTreaty } from "@elysiajs/eden";
+import { Elysia, t } from "elysia";
+
+const app = new Elysia()
+	.ws("/chat", {
+		message(ws, message) {
+			ws.send(message);
+		},
+		body: t.String(),
+		response: t.String(),
+	})
+	.listen(8080);
+
+export type App = typeof app;
+
+// ---cut---
+const client = edenTreaty<App>("http://localhost:8080");
+
+const chat = client.chat.subscribe();
+
+chat.subscribe((message) => {
+	console.log("got", message);
+});
+
+chat.send("hello from client");
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Model"/>
+
+<div class="mt-7"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+// ---cut---
+new Elysia()
+	.model({
+		sign: t.Object({
+			username: t.String(),
+			password: t.String(),
+		}),
+	})
+	.post("/sign-in", ({ body }) => body,
+    //                              ^?                                
+    {
+		body: "sign",
+		response: "sign",
+	});
 ```
