@@ -10,6 +10,7 @@ addons:
 
 ---
 layout: default
+title: Express
 ---
 <SlideLogo framework="ExpressJS" title="Плюсы и минусы"/>
 
@@ -131,6 +132,7 @@ layout: default
 
 ---
 layout: default
+title: Koa
 ---
 
 <SlideLogo framework="KoaJS" title="Плюсы и минусы"/>
@@ -148,6 +150,7 @@ layout: default
 
 ---
 layout: default
+title: Fastify
 ---
 
 <SlideLogo framework="FastifyJS" title="Плюсы и минусы"/>
@@ -247,6 +250,7 @@ fastify.listen({ port: 3000 }, console.log);
 
 ---
 layout: default
+title: Elysia
 ---
 
 <SlideLogo framework="ElysiaJS" title="Фичи"/>
@@ -628,7 +632,7 @@ new Elysia()
 layout: full
 ---
 
-<img src="elysia-migration-issue.png" />
+<img src="/elysia-migration-issue.png" />
 
 ---
 
