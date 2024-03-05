@@ -2,15 +2,28 @@
 theme: elysia
 highlighter: shiki
 layout: cover
-addons:
-    - slidev-component-progress
 export:
     format: pdf
     dark: true
     withClicks: true
 ---
 
-<CoverContent/>
+<div class="h-full flex flex-col justify-between">
+
+<h1 class="w-2xl">Познаём Elysia и Bun — фреймворк, сделанный для людей</h1>
+
+<div class="flex items-center justify-between">
+
+<div class="flex flex-col gap-0 pt-25 text-xl">
+    <span class="font-bold">Всеволод Деткин</span>
+    <span>Бекенд разработчик, Элитриум</span>
+</div>
+
+<img class="-mr-25" width="500px" height="500px" src="/fox.webp" />
+
+</div>
+
+</div>
 
 ---
 layout: default
@@ -31,7 +44,7 @@ title: Express
 -   Медленный
 -   Middleware
 -   Плохая типизация
--   Из коробки почти ничего не имеет
+-   Из коробки почти ничего не имеет (микро-фреймворк)
 -   Написан в эру мамонтов
 -   Костыльный
 -   Разработчики забили
