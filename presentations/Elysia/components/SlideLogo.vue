@@ -4,21 +4,21 @@ const props = defineProps<{
     title: string
 }>()
 
-const logos: Record<typeof props["framework"], string> = {
-    ExpressJS: "/express-logo.png",
-    KoaJS: "/koa-logo.png",
-    FastifyJS: "/fastify-logo.png",
-    ElysiaJS: "/elysia-logo.png"
-}
-
 </script>
 
 <template>
-    <div class="flex flex-row items-center font-bold">
-        <img width="50px" :src="logos[props.framework]" />
-        <span class="text-xl">{{ props.framework }} - </span>
-        <span class="ml-1 text-elysia-purple">
-            {{ props.title }}
-        </span>
-    </div>
+    <div class="flex flex-row items-center font-bold gap-2">
+        <div class="text-2xl">
+            <skill-icons-expressjs-light text-1xl v-if="props.framework === 'ExpressJS'" />
+            <simple-icons-koa v-if="props.framework === 'KoaJS'" />
+            <simple-icons-fastify v-if="props.framework === 'FastifyJS'" />
+            <img src="/elysia-logo.png" width="40px" v-if="props.framework === 'ElysiaJS'" </div>
+
+            <div class="flex flex-row items-center gap-1">
+                <span class="text-xl">{{ props.framework }} - </span>
+                <span class="text-elysia-purple">
+                    {{ props.title }}
+                </span>
+            </div>
+        </div>
 </template>
