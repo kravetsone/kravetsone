@@ -3,7 +3,11 @@ theme: elysia
 highlighter: shiki
 layout: cover
 addons:
-  - slidev-component-progress
+    - slidev-component-progress
+export:
+    format: pdf
+    dark: true
+    withClicks: true
 ---
 
 <CoverContent/>
@@ -12,28 +16,30 @@ addons:
 layout: default
 title: Express
 ---
+
 <SlideLogo framework="ExpressJS" title="Плюсы и минусы"/>
 
 <p class="text-green">Плюсы</p>
 
-- Проверен временем
-- Большое количество материала
-- Считается стандартом (к сожалению)
-- Популярен (множество готовых решений)
+-   Проверен временем
+-   Большое количество материала
+-   Считается стандартом (к сожалению)
+-   Популярен (множество готовых решений)
 
 <p class="text-red">Минусы</p>
 
-- Медленный
-- Middleware
-- Плохая типизация
-- Из коробки почти ничего не имеет
-- Написан в эру мамонтов
-- Костыльный
-- Разработчики забили
+-   Медленный
+-   Middleware
+-   Плохая типизация
+-   Из коробки почти ничего не имеет
+-   Написан в эру мамонтов
+-   Костыльный
+-   Разработчики забили
 
 ---
 layout: default
 ---
+
 <SlideLogo framework="ExpressJS" title="Медленный"/>
 
 // TODO: Сделать свой чарт
@@ -43,6 +49,7 @@ layout: default
 ---
 layout: default
 ---
+
 <SlideLogo framework="ExpressJS" title="Медленный"/>
 
 // TODO: Описать медленный регексовый поиск экспресса
@@ -50,6 +57,7 @@ layout: default
 ---
 layout: default
 ---
+
 <SlideLogo framework="ExpressJS" title="Middleware"/>
 
 <div class="mt-7"/>
@@ -57,7 +65,7 @@ layout: default
 ```ts twoslash
 declare module "express-serve-static-core" {
     interface Request {
-        user: { name: "Yandex" }
+        user: { name: "Yandex" };
     }
 }
 // ---cut---
@@ -66,20 +74,20 @@ import Express from "express";
 const app = Express();
 
 app.use((req, res, next) => {
-	if (!req.headers.authorization) return res.send("No access");
-    
-	req.user = { name: "Yandex" };
-	console.log("before handler");
+    if (!req.headers.authorization) return res.send("No access");
 
-	next();
+    req.user = { name: "Yandex" };
+    console.log("before handler");
+
+    next();
 });
 
 app.get("/", (req, res) => {
-	return res.send(`Hello, ${req.user.name}!`);
+    return res.send(`Hello, ${req.user.name}!`);
 });
 
 app.use((req, res) => {
-	console.log("after handler never executes...");
+    console.log("after handler never executes...");
 });
 ```
 
@@ -101,13 +109,13 @@ import "express-async-errors";
 const app = Express();
 
 app.use(async (req, res) => {
-	if (!req.headers.authorization) throw new Error("No access");
+    if (!req.headers.authorization) throw new Error("No access");
 
     await findUser();
 });
 // Да-да кривые типы экспресса с примером из доки - https://expressjs.com/en/guide/error-handling.html#error-handling
 app.use((err, req, res, next) => {
-	return res.status(400).json(err.message);
+    return res.status(400).json(err.message);
 });
 ```
 
@@ -119,14 +127,14 @@ layout: default
 
 <div class="mt-7"/>
 
-- 4.18.2 (latest) - год назад
-- 4.18.1 - 2 года назад
-- 4.18.0 - 2 года назад
-- 4.17.3 - 2 года назад
-- 5.0.0-beta.1 - 2 года назад
-- 4.17.2 - 2 года назад
-- 5.0.0-alpha.8 - 4 года назад
-- 4.1.1 - 5 лет назад
+-   4.18.2 (latest) - год назад
+-   4.18.1 - 2 года назад
+-   4.18.0 - 2 года назад
+-   4.17.3 - 2 года назад
+-   5.0.0-beta.1 - 2 года назад
+-   4.17.2 - 2 года назад
+-   5.0.0-alpha.8 - 4 года назад
+-   4.1.1 - 5 лет назад
 
 // TODO: Придумать как обыграть покрасивее
 
@@ -139,14 +147,14 @@ title: Koa
 
 <p class="text-green">Плюсы</p>
 
-- Написан командой ExpressJS
-- Значительно быстрее ExpressJS
+-   Написан командой ExpressJS
+-   Значительно быстрее ExpressJS
 
 <p class="text-red">Минусы</p>
 
-- Middleware
-- Плохая типизация
-- Плохая работа с валидацией
+-   Middleware
+-   Плохая типизация
+-   Плохая работа с валидацией
 
 ---
 layout: default
@@ -157,17 +165,17 @@ title: Fastify
 
 <p class="text-green">Плюсы</p>
 
-- Современный
-- Life-cycle hooks
-- Производительный
-- fast-json-stringify
-- Построен на JSON Schema и AJV
-- Отличный DX и swagger одной строчкой
-- express-compatibility plugin
+-   Современный
+-   Life-cycle hooks
+-   Производительный
+-   fast-json-stringify
+-   Построен на JSON Schema и AJV
+-   Отличный DX и swagger одной строчкой
+-   express-compatibility plugin
 
 <p class="text-red">Минусы</p>
 
-- Не идеал типизации
+-   Не идеал типизации
 
 ---
 layout: default
@@ -196,21 +204,20 @@ import Fastify from "fastify";
 const fastify = Fastify().withTypeProvider<TypeBoxTypeProvider>();
 
 fastify.get(
-	"/route",
-	{
-		schema: {
-			querystring: Type.Object({
-				foo: Type.Number(),
-				fooBar: Type.String(),
-			}),
-		},
-	},
-	(request, reply) => {
-		request.query.f; // type safe!
-        //       ^|
-	},
+  "/route",
+  {
+    schema: {
+        querystring: Type.Object({
+          foo: Type.Number(),
+        fooBar: Type.String(),
+      }),
+    },
+  },
+  (request, reply) => {
+    request.query.; // type safe!
+    //       	    ^|
+  },
 );
-
 ```
 
 ---
@@ -234,15 +241,15 @@ const router = Express.Router();
 fastify.use(router);
 
 router.use((req, res, next) => {
-	res.setHeader("x-custom", "fastify + express");
-	next();
+    res.setHeader("x-custom", "fastify + express");
+    next();
 });
 
 router.get("/hello", (req, res) => {
-	res.status(201).json({ hello: "world" });
+    res.status(201).json({ hello: "world" });
 });
 router.use("*", (req, res) => {
-	res.status(404).json({ msg: "not found" });
+    res.status(404).json({ msg: "not found" });
 });
 
 fastify.listen({ port: 3000 }, console.log);
@@ -263,7 +270,7 @@ layout: default
 
 <SlideLogo framework="ElysiaJS" title="Быстрый"/>
 
-// TODO: 
+// TODO:
 
 ---
 layout: default
@@ -277,20 +284,19 @@ layout: default
 import { Elysia, t } from "elysia";
 
 new Elysia().post(
-	"/yandex/question",
-	({ body }) => ({ message: "Question created!" }),
-	// ^?
-	{
-		body: t.Object({
-			presenter: t.TemplateLiteral("{Доклад 1|Доклад 2}"),
-			text: t.String(),
-		}),
-		response: t.Object({
-			message: t.String(),
-		}),
-	},
+    "/yandex/question",
+    ({ body }) => ({ message: "Question created!" }),
+    // ^?
+    {
+        body: t.Object({
+            presenter: t.TemplateLiteral("{Доклад 1|Доклад 2}"),
+            text: t.String(),
+        }),
+        response: t.Object({
+            message: t.String(),
+        }),
+    },
 );
-
 ```
 
 ---
@@ -299,6 +305,7 @@ new Elysia().post(
 
 <div class="mt-7"/>
 
+<!-- prettier-ignore -->
 ```ts twoslash
 // @filename: routes.ts
 import { Elysia } from "elysia";
@@ -312,11 +319,10 @@ import { Elysia, t } from "elysia";
 import { feed, users } from "./routes";
 
 new Elysia()
-  .use(swagger())
-  .use(feed)
-  .use(users)
-  .listen(3000);
-
+	.use(swagger())
+	.use(feed)
+	.use(users)
+	.listen(3000);
 ```
 
 ---
@@ -329,40 +335,39 @@ layout: full
 
 <SlideLogo framework="ElysiaJS" title="e2e type-safety | TODO: лучше разместить"/>
 
-
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
 const app = new Elysia()
-	.post("/yandex/employee", () => {}, {
-		body: t.Object({
-			name: t.String(),
-			stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
-		}),
-	})
-	.listen(1997);
+    .post("/yandex/employee", () => {}, {
+        body: t.Object({
+            name: t.String(),
+            stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
+        }),
+    })
+    .listen(1997);
 
 export type App = typeof app;
 ```
-
 
 ```ts twoslash
 // @filename: server.ts
 import { Elysia, t } from "elysia";
 
 const app = new Elysia()
-	.post("/yandex/employee", () => {}, {
-		body: t.Object({
-			name: t.String(),
-			stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
-		}),
-	}).post("/yandex/another", () => {}, {
-		body: t.Object({
-			name: t.String(),
-			stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
-		}),
-	})
-	.listen(1997);
+    .post("/yandex/employee", () => {}, {
+        body: t.Object({
+            name: t.String(),
+            stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
+        }),
+    })
+    .post("/yandex/another", () => {}, {
+        body: t.Object({
+            name: t.String(),
+            stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
+        }),
+    })
+    .listen(1997);
 
 export type App = typeof app;
 // @filename: index.ts
@@ -374,10 +379,9 @@ const eden = edenTreaty<App>("http://localhost:1997");
 
 await eden.yandex.employee.post({
     //            ^|
-	name: "Всеволод",
-	stack: ["Elysia", "Svelte"],
+    name: "Всеволод",
+    stack: ["Elysia", "Svelte"],
 });
-
 ```
 
 ---
@@ -390,17 +394,19 @@ await eden.yandex.employee.post({
 import { Elysia } from "elysia";
 import { Hono } from "hono";
 // ---cut---
-const elysia = new Elysia()
-    .get("/", 'Hello from Elysia inside Hono inside Elysia')
+const elysia = new Elysia().get(
+    "/",
+    "Hello from Elysia inside Hono inside Elysia",
+);
 
 const hono = new Hono()
-    .get('/', (c) => c.text('Hello from Hono!'))
-    .mount('/elysia', elysia.fetch)
+    .get("/", (c) => c.text("Hello from Hono!"))
+    .mount("/elysia", elysia.fetch);
 
 const main = new Elysia()
-    .get('/', () => 'Hello from Elysia')
-    .mount('/hono', hono.fetch)
-    .listen(3000)
+    .get("/", () => "Hello from Elysia")
+    .mount("/hono", hono.fetch)
+    .listen(3000);
 ```
 
 ---
@@ -415,16 +421,16 @@ import { Elysia, t } from "elysia";
 const app = new Elysia();
 // ---cut---
 app.get(
-	"/:type",
-	({ query: { pageSize }, params: { type }, set }) => {
-		set.status = "I'm a teapot";
-		set.headers["Content-Type"] = "application/x-teapot";
-	},
-	{
-		query: t.Object({
-			pageSize: t.Numeric(),
-		}),
-	},
+    "/:type",
+    ({ query: { pageSize }, params: { type }, set }) => {
+        set.status = "I'm a teapot";
+        set.headers["Content-Type"] = "application/x-teapot";
+    },
+    {
+        query: t.Object({
+            pageSize: t.Numeric(),
+        }),
+    },
 );
 ```
 
@@ -439,9 +445,7 @@ import { Elysia, t } from "elysia";
 
 const app = new Elysia();
 // ---cut---
-app
-	.state("requests", 1)
-	.get("/increment", ({ store }) => ++store.requests);
+app.state("requests", 1).get("/increment", ({ store }) => ++store.requests);
 ```
 
 <br/>
@@ -454,12 +458,10 @@ class Logger {
     log(text: string) {}
 }
 // ---cut---
-app
-  .decorate("logger", new Logger())
-  .get("/", ({ logger }) => {
-    	logger.log("hi");
+app.decorate("logger", new Logger()).get("/", ({ logger }) => {
+    logger.log("hi");
 
-    	return "hi";
+    return "hi";
 });
 ```
 
@@ -474,15 +476,13 @@ import { Elysia, t } from "elysia";
 
 const app = new Elysia();
 // ---cut---
-app
-	.derive(({ headers }) => {
-		const auth = headers.Authorization;
+app.derive(({ headers }) => {
+    const auth = headers.Authorization;
 
-		return {
-			bearer: auth?.startsWith("Bearer ") ? auth.slice(7) : null,
-		};
-	})
-	.get("/", ({ bearer }) => bearer);
+    return {
+        bearer: auth?.startsWith("Bearer ") ? auth.slice(7) : null,
+    };
+}).get("/", ({ bearer }) => bearer);
 ```
 
 ---
@@ -495,20 +495,16 @@ app
 import { Elysia } from "elysia";
 
 // ---cut---
-const setup = new Elysia({ name: 'setup' })
-    .decorate({
-        argon: 'a',
-        boron: 'b',
-        carbon: 'c'
-    })
+const setup = new Elysia({ name: "setup" }).decorate({
+    argon: "a",
+    boron: "b",
+    carbon: "c",
+});
 
 const app = new Elysia()
-    .use(
-        setup
-            .prefix('decorator', 'setup')
-    )
-    .get('/', ({ setupCarbon }) => setupCarbon)
-    //                              ^?
+    .use(setup.prefix("decorator", "setup"))
+    .get("/", ({ setupCarbon }) => setupCarbon);
+//                                 ^?
 ```
 
 ---
@@ -537,16 +533,13 @@ class YandexController {
 }
 // ---cut---
 const plugin = new Elysia()
-	.decorate("yandex", new YandexController())
-	.get("/", () => "Hello, Yandex!");
+    .decorate("yandex", new YandexController())
+    .get("/", () => "Hello, Yandex!");
 
-app
-	.use(plugin)
-	.post("/event", ({ yandex }) => yandex.createEvent("Я 💛 Фронтенд"))
-	.listen(3000);
+app.use(plugin)
+    .post("/event", ({ yandex }) => yandex.createEvent("Я 💛 Фронтенд"))
+    .listen(3000);
 ```
-
-
 
 ---
 layout: full
@@ -556,7 +549,7 @@ layout: full
 
 ---
 
-<SlideLogo framework="ElysiaJS" title="Lyfe-cycle"/>
+<SlideLogo framework="ElysiaJS" title="Life-cycle"/>
 
 <div class="mt-7"/>
 
@@ -566,14 +559,14 @@ import { Elysia } from "elysia";
 
 // ---cut---
 new Elysia()
-	.get("/none", () => "<h1>Hello World</h1>")
-	.onAfterHandle(({ response, set }) => {
-		if (isHtml(response))
-			set.headers["Content-Type"] = "text/html; charset=utf8";
-	})
-	.get("/", () => "<h1>Hello World</h1>")
-	.get("/hi", () => "<h1>Hello World</h1>")
-	.listen(3000);
+    .get("/none", () => "<h1>Hello World</h1>")
+    .onAfterHandle(({ response, set }) => {
+        if (isHtml(response))
+            set.headers["Content-Type"] = "text/html; charset=utf8";
+    })
+    .get("/", () => "<h1>Hello World</h1>")
+    .get("/hi", () => "<h1>Hello World</h1>")
+    .listen(3000);
 ```
 
 ---
@@ -586,21 +579,20 @@ new Elysia()
 import { Elysia, t } from "elysia";
 
 const signIn = (body: any) => "";
-const signUp = (body: any) => "";  
+const signUp = (body: any) => "";
 // ---cut---
-new Elysia()
-	.guard(
-		{
-			body: t.Object({
-				username: t.String(),
-				password: t.String(),
-			}),
-		},
-		(app) =>
-			app
-				.post("/sign-up", ({ body }) => signUp(body))
-				.post("/sign-in", ({ body }) => signIn(body)),
-	)
+new Elysia().guard(
+    {
+        body: t.Object({
+            username: t.String(),
+            password: t.String(),
+        }),
+    },
+    (app) =>
+        app
+            .post("/sign-up", ({ body }) => signUp(body))
+            .post("/sign-in", ({ body }) => signIn(body)),
+);
 ```
 
 ---
@@ -615,17 +607,17 @@ import { Elysia } from "elysia";
 
 // ---cut---
 const html = new Elysia({ scoped: true })
-	.onAfterHandle(({ set, response }) => {
-		if (isHtml(response))
-			set.headers["Content-Type"] = "text/html; charset=utf8";
-	})
-	.get("/inner", () => "<h1>Hello World</h1>");
+    .onAfterHandle(({ set, response }) => {
+        if (isHtml(response))
+            set.headers["Content-Type"] = "text/html; charset=utf8";
+    })
+    .get("/inner", () => "<h1>Hello World</h1>");
 
 new Elysia()
-	.get("/", () => "<h1>Hello World</h1>")
-	.use(html)
-	.get("/outer", () => "<h1>Hello World</h1>")
-	.listen(3000);
+    .get("/", () => "<h1>Hello World</h1>")
+    .use(html)
+    .get("/outer", () => "<h1>Hello World</h1>")
+    .listen(3000);
 ```
 
 ---
@@ -645,19 +637,19 @@ import { Elysia, t } from "elysia";
 
 // ---cut---
 new Elysia().post(
-	"/upload/avatar",
-	async ({ body: { avatar } }) => {
-		await Bun.write(process.cwd()+"/имя-файла.ext"/**путёк добавить */, avatar);
-	},
-	{
-		body: t.Object({
-			description: t.String(),
-			avatar: t.File({
-				type: "image/png",
-				maxSize: "5m",
-			}),
-		}),
-	},
+    "/upload/avatar",
+    async ({ body: { avatar } }) => {
+        await Bun.write(`${process.cwd()}/${avatar.originalName}`, avatar);
+    },
+    {
+        body: t.Object({
+            description: t.String(),
+            avatar: t.File({
+                type: "image/png",
+                maxSize: "5m",
+            }),
+        }),
+    },
 );
 ```
 
@@ -672,25 +664,25 @@ import { Elysia } from "elysia";
 
 // ---cut---
 class APIError extends Error {
-	constructor(public typeSafeCode: "UNAUTHORIZED" | "NOT_TEAPOT") {
-		super();
-		this.message = "An APIError occurred";
-	}
+    constructor(public typeSafeCode: "UNAUTHORIZED" | "NOT_TEAPOT") {
+        super();
+        this.message = "An Error occurred";
+    }
 }
 
 new Elysia()
-	.error({
-		APIError,
-	})
-	.onError(({ code, error }) => {
-		if (code === "APIError") {
-			console.error(error.typeSafeCode);
-		}
-	})
-	.get("/teapot", () => {
-		throw new APIError("NOT_TEAPOT");
-	});
-
+    .error({
+        APIError,
+    })
+    .onError(({ code, error }) => {
+        if (code === "APIError") {
+            console.error(error.typeSafeCode);
+            //                      ^?
+        }
+    })
+    .get("/teapot", () => {
+        throw new APIError("NOT_TEAPOT");
+    });
 ```
 
 ---
@@ -705,23 +697,23 @@ import { Elysia, t } from "elysia";
 const app = new Elysia();
 // ---cut---
 app.get(
-	"/",
-	({ cookie: { user } }) => {
-		user.value = {
-			id: 1,
-			company: "Yandex",
-			name: "Summoning 101",
-		};
-	},
-	{
-		cookie: t.Cookie({
-			user: t.Object({
-				id: t.Numeric(),
-				company: t.TemplateLiteral("{Yandex|Elytrium}"),
-				name: t.String(),
-			}),
-		}),
-	},
+    "/",
+    ({ cookie: { user } }) => {
+        user.value = {
+            id: 1,
+            company: "Yandex",
+            name: "Summoning 101",
+        };
+    },
+    {
+        cookie: t.Cookie({
+            user: t.Object({
+                id: t.Numeric(),
+                company: t.TemplateLiteral("{Yandex|Elytrium}"),
+                name: t.String(),
+            }),
+        }),
+    },
 );
 ```
 
@@ -736,18 +728,18 @@ import { Elysia, t } from "elysia";
 
 // ---cut---
 new Elysia()
-    .ws('/ws', {
+    .ws("/ws", {
         body: t.Object({
-            message: t.String()
+            message: t.String(),
         }),
         message(ws, { message }) {
             ws.send({
                 message,
-                time: Date.now()
-            })
-        }
+                time: Date.now(),
+            });
+        },
     })
-    .listen(8080)
+    .listen(8080);
 ```
 
 ---
@@ -767,11 +759,11 @@ const app = new Elysia().get("/", () => "hi").listen(3000);
 const api = edenTreaty<typeof app>("http://localhost:3000");
 
 describe("Elysia", () => {
-	it("return a response", async () => {
-		const { data } = await api.get();
+    it("return a response", async () => {
+        const { data } = await api.get();
 
-		expect(data).toBe("hi");
-	});
+        expect(data).toBe("hi");
+    });
 });
 ```
 
@@ -786,17 +778,17 @@ import { Elysia } from "elysia";
 
 // ---cut---
 const plugin = new Elysia({ name: "plugin" }).macro(({ onBeforeHandle }) => {
-	return {
-		hi(word: string) {
-			onBeforeHandle(() => {
-				console.log(word);
-			});
-		},
-	};
+    return {
+        hi(word: string) {
+            onBeforeHandle(() => {
+                console.log(word);
+            });
+        },
+    };
 });
 
 const app = new Elysia().use(plugin).get("/", () => "hi", {
-	hi: "Elysia",
+    hi: "Elysia",
 });
 ```
 
@@ -811,14 +803,14 @@ import { Elysia, t } from "elysia";
 
 // ---cut---
 const app = new Elysia()
-	.ws("/chat", {
-		message(ws, message) {
-			ws.send(message);
-		},
-		body: t.String(),
-		response: t.String(),
-	})
-	.listen(8080);
+    .ws("/chat", {
+        message(ws, message) {
+            ws.send(message);
+        },
+        body: t.String(),
+        response: t.String(),
+    })
+    .listen(8080);
 
 export type App = typeof app;
 ```
@@ -830,14 +822,14 @@ import { edenTreaty } from "@elysiajs/eden";
 import { Elysia, t } from "elysia";
 
 const app = new Elysia()
-	.ws("/chat", {
-		message(ws, message) {
-			ws.send(message);
-		},
-		body: t.String(),
-		response: t.String(),
-	})
-	.listen(8080);
+    .ws("/chat", {
+        message(ws, message) {
+            ws.send(message);
+        },
+        body: t.String(),
+        response: t.String(),
+    })
+    .listen(8080);
 
 export type App = typeof app;
 
@@ -847,7 +839,7 @@ const client = edenTreaty<App>("http://localhost:8080");
 const chat = client.chat.subscribe();
 
 chat.subscribe((message) => {
-	console.log("got", message);
+    console.log("got", message);
 });
 
 chat.send("hello from client");
@@ -864,16 +856,23 @@ import { Elysia, t } from "elysia";
 
 // ---cut---
 new Elysia()
-	.model({
-		sign: t.Object({
-			username: t.String(),
-			password: t.String(),
-		}),
-	})
-	.post("/sign-in", ({ body }) => body,
-    //                              ^?                                
-    {
-		body: "sign",
-		response: "sign",
-	});
+    .model({
+        sign: t.Object({
+            username: t.String(),
+            password: t.String(),
+        }),
+    })
+    .post(
+        "/sign-in",
+        ({ body }) => body,
+        //            ^?
+        //
+        //
+        //
+        //
+        {
+            body: "sign",
+            response: "sign",
+        },
+    );
 ```
