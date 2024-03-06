@@ -1,5 +1,6 @@
 ---
 theme: elysia
+mdc: true
 highlighter: shiki
 layout: cover
 export:
@@ -34,12 +35,18 @@ title: Express
 
 <p class="text-green">Плюсы</p>
 
+<v-clicks>
+
 -   Проверен временем
 -   Большое количество материала
 -   Считается стандартом (к сожалению)
 -   Популярен (множество готовых решений)
 
+</v-clicks>
+
 <p class="text-red">Минусы</p>
+
+<v-clicks>
 
 -   Медленный
 -   Middleware
@@ -48,6 +55,8 @@ title: Express
 -   Написан в эру мамонтов
 -   Костыльный
 -   Разработчики забили
+
+</v-clicks>
 
 ---
 layout: default
@@ -87,7 +96,7 @@ import Express from "express";
 const app = Express();
 
 app.use((req, res, next) => {
-    if (!req.headers.authorization) return res.send("No access");
+    if (!req.header("authorization")) return res.send("No access");
 
     req.user = { name: "Yandex" };
     console.log("before handler");
@@ -112,7 +121,7 @@ layout: default
 
 <div class="mt-7"/>
 
-```ts twoslash
+```ts {1,2|all} twoslash
 /** Какая-то асинхронная операция по поиску юзера */
 function findUser() {}
 // ---cut---
@@ -122,7 +131,7 @@ import "express-async-errors";
 const app = Express();
 
 app.use(async (req, res) => {
-    if (!req.headers.authorization) throw new Error("No access");
+    if (!req.header("authorization")) throw new Error("No access");
 
     await findUser();
 });
@@ -160,14 +169,22 @@ title: Koa
 
 <p class="text-green">Плюсы</p>
 
+<v-clicks>
+
 -   Написан командой ExpressJS
 -   Значительно быстрее ExpressJS
 
+</v-clicks>
+
 <p class="text-red">Минусы</p>
+
+<v-clicks>
 
 -   Middleware
 -   Плохая типизация
 -   Плохая работа с валидацией
+
+</v-clicks>
 
 ---
 layout: default
@@ -204,9 +221,12 @@ Request => Routing => Logger => onRequest Hook => preParsing Hook => Parsing => 
 layout: default
 ---
 
+<ShowTwoslash />
 <SlideLogo framework="FastifyJS" title="Валидация и сериализация"/>
 
 <div class="mt-7"/>
+
+<ShowTwoslash />
 
 ```ts twoslash
 // @noErrors
@@ -289,6 +309,7 @@ layout: default
 layout: default
 ---
 
+<ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Валидация"/>
 
 <div class="mt-7"/>
@@ -346,7 +367,9 @@ layout: full
 
 ---
 
-<SlideLogo framework="ElysiaJS" title="e2e type-safety | TODO: лучше разместить"/>
+<ShowTwoslash />
+
+<SlideLogo framework="ElysiaJS" title="e2e type-safety | лучше разместить"/>
 
 ```ts twoslash
 import { Elysia, t } from "elysia";
@@ -500,24 +523,28 @@ app.derive(({ headers }) => {
 
 ---
 
+<ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Affix"/>
 
 <div class="mt-7"/>
 
+<!-- prettier-ignore -->
 ```ts twoslash
 import { Elysia } from "elysia";
 
 // ---cut---
-const setup = new Elysia({ name: "setup" }).decorate({
-    argon: "a",
-    boron: "b",
-    carbon: "c",
-});
+const setup = new Elysia({ name: "setup" })
+            .decorate({
+                argon: "a",
+                boron: "b",
+                carbon: "c",
+            });
 
 const app = new Elysia()
     .use(setup.prefix("decorator", "setup"))
     .get("/", ({ setupCarbon }) => setupCarbon);
-//                                 ^?
+//                                  ^?
+
 ```
 
 ---
@@ -528,7 +555,7 @@ const app = new Elysia()
 
 TODO: переделать кнш
 
-<img width="500" src="/new-elysia-twitter.png" />
+<img width="500" src="/new-elysia-twitter.png" /> 
 
 ---
 
@@ -555,8 +582,8 @@ app.use(plugin)
 ```
 
 ---
-layout: full
----
+
+## layout: full
 
 <img src="/lifecycle.webp" />
 
@@ -634,8 +661,8 @@ new Elysia()
 ```
 
 ---
-layout: full
----
+
+## layout: full
 
 <img src="/elysia-migration-issue.png" />
 
@@ -668,6 +695,7 @@ new Elysia().post(
 
 ---
 
+<ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Error handling"/>
 
 <div class="mt-7"/>
@@ -860,6 +888,7 @@ chat.send("hello from client");
 
 ---
 
+<ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Model"/>
 
 <div class="mt-7"/>
