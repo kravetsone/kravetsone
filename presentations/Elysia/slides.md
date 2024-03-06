@@ -82,8 +82,6 @@ layout: default
 
 <SlideLogo framework="ExpressJS" title="Middleware"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 declare module "express-serve-static-core" {
     interface Request {
@@ -119,8 +117,6 @@ layout: default
 
 <SlideLogo framework="ExpressJS" title="Написан в эру мамонтов + костыльный"/>
 
-<div class="mt-7"/>
-
 ```ts {1,2|all} twoslash
 /** Какая-то асинхронная операция по поиску юзера */
 function findUser() {}
@@ -146,8 +142,6 @@ layout: default
 ---
 
 <SlideLogo framework="ExpressJS" title="Разработчики забили"/>
-
-<div class="mt-7"/>
 
 -   4.18.2 (latest) - год назад
 -   4.18.1 - 2 года назад
@@ -195,6 +189,8 @@ title: Fastify
 
 <p class="text-green">Плюсы</p>
 
+<v-clicks>
+
 -   Современный
 -   Life-cycle hooks
 -   Производительный
@@ -202,11 +198,13 @@ title: Fastify
 -   Построен на JSON Schema и AJV
 -   Отличный DX и swagger одной строчкой
 -   express-compatibility plugin
-
+</v-clicks>
 <p class="text-red">Минусы</p>
+<v-clicks>
 
 -   Не идеал типизации
 
+</v-clicks>
 ---
 layout: default
 ---
@@ -224,8 +222,6 @@ layout: default
 <ShowTwoslash />
 <SlideLogo framework="FastifyJS" title="Валидация и сериализация"/>
 
-<div class="mt-7"/>
-
 <ShowTwoslash />
 
 ```ts twoslash
@@ -241,9 +237,9 @@ fastify.get(
   {
     schema: {
         querystring: Type.Object({
-          foo: Type.Number(),
-        fooBar: Type.String(),
-      }),
+            foo: Type.Number(),
+            fooBar: Type.String(),
+        }),
     },
   },
   (request, reply) => {
@@ -258,8 +254,6 @@ layout: default
 ---
 
 <SlideLogo framework="FastifyJS" title="Миграция с Express"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import fastifyExpress from "@fastify/express";
@@ -312,8 +306,6 @@ layout: default
 <ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Валидация"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -321,6 +313,10 @@ new Elysia().post(
     "/yandex/question",
     ({ body }) => ({ message: "Question created!" }),
     // ^?
+    //
+    //
+    //
+    //
     {
         body: t.Object({
             presenter: t.TemplateLiteral("{Доклад 1|Доклад 2}"),
@@ -336,8 +332,6 @@ new Elysia().post(
 ---
 
 <SlideLogo framework="ElysiaJS" title="OpenAPI / Swagger"/>
-
-<div class="mt-7"/>
 
 <!-- prettier-ignore -->
 ```ts twoslash
@@ -424,8 +418,6 @@ await eden.yandex.employee.post({
 
 <SlideLogo framework="ElysiaJS" title="WinterCG"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { Elysia } from "elysia";
 import { Hono } from "hono";
@@ -449,8 +441,6 @@ const main = new Elysia()
 
 <SlideLogo framework="ElysiaJS" title="Context"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -473,8 +463,6 @@ app.get(
 ---
 
 <SlideLogo framework="ElysiaJS" title="State & Decorate"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import { Elysia, t } from "elysia";
@@ -505,8 +493,6 @@ app.decorate("logger", new Logger()).get("/", ({ logger }) => {
 
 <SlideLogo framework="ElysiaJS" title="Derive"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -525,8 +511,6 @@ app.derive(({ headers }) => {
 
 <ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Affix"/>
-
-<div class="mt-7"/>
 
 <!-- prettier-ignore -->
 ```ts twoslash
@@ -551,8 +535,6 @@ const app = new Elysia()
 
 <SlideLogo framework="ElysiaJS" title="Elysia plugin"/>
 
-<div class="mt-7"/>
-
 TODO: переделать кнш
 
 <img width="500" src="/new-elysia-twitter.png" /> 
@@ -560,8 +542,6 @@ TODO: переделать кнш
 ---
 
 <SlideLogo framework="ElysiaJS" title="Elysia plugin"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import { Elysia } from "elysia";
@@ -591,8 +571,6 @@ app.use(plugin)
 
 <SlideLogo framework="ElysiaJS" title="Life-cycle"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { isHtml } from "@elysiajs/html";
 import { Elysia } from "elysia";
@@ -612,8 +590,6 @@ new Elysia()
 ---
 
 <SlideLogo framework="ElysiaJS" title="Guard"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import { Elysia, t } from "elysia";
@@ -638,8 +614,6 @@ new Elysia().guard(
 ---
 
 <SlideLogo framework="ElysiaJS" title="Scoped плагины"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import { isHtml } from "@elysiajs/html";
@@ -670,8 +644,6 @@ new Elysia()
 
 <SlideLogo framework="ElysiaJS" title="Загрузка файлов"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -697,8 +669,6 @@ new Elysia().post(
 
 <ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Error handling"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import { Elysia } from "elysia";
@@ -730,8 +700,6 @@ new Elysia()
 
 <SlideLogo framework="ElysiaJS" title="Cookie"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -762,8 +730,6 @@ app.get(
 
 <SlideLogo framework="ElysiaJS" title="WebSocket"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -786,8 +752,6 @@ new Elysia()
 ---
 
 <SlideLogo framework="ElysiaJS" title="Tests with eden"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import { edenTreaty } from "@elysiajs/eden";
@@ -812,8 +776,6 @@ describe("Elysia", () => {
 
 <SlideLogo framework="ElysiaJS" title="Macro"/>
 
-<div class="mt-7"/>
-
 ```ts twoslash
 import { Elysia } from "elysia";
 
@@ -836,8 +798,6 @@ const app = new Elysia().use(plugin).get("/", () => "hi", {
 ---
 
 <SlideLogo framework="ElysiaJS" title="Websocket e2e type-safety"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import { Elysia, t } from "elysia";
@@ -890,8 +850,6 @@ chat.send("hello from client");
 
 <ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Model"/>
-
-<div class="mt-7"/>
 
 ```ts twoslash
 import { Elysia, t } from "elysia";
