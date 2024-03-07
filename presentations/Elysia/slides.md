@@ -64,8 +64,6 @@ layout: default
 
 <SlideLogo framework="ExpressJS" title="Медленный"/>
 
-// TODO: Сделать свой чарт
-
 <img class="mt-7" src="/benchmark.png"/>
 
 ---
@@ -143,7 +141,8 @@ layout: default
 
 <SlideLogo framework="ExpressJS" title="Разработчики забили"/>
 
--   4.18.2 (latest) - год назад
+-   4.18.3 (latest) - пару дней назад (спойлер - исправили 1 баг)
+-   4.18.2 - год назад
 -   4.18.1 - 2 года назад
 -   4.18.0 - 2 года назад
 -   4.17.3 - 2 года назад
@@ -151,8 +150,6 @@ layout: default
 -   4.17.2 - 2 года назад
 -   5.0.0-alpha.8 - 4 года назад
 -   4.1.1 - 5 лет назад
-
-// TODO: Придумать как обыграть покрасивее
 
 ---
 layout: default
@@ -274,9 +271,6 @@ router.use((req, res, next) => {
 
 router.get("/hello", (req, res) => {
     res.status(201).json({ hello: "world" });
-});
-router.use("*", (req, res) => {
-    res.status(404).json({ msg: "not found" });
 });
 
 fastify.listen({ port: 3000 }, console.log);
@@ -562,8 +556,8 @@ app.use(plugin)
 ```
 
 ---
-
-## layout: full
+layout: full
+---
 
 <img src="/lifecycle.webp" />
 
@@ -635,8 +629,8 @@ new Elysia()
 ```
 
 ---
-
-## layout: full
+layout: full
+---
 
 <img src="/elysia-migration-issue.png" />
 
@@ -651,7 +645,7 @@ import { Elysia, t } from "elysia";
 new Elysia().post(
     "/upload/avatar",
     async ({ body: { avatar } }) => {
-        await Bun.write(`${process.cwd()}/${avatar.originalName}`, avatar);
+        await Bun.write(`${process.cwd()}/${avatar.name}`, avatar);
     },
     {
         body: t.Object({
@@ -675,7 +669,7 @@ import { Elysia } from "elysia";
 
 // ---cut---
 class APIError extends Error {
-    constructor(public typeSafeCode: "UNAUTHORIZED" | "NOT_TEAPOT") {
+    constructor(public typeSafeCode: "UNAUTHORIZED" | "SOME_REASON") {
         super();
         this.message = "An Error occurred";
     }
@@ -692,7 +686,7 @@ new Elysia()
         }
     })
     .get("/teapot", () => {
-        throw new APIError("NOT_TEAPOT");
+        throw new APIError("SOME_REASON");
     });
 ```
 

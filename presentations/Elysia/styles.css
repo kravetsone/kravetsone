@@ -1,3 +1,7 @@
 .v-popper__popper.v-popper--theme-twoslash {
     display: none;
 }
+
+.full {
+    padding: 0;
+}
