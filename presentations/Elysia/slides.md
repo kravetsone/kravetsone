@@ -34,8 +34,28 @@ export:
 layout: default
 title: Обо мне
 ---
-Не придумал пока
+<div class="flex justify-between">
+<div class="flex flex-col flex-items-center w-full p-5">
+    <h1 class="text-xl">Обо мне</h1>
+    <ul class="flex-self-start">
+        <li>Это ещё придумать надо</li>
+        <li>Учусь мб</li>
+        <li>Победитель хакатонов...</li>
+        <li>Любитель новых технологий</li>
+        <li>Любитель перекладывать жсоны</li>
+        <li>Проекты</li>
+        <li>Люблю ходить на митапы кста</li>
+    </ul>
+</div>
 
+<img width="500" src="/me.jpg" />
+</div>
+
+<!-- <style>
+.default {
+    @apply p-64;
+}
+</style> -->
 ---
 title: Express
 ---
