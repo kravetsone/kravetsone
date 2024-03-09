@@ -9,7 +9,7 @@ const props = defineProps<{
 <template>
     <div class="flex flex-row items-center font-bold gap-2">
         <div class="text-3xl">
-            <skill-icons-expressjs-light text-1xl v-if="props.framework === 'ExpressJS'" />
+            <skill-icons-expressjs-light v-if="props.framework === 'ExpressJS'" />
             <simple-icons-koa v-if="props.framework === 'KoaJS'" />
             <simple-icons-fastify v-if="props.framework === 'FastifyJS'" />
             <img src="/elysia-logo.png" width="40px" v-if="props.framework === 'ElysiaJS'" />
