@@ -9,9 +9,9 @@
     },
     "dependencies": {
         "@elysiajs/swagger": "^0.8.5",
-        "@slidev/cli": "0.48.0-beta.22",
-        "@slidev/theme-default": "latest",
-        "@slidev/theme-seriph": "latest",
+        "@slidev/cli": "0.48.0-beta.25",
+        "@slidev/theme-default": "0.25.0",
+        "@slidev/theme-seriph": "0.25.0",
         "slidev-component-progress": "^1.0.3",
         "vue": "^3.4.21"
     },

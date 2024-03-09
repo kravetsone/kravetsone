@@ -282,11 +282,7 @@ Request => Routing => Logger => onRequest Hook => preParsing Hook => Parsing => 
 ---
 layout: default
 ---
-
-<ShowTwoslash />
 <SlideLogo framework="FastifyJS" title="Валидация и сериализация"/>
-
-<ShowTwoslash />
 
 ```ts twoslash
 // @noErrors
@@ -364,7 +360,6 @@ layout: default
 layout: default
 ---
 
-<ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Валидация"/>
 
 ```ts twoslash
@@ -421,8 +416,6 @@ layout: full
 <img src="/scalar-dark-mode.webp" />
 
 ---
-
-<ShowTwoslash />
 
 <SlideLogo framework="ElysiaJS" title="e2e type-safety | лучше разместить"/>
 
@@ -570,7 +563,6 @@ app.derive(({ headers }) => {
 
 ---
 
-<ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Affix"/>
 
 <!-- prettier-ignore -->
@@ -728,7 +720,6 @@ new Elysia().post(
 
 ---
 
-<ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Error handling"/>
 
 ```ts twoslash
@@ -909,7 +900,6 @@ chat.send("hello from client");
 
 ---
 
-<ShowTwoslash />
 <SlideLogo framework="ElysiaJS" title="Model"/>
 
 ```ts twoslash
