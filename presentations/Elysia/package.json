@@ -9,10 +9,11 @@
     },
     "dependencies": {
         "@elysiajs/swagger": "^0.8.5",
-        "@slidev/cli": "0.48.0-beta.25",
+        "@slidev/cli": "0.48.1",
         "@slidev/theme-default": "0.25.0",
         "@slidev/theme-seriph": "0.25.0",
         "slidev-component-progress": "^1.0.3",
+        "slidev-theme-elysia": "^0.0.1",
         "vue": "^3.4.21"
     },
     "devDependencies": {

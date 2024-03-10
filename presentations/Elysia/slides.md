@@ -374,7 +374,7 @@ layout: default
 
 <SlideLogo framework="ElysiaJS" title="Быстрый"/>
 
-// TODO:
+// TODO: Здесь стоит рассказать о Powered by Bun Static code generation+TypeBox and etc
 
 ---
 layout: default
@@ -491,6 +491,8 @@ await eden.yandex.employee.post({
 ---
 
 <SlideLogo framework="ElysiaJS" title="WinterCG"/>
+
+https://wintercg.org/
 
 ```ts twoslash
 import { Elysia } from "elysia";
