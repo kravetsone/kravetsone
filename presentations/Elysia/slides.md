@@ -241,6 +241,7 @@ title: Koa
 
 -   Написан командой ExpressJS
 -   Значительно быстрее ExpressJS
+-   Закрывает многие проблемы ExpressJS
 
 </v-clicks>
 
@@ -250,7 +251,8 @@ title: Koa
 
 -   Middleware
 -   Не идеал типизации
--   Плохая работа с валидацией
+-   Плохая интеграция с OpenAPI
+-   Не особо популярен
 
 </v-clicks>
 
@@ -258,11 +260,20 @@ title: Koa
 Теперь давайте перейдём к следующему фреймворку. Им будет **Koa**. 
 
 **Начнём с плюсов:**
+
 [Click] Написан командой ExpressJS. Koa был написан командой, которая занималась и ExpressJS. Так что этот фреймворк справедливо можно назвать перерождением Express'а
 [Click] Значительно быстрее ExpressJS. В Koa нет таких значительных проблем как в Express'е.
 
 **А теперь к минусам:**
+
+[Click] Middleware. Так как это буквально перерождение Express паттерн Middleware никуда не исчез.
+[Click] Плохая интеграция с OpenAPI. // TODO:
+[Click] Не особо популярен. Многие не видят в нём преимуществ перед Express // TODO: дописать додумать
 -->
+
+---
+
+Добавить примеры кода
 
 ---
 layout: default
@@ -282,6 +293,8 @@ title: Fastify
 -   Построен на JSON Schema и AJV
 -   Отличный DX и swagger одной строчкой
 -   express-compatibility plugin
+-   Удобная обработка ошибок
+
 </v-clicks>
 <p class="text-red">Минусы</p>
 <v-clicks>
@@ -289,6 +302,23 @@ title: Fastify
 -   Не идеал типизации
 
 </v-clicks>
+
+<!--
+Давайте поговорим о FastifyJS. 
+
+**Начнём с плюсов:**
+
+[Click] Современный. Первая стабильная версия Fastify вышла 6 лет назад и новые версии всё ещё выходят. Вот-вот и выйдет v5
+[Click] Значительно быстрее ExpressJS. В Koa нет таких значительных проблем как в Express'е.
+
+**А теперь к минусам:**
+
+[Click] Middleware. Так как это буквально перерождение Express паттерн Middleware никуда не исчез.
+[Click] Плохая интеграция с OpenAPI. // TODO:
+[Click] Не особо популярен. Многие не видят в нём преимуществ перед Express // TODO: дописать додумать
+-->
+
+
 ---
 layout: default
 ---
@@ -324,7 +354,7 @@ fastify.get(
   },
   (request, reply) => {
     request.query.; // type safe!
-    //       	    ^|
+    //       	 ^|
   },
 );
 ```
@@ -360,11 +390,54 @@ fastify.listen({ port: 3000 }, console.log);
 ```
 
 ---
+
+https://github.com/fastify/fastify/issues/5116
+
+---
 layout: default
 title: Elysia
 ---
 
 <SlideLogo framework="ElysiaJS" title="Фичи"/>
+
+<p class="text-green">Плюсы</p>
+
+<v-clicks>
+
+- Умные типы
+- e2e type-safety
+- Производительность
+- WinterCG совместим (Web API)
+- Life-cycle hooks
+- Тесно связан с swagger/OpenAPI
+- Плагин позволяющий использовать JSX 
+- Powered by Bun
+
+</v-clicks>
+<p class="text-red">Минусы</p>
+<v-clicks>
+
+- Powered by Bun
+- Молодой
+
+</v-clicks>
+
+<!-- 
+Рассказать о бенчмарке fast-json-stringify в бане
+
+**Из плюсов:**
+
+[Click] Умные типы. Elysia спроектирована так чтобы вам приходилось писать меньше типов.
+[Click] e2e type-safety. Elysia даёт возможность экспортировать типы бекенда в монорепе и использовать в клиенте.
+[Click] Производительность. Elysia производительна благодаря Static Code Analysis, and Dynamic Code Injection // TODO: покопаться и добавить что typebox такой же
+[Click] WinterCG. Построен на Web API стандартах.
+[Click] Life-cycle hooks. Удобная работа с жизненным циклом запроса.
+[Click] OpenAPI. Elysia имеет встроенный валидатор TypeBox, который обеспечивает хорошую совместимость с OpenAPI.
+[Click] JSX
+[Click] Powered by Bun. Bun предоставляет отличный DX и perfomance но он ещё не такой стабильный как хотелось бы что можно так же отнести и к минусу
+
+
+-->
 
 <img src="/feature-sheet.webp"/>
 
@@ -949,3 +1022,29 @@ new Elysia()
         },
     );
 ```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="JSX/HTML"/>
+
+```tsx twoslash
+import { Elysia } from 'elysia'
+import { html } from '@elysiajs/html' 
+
+new Elysia()
+    .use(html()) 
+    .get('/', () => (
+        <html lang="en">
+            <head>
+                <title>Hello World</title>
+            </head>
+            <body>
+                <h1>Hello World</h1>
+            </body>
+        </html>
+    ))
+```
+
+<!-- 
+Elysia имеет плагин для работы c HTML/JSX. Он так же вам позволит защищаться от xss атак 
+ -->
