@@ -20,7 +20,7 @@ export:
     <span>Бекенд разработчик, Элитриум</span>
 </div>
 
-<img class="-mr-25" width="500px" height="500px" src="/fox.webp" />
+<img class="-mr-25" width="500px" src="/fox.webp" />
 
 </div>
 
@@ -48,14 +48,9 @@ title: Обо мне
     </ul>
 </div>
 
-<img width="500" src="/me.jpg" />
+<img width="500" class="h-[450px]" src="/me.jpg" />
 </div>
 
-<!-- <style>
-.default {
-    @apply p-64;
-}
-</style> -->
 ---
 title: Express
 ---
@@ -253,7 +248,7 @@ title: Koa
 -   Не идеал типизации
 -   Плохая интеграция с OpenAPI
 -   Не особо популярен
-
+ дополнить инфу про async/await и генераторы
 </v-clicks>
 
 <!--
@@ -336,11 +331,11 @@ layout: default
 
 ```ts twoslash
 // @noErrors
-import { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
+import { TypeBoxValidatorCompiler, TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
 import { Type } from "@sinclair/typebox";
 import Fastify from "fastify";
 
-const fastify = Fastify().withTypeProvider<TypeBoxTypeProvider>();
+const fastify = Fastify().setValidatorCompiler(TypeBoxValidatorCompiler).withTypeProvider<TypeBoxTypeProvider>();
 
 fastify.get(
   "/route",
@@ -358,6 +353,11 @@ fastify.get(
   },
 );
 ```
+
+<!-- 
+В Fastify под коробкой используется AJV, который обеспечивает валидацию. 
+TODO: Поресерчить про TypeBox/AJV используется ли при тайп-провайдерах
+ -->
 
 ---
 layout: default
@@ -388,6 +388,8 @@ router.get("/hello", (req, res) => {
 
 fastify.listen({ port: 3000 }, console.log);
 ```
+
+<!-- Очень интересно, что у Fastify есть плагин который обеспечивает совместимость с express -->
 
 ---
 
@@ -477,6 +479,8 @@ new Elysia().post(
     },
 );
 ```
+
+<!-- Валидация же представляет из себя typebox c расширенными возможностями -->
 
 ---
 
@@ -618,7 +622,9 @@ import { Elysia, t } from "elysia";
 
 const app = new Elysia();
 // ---cut---
-app.state("requests", 1).get("/increment", ({ store }) => ++store.requests);
+app
+    .state("requests", 1)
+    .get("/increment", ({ store }) => ++store.requests);
 ```
 
 <br/>
@@ -631,11 +637,13 @@ class Logger {
     log(text: string) {}
 }
 // ---cut---
-app.decorate("logger", new Logger()).get("/", ({ logger }) => {
-    logger.log("hi");
+app
+    .decorate("logger", new Logger())
+    .get("/", ({ logger }) => {
+        logger.log("hi");
 
-    return "hi";
-});
+        return "hi";
+    });
 ```
 
 ---
@@ -647,13 +655,15 @@ import { Elysia, t } from "elysia";
 
 const app = new Elysia();
 // ---cut---
-app.derive(({ headers }) => {
-    const auth = headers.Authorization;
+app
+    .derive(({ headers }) => {
+        const auth = headers.Authorization;
 
-    return {
-        bearer: auth?.startsWith("Bearer ") ? auth.slice(7) : null,
-    };
-}).get("/", ({ bearer }) => bearer);
+        return {
+            bearer: auth?.startsWith("Bearer ") ? auth.slice(7) : null,
+        };
+    })
+    .get("/", ({ bearer }) => bearer);
 ```
 
 ---
@@ -937,9 +947,11 @@ const plugin = new Elysia({ name: "plugin" }).macro(({ onBeforeHandle }) => {
     };
 });
 
-const app = new Elysia().use(plugin).get("/", () => "hi", {
-    hi: "Elysia",
-});
+new Elysia()
+    .use(plugin)
+    .get("/", () => "hi", {
+        hi: "Elysia",
+    });
 ```
 
 ---
@@ -1028,6 +1040,10 @@ new Elysia()
 <SlideLogo framework="ElysiaJS" title="JSX/HTML"/>
 
 ```tsx twoslash
+// @jsx: react
+// @jsxFactory: Html.createElement
+// @jsxFragmentFactory: Html.Fragment
+// ---cut---
 import { Elysia } from 'elysia'
 import { html } from '@elysiajs/html' 
 
@@ -1051,6 +1067,6 @@ Elysia имеет плагин для работы c HTML/JSX. Он так же 
 
 ---
 
-links
+🚧 Тут будут QR-коды
 
-<QRCode size="50" value="https://elysiajs.com/" />
+<!-- <QRCode size="50" value="https://elysiajs.com/" /> -->
