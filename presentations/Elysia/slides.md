@@ -433,7 +433,7 @@ title: Elysia
 [Click] WinterCG. Построен на Web API стандартах.
 [Click] Life-cycle hooks. Удобная работа с жизненным циклом запроса.
 [Click] OpenAPI. Elysia имеет встроенный валидатор TypeBox, который обеспечивает хорошую совместимость с OpenAPI.
-[Click] JSX
+[Click] JSX. Имеет плагин для работы с JSX
 [Click] Powered by Bun. Bun предоставляет отличный DX и perfomance но он ещё не такой стабильный как хотелось бы что можно так же отнести и к минусу
 
 
@@ -1048,3 +1048,9 @@ new Elysia()
 <!-- 
 Elysia имеет плагин для работы c HTML/JSX. Он так же вам позволит защищаться от xss атак 
  -->
+
+---
+
+links
+
+<QRCode size="50" value="https://elysiajs.com/" />
