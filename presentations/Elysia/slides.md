@@ -224,6 +224,12 @@ Express перестал активно обновляться. Как напр�
 -->
 
 ---
+layout: full
+---
+
+<img class="w-full" src="/hyper-express.png"/>
+
+---
 layout: default
 title: Koa
 ---
@@ -248,7 +254,7 @@ title: Koa
 -   Не идеал типизации
 -   Плохая интеграция с OpenAPI
 -   Не особо популярен
- дополнить инфу про async/await и генераторы
+
 </v-clicks>
 
 <!--
@@ -263,12 +269,35 @@ title: Koa
 
 [Click] Middleware. Так как это буквально перерождение Express паттерн Middleware никуда не исчез.
 [Click] Плохая интеграция с OpenAPI. // TODO:
-[Click] Не особо популярен. Многие не видят в нём преимуществ перед Express // TODO: дописать додумать
+[Click] Не особо популярен. Пропагандировался как фреймворк нового поколения исправляя callback hell генераторами // TODO: дописать додумать
 -->
 
 ---
 
-Добавить примеры кода
+<SlideLogo framework="KoaJS" title="Генераторы"/>
+
+```ts
+var koa = require("koa");
+var app = koa();
+
+app.use(function *(next) {
+    var start = new Date;
+    yield next;
+    var ms = new Date - start;
+    console.log("%s %s - %s", this.method, this.url, ms);
+});
+
+app.use(function *(){
+    this.body = "Hello world!";
+});
+
+app.listen(3000);
+```
+
+<!-- 
+KoaJS назывался «фреймворком нового поколения» и решал проблему callback hell ещё до появления сахара в виде async/await
+но после появления их появления люди так и остались на express
+-->
 
 ---
 layout: default
@@ -320,7 +349,18 @@ layout: default
 
 <SlideLogo framework="FastifyJS" title="Life-cycle hooks"/>
 
-Request => Routing => Logger => onRequest Hook => preParsing Hook => Parsing => preValidation Hook => Validation => preHandler Hook => User Handler => Reply => preSerialization Hook => onSend Hook => Response => onResponse Hook
+<!-- Request => Routing => Logger => onRequest Hook => preParsing Hook => Parsing => preValidation Hook => Validation => preHandler Hook => User Handler => Reply => preSerialization Hook => onSend Hook => Response => onResponse Hook -->
+
+- onRequest
+- preParsing
+- preValidation
+- preHandler
+- preSerialization
+- onError
+- onSend
+- onResponse
+- onTimeout
+- onRequestAbort
 
 <!-- // TODO: flow chart -->
 
@@ -349,14 +389,13 @@ fastify.get(
   },
   (request, reply) => {
     request.query.; // type safe!
-    //       	 ^|
+    //       	    ^|
   },
 );
 ```
 
 <!-- 
 В Fastify под коробкой используется AJV, который обеспечивает валидацию. 
-TODO: Поресерчить про TypeBox/AJV используется ли при тайп-провайдерах
  -->
 
 ---
@@ -412,7 +451,7 @@ title: Elysia
 - WinterCG совместим (Web API)
 - Life-cycle hooks
 - Тесно связан с swagger/OpenAPI
-- Плагин позволяющий использовать JSX 
+- JSX 
 - Powered by Bun
 
 </v-clicks>
@@ -441,7 +480,7 @@ title: Elysia
 
 -->
 
-<img src="/feature-sheet.webp"/>
+<!-- <img src="/feature-sheet.webp"/> -->
 
 ---
 layout: default
@@ -542,12 +581,6 @@ const app = new Elysia()
             stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
         }),
     })
-    .post("/yandex/another", () => {}, {
-        body: t.Object({
-            name: t.String(),
-            stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
-        }),
-    })
     .listen(1997);
 
 export type App = typeof app;
@@ -559,7 +592,6 @@ import type { App } from "./server";
 const eden = edenTreaty<App>("http://localhost:1997");
 
 await eden.yandex.employee.post({
-    //            ^|
     name: "Всеволод",
     stack: ["Elysia", "Svelte"],
 });
@@ -693,10 +725,11 @@ const app = new Elysia()
 
 <SlideLogo framework="ElysiaJS" title="Elysia plugin"/>
 
-TODO: переделать кнш
+<div class="flex justify-between">
+<div/>
+<img class="-mt-20 -mr-10 scale-90" width="500" src="/new-elysia-twitter.png" /> 
 
-<img width="500" src="/new-elysia-twitter.png" /> 
-
+</div>
 ---
 
 <SlideLogo framework="ElysiaJS" title="Elysia plugin"/>
