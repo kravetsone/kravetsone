@@ -11,7 +11,7 @@
 
 #### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle, Husky и выбор плагинов. Авто-обновление зависимостей (включая те которые используются в генерации шаблона) с помощью Renovate
 
-#### 4. [[`GramIO`](https://github.com/gramiojs)] - WIP
+#### 4. [[`GramIO`](https://github.com/gramiojs)] - WIP Telegram Bot API фреймворк для создания ботов с удобством!
 
 -   [[`keyboards`](https://github.com/gramiojs/keyboards)] - Фреймворк-агностик библиотека для создания клавиатур телеграм ботам с многими классными возможностями!
 
@@ -22,6 +22,12 @@
 -   [[`files`](https://github.com/gramiojs/files)] - Библиотека для удобной работой с загрузкой файлов для Telegram Bot API (работает под капотом GramIO)
 
 -   [[`documentation`](https://gramio.netlify.app/)] - Документация на [VitePress](https://vitepress.dev/) с авто-деплоем на [Netlify](https://www.netlify.com/)
+
+-   [[`autoload`](https://github.com/gramiojs/autoload)] - Плагин для автозагрузки в [GramIO](https://github.com/gramiojs)
+
+-   [[`session`](https://github.com/gramiojs/session)] - Плагин для сессий в [GramIO](https://github.com/gramiojs)
+
+-   [[`prompt`](https://github.com/gramiojs/prompt)] - Плагин реализующий "Вопрос-Ответ" в [GramIO](https://github.com/gramiojs)
 
 #### 5. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
