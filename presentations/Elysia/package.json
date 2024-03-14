@@ -1,39 +1,39 @@
 {
-  "name": "elysia",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
-  },
-  "dependencies": {
-    "@elysiajs/swagger": "^0.8.5",
-    "@slidev/cli": "0.48.1",
-    "@slidev/theme-default": "0.25.0",
-    "@slidev/theme-seriph": "0.25.0",
-    "slidev-component-progress": "^1.0.3",
-    "slidev-theme-elysia": "^0.0.1",
-    "vue": "^3.4.21"
-  },
-  "devDependencies": {
-    "@elysiajs/eden": "^0.8.1",
-    "@elysiajs/html": "^0.8.0",
-    "@fastify/express": "^2.3.0",
-    "@fastify/type-provider-typebox": "^4.0.0",
-    "@iconify-json/simple-icons": "^1.1.94",
-    "@iconify-json/skill-icons": "^1.1.8",
-    "@sinclair/typebox": "^0.32.15",
-    "@types/bun": "^1.0.8",
-    "@types/express": "^4.17.21",
-    "elysia": "^0.8.17",
-    "express": "^4.18.3",
-    "fastify": "^4.26.1",
-    "hono": "^4.0.9",
-    "playwright-chromium": "^1.42.1",
-    "prettier": "^3.2.5",
-    "prettier-plugin-slidev": "^1.0.5",
-    "react": "^18.2.0",
-    "vue-qr-code-styling": "^2.0.1"
-  }
+    "name": "elysia",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "build": "slidev build",
+        "dev": "slidev --open",
+        "export": "slidev export"
+    },
+    "dependencies": {
+        "@elysiajs/swagger": "1.0.0-rc.0",
+        "@slidev/cli": "0.48.1",
+        "@slidev/theme-default": "0.25.0",
+        "@slidev/theme-seriph": "0.25.0",
+        "slidev-component-progress": "^1.0.3",
+        "slidev-theme-elysia": "^0.0.1",
+        "vue": "^3.4.21"
+    },
+    "devDependencies": {
+        "@elysiajs/eden": "1.0.0-rc.4",
+        "@elysiajs/html": "1.0.0-rc.0",
+        "@fastify/express": "^2.3.0",
+        "@fastify/type-provider-typebox": "^4.0.0",
+        "@iconify-json/simple-icons": "^1.1.94",
+        "@iconify-json/skill-icons": "^1.1.8",
+        "@sinclair/typebox": "^0.32.15",
+        "@types/bun": "^1.0.8",
+        "@types/express": "^4.17.21",
+        "elysia": "1.0.0-rc.15",
+        "express": "^4.18.3",
+        "fastify": "^4.26.1",
+        "hono": "^4.0.9",
+        "playwright-chromium": "^1.42.1",
+        "prettier": "^3.2.5",
+        "prettier-plugin-slidev": "^1.0.5",
+        "react": "^18.2.0",
+        "vue-qr-code-styling": "^2.0.1"
+    }
 }

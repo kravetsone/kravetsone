@@ -36,15 +36,15 @@ title: Обо мне
 ---
 <div class="flex justify-between">
 <div class="flex flex-col flex-items-center w-full p-5">
-    <h1 class="text-xl">Обо мне</h1>
+    <h1 class="text-xl flex-self-start">Обо мне</h1>
     <ul class="flex-self-start">
-        <li>Это ещё придумать надо</li>
-        <li>Учусь мб</li>
+        <li>WIP</li>
+        <!-- <li>Учусь мб</li>
         <li>Победитель хакатонов...</li>
         <li>Любитель новых технологий</li>
         <li>Любитель перекладывать жсоны</li>
         <li>Проекты</li>
-        <li>Люблю ходить на митапы кста</li>
+        <li>Люблю ходить на митапы кста</li> -->
     </ul>
 </div>
 
@@ -97,7 +97,7 @@ title: Express
 [Click] Плохая типизация. ExpressJS поставляется с типами отдельно и они не идеально описаны.
 [Click] Из коробки почти ничего не имеет (микро-фреймворк). ExpressJS по своей сути является микро-фреймворком, который предоставляет пользователю медленный роутинг и Middlewares. Какое-то время даже body-parser приходилось загружать отдельно.
 [Click] Написан в эру мамонтов. Как бы это не звучало, но ExpressJS невероятно старый.
-[Click] Костыльный. Он писался до появления async/await так что теперь чтобы отловить ошибку брошенную в асинхронном Middleware нам приходится использовать хак
+[Click] Костыльный. Последний мажор был выпущен до появления Promises так что теперь чтобы отловить ошибку брошенную в асинхронном Middleware нам приходится использовать хак
 [Click] Разработчики забили. Разработчики более не занимаются активной разработкой/поддержкой Express'а.
 -->
 
@@ -217,8 +217,10 @@ layout: default
 -   5.0.0-beta.1 - 2 года назад
 -   4.17.2 - 2 года назад
 -   5.0.0-alpha.8 - 4 года назад
--   4.1.1 - 5 лет назад
+-   4.17.1 - 5 лет назад
 
+...
+-   4.0.0 - 04.09.2014
 <!--
 Express перестал активно обновляться. Как например первая бета 5.0.0 вышла 2 года назад. И с того момента не получила никаких коммитов в ветке на гитхабе. Хотя документация во всю кричит «Документация версии 5.0.0 уже доступна».
 -->
@@ -430,9 +432,9 @@ fastify.listen({ port: 3000 }, console.log);
 
 <!-- Очень интересно, что у Fastify есть плагин который обеспечивает совместимость с express -->
 
----
+<!-- ---
 
-https://github.com/fastify/fastify/issues/5116
+https://github.com/fastify/fastify/issues/5116 -->
 
 ---
 layout: default
@@ -586,10 +588,10 @@ const app = new Elysia()
 export type App = typeof app;
 // @filename: index.ts
 // ---cut---
-import { edenTreaty } from "@elysiajs/eden";
+import { treaty } from "@elysiajs/eden";
 import type { App } from "./server";
 
-const eden = edenTreaty<App>("http://localhost:1997");
+const eden = treaty<App>("http://localhost:1997");
 
 await eden.yandex.employee.post({
     name: "Всеволод",
@@ -598,19 +600,24 @@ await eden.yandex.employee.post({
 ```
 
 ---
+layout: full
+---
+
+<img class="w-full" src="/WinterCG.png"/>
+
+---
 
 <SlideLogo framework="ElysiaJS" title="WinterCG"/>
-
-https://wintercg.org/
 
 ```ts twoslash
 import { Elysia } from "elysia";
 import { Hono } from "hono";
 // ---cut---
-const elysia = new Elysia().get(
-    "/",
-    "Hello from Elysia inside Hono inside Elysia",
-);
+const elysia = new Elysia()
+    .get(
+        "/",
+        "Hello from Elysia inside Hono inside Elysia",
+    );
 
 const hono = new Hono()
     .get("/", (c) => c.text("Hello from Hono!"))
@@ -636,6 +643,8 @@ app.get(
     ({ query: { pageSize }, params: { type }, set }) => {
         set.status = "I'm a teapot";
         set.headers["Content-Type"] = "application/x-teapot";
+
+        return "ok";
     },
     {
         query: t.Object({
@@ -944,18 +953,18 @@ new Elysia()
 <SlideLogo framework="ElysiaJS" title="Tests with eden"/>
 
 ```ts twoslash
-import { edenTreaty } from "@elysiajs/eden";
+import { treaty } from "@elysiajs/eden";
 import { Elysia } from "elysia";
 import { describe, it, expect } from "bun:test";
 
 // ---cut---
 const app = new Elysia().get("/", () => "hi").listen(3000);
 
-const api = edenTreaty<typeof app>("http://localhost:3000");
+const api = treaty<typeof app>(app);
 
 describe("Elysia", () => {
     it("return a response", async () => {
-        const { data } = await api.get();
+        const { data } = await api.index.get();
 
         expect(data).toBe("hi");
     });
@@ -1011,7 +1020,7 @@ export type App = typeof app;
 <br/>
 
 ```ts twoslash
-import { edenTreaty } from "@elysiajs/eden";
+import { treaty } from "@elysiajs/eden";
 import { Elysia, t } from "elysia";
 
 const app = new Elysia()
@@ -1027,7 +1036,7 @@ const app = new Elysia()
 export type App = typeof app;
 
 // ---cut---
-const client = edenTreaty<App>("http://localhost:8080");
+const client = treaty<App>("http://localhost:8080");
 
 const chat = client.chat.subscribe();
 
