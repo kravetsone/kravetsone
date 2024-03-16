@@ -4,7 +4,8 @@ mdc: true
 highlighter: shiki
 layout: cover
 addons:
-  - "@katzumi/slidev-addon-qrcode"
+  - slidev-addon-qrcode
+twoslash: build
 export:
   format: pdf
   dark: true
@@ -1111,17 +1112,4 @@ Elysia имеет плагин для работы c HTML/JSX. Он так же 
 
 ---
 
-🚧 Тут будут QR-коды
-
-<QRCode
-  value="https://elysiajs.com/"
-  image="/elysia-logo.png"
-/>
-
-<QRCode
-  value="https://github.com/k2tzumi/slidev-addon-qrcode"
-  width="180"
-  height="180"
-  color="4329B9"
-  image="83095831.png"
-/>
+<QRCodesSlide/>
