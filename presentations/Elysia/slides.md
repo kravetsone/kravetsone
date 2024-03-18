@@ -5,11 +5,10 @@ highlighter: shiki
 layout: cover
 addons:
   - slidev-addon-qrcode
-twoslash: build
 export:
+  timeout: 60000
   format: pdf
   dark: true
-  withClicks: true
 ---
 
 <div class="h-full flex flex-col justify-between">

@@ -5,7 +5,7 @@
     "scripts": {
         "build": "slidev build",
         "dev": "slidev --open",
-        "export": "slidev export"
+        "export": "slidev export --with-clicks"
     },
     "dependencies": {
         "@elysiajs/swagger": "1.0.0-rc.0",
