@@ -838,12 +838,6 @@ new Elysia()
 ```
 
 ---
-layout: full
----
-
-<img src="/elysia-migration-issue.png" />
-
----
 
 <SlideLogo framework="ElysiaJS" title="Загрузка файлов"/>
 

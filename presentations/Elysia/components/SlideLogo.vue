@@ -12,7 +12,7 @@ const props = defineProps<{
             <skill-icons-expressjs-light v-if="props.framework === 'ExpressJS'" />
             <simple-icons-koa v-if="props.framework === 'KoaJS'" />
             <simple-icons-fastify v-if="props.framework === 'FastifyJS'" />
-            <img src="/elysia-logo.png" width="40px" v-if="props.framework === 'ElysiaJS'" />
+            <img src="https://elysiajs.com/assets/elysia.svg" width="40px" v-if="props.framework === 'ElysiaJS'" />
         </div>
 
         <div class="flex flex-row items-center gap-1">
