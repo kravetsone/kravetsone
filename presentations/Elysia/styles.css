@@ -1,3 +1,7 @@
 .full {
     padding: 0;
 }
+
+thead > tr > th {
+    @apply !text-center;
+}

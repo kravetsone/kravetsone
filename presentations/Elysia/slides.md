@@ -150,13 +150,7 @@ Express же использует библиотеку path-to-regexp котор
 
 ---
 layout: default
----
-
-<SlideLogo framework="ExpressJS" title="Middleware"/>
-
-
-
----
+--- 
 
 <SlideLogo framework="ExpressJS" title="Middleware"/>
 
@@ -503,6 +497,92 @@ fastify.listen({ port: 3000 }, console.log);
 
 https://github.com/fastify/fastify/issues/5116 -->
 
+---
+
+<SlideLogo framework="FastifyJS" title="Миграция с Express"/>
+
+<div class="text-center">
+
+| <skill-icons-expressjs-light /> Middleware       | <simple-icons-fastify /> Plugin       |
+| ------------- |:-------------:|
+| helmet      | @fastify/helmet |
+| cors      | @fastify/cors      |
+| serve-static | @fastify/static      |
+| Passport.js | @fastify/passport |
+| multer | fastify-multer |
+
+<p>И так далее...</p>
+
+</div>
+
+---
+
+<SlideLogo framework="KitaJS" title="Fastify роутер"/>
+
+<pre>
+src/routes
+├── auth.ts               (/auth)
+├── posts
+│   └── index.ts          (/posts)
+└── users
+    ├── [id]
+    │   ├── index.ts      (/users/:id)
+    │   └── posts.ts      (/users/:id/posts)
+    ├── index.ts          (/users)
+    └── me
+        ├── index.ts      (/users/me)
+        └── posts.ts      (/users/me/posts)
+</pre>
+
+---
+
+<SlideLogo framework="KitaJS" title="Endpoint"/>
+
+```ts
+// src/routes/users.ts
+import type { Body, Header } from "@kitajs/runtime";
+
+interface CreateUser {
+  /**
+   * The name of the user
+   *
+   * @minLength 3
+   * @maxLength 20
+   */
+  name: string;
+}
+
+// Creates a new user
+export function post(
+  data: Body<CreateUser>,
+  userAgent: Header<"user-agent">,
+  rawRequest: FastifyRequest
+) {
+  // ...
+}
+```
+
+---
+
+<SlideLogo framework="KitaJS" title="Provider"/>
+
+```ts
+import type { FastifyRequest } from "fastify";
+
+/**
+ * When this type is used as a route parameter, the function below will be
+ * called
+ */
+export type UserAgent = string | undefined;
+
+/**
+ * We can also use almost any other parameter type, like FastifyRequest or even
+ * other providers
+ */
+export default function ({ headers }: FastifyRequest): UserAgent {
+  return headers["user-agent"];
+}
+```
 ---
 layout: default
 title: Elysia
