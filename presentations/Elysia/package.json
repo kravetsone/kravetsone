@@ -9,6 +9,9 @@
     },
     "dependencies": {
         "@elysiajs/swagger": "1.0.0-rc.0",
+        "@iconify-json/formkit": "^1.1.7",
+        "@iconify-json/heroicons": "^1.1.20",
+        "@iconify-json/logos": "^1.1.42",
         "@slidev/cli": "0.48.3",
         "@slidev/theme-default": "0.25.0",
         "@slidev/theme-seriph": "0.25.0",

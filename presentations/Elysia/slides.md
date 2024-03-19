@@ -120,11 +120,25 @@ layout: default
 layout: default
 ---
 
-<SlideLogo framework="ExpressJS" title="Медленный"/>
+<SlideLogo framework="ExpressJS" title="Медленный роутинг"/>
 
-<div class="flex items-center justify-center h-full">
+<div class="flex items-center justify-around h-full">
 
-<img width="500px" src="/slow-express.png">
+<div class="flex flex-col justify-center items-center">
+/some/:value 
+
+<formkit-arrowdown class="text-4xl" />
+<div>
+<logos-npm-icon /> path-to-regexp
+</div>
+<formkit-arrowdown class="text-4xl" />
+
+/^\/some\/(?:([^\/]+?))\/?$/i
+</div>
+
+<QRCode type="svg" data="https://forbeslindesay.github.io/express-route-tester/"
+            :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :width="200"
+            :height="200" />
 
 </div>
 
@@ -139,6 +153,14 @@ layout: default
 ---
 
 <SlideLogo framework="ExpressJS" title="Middleware"/>
+
+
+
+---
+
+<SlideLogo framework="ExpressJS" title="Middleware"/>
+
+<div class="flex">
 
 ```ts twoslash
 declare module "express-serve-static-core" {
@@ -159,15 +181,23 @@ app.use((req, res, next) => {
 
     next();
 });
-
-app.get("/", (req, res) => {
-    return res.send(`Hello, ${req.user.name}!`);
+app.use((req, res, next) => {
+    // Непредсказуемо мутируем ещё что-то
+    next();
 });
-
-app.use((req, res) => {
-    console.log("after handler is never executed...");
+app.get("/", (req, res) => {
+    res.send(`Hello, ${req.user.name}!`);
 });
 ```
+<div class="flex flex-col items-center justify-center ml-35">
+Middleware (req, res, next)
+<formkit-arrowdown class="text-4xl" />
+Middleware (req, res, next)
+<formkit-arrowdown class="text-4xl" />
+Controller (req, res)
+</div>
+
+</div>
 
 <!--
 TODO: flow-chart req => req => req => send
@@ -220,7 +250,7 @@ layout: default
 
 <SlideLogo framework="ExpressJS" title="Разработчики забили"/>
 
--   4.18.3 (latest) - пару дней назад (спойлер - исправили 1 баг за год)
+-   4.18.3 (latest) - пару недель назад (спойлер - исправили 1 баг за год)
 -   4.18.2 - год назад
 -   4.18.1 - 2 года назад
 -   4.18.0 - 2 года назад
@@ -240,7 +270,7 @@ Express перестал активно обновляться. Как напр�
 layout: full
 ---
 
-<img class="w-full" src="/hyper-express.png"/>
+<img class="w-full" src="/hyper-express.png" width="500"/>
 
 ---
 layout: default
@@ -364,6 +394,30 @@ layout: default
 
 <!-- Request => Routing => Logger => onRequest Hook => preParsing Hook => Parsing => preValidation Hook => Validation => preHandler Hook => User Handler => Reply => preSerialization Hook => onSend Hook => Response => onResponse Hook -->
 
+<div class="flex">
+
+```ts
+fastify.post("/", (request, reply) => {
+    // some logic
+});
+
+fastify.addHook('preParsing', async (request, reply, payload) => {
+  await asyncMethod();
+
+  return newPayload;
+});
+fastify.addHook('preHandler', async (request, reply) => {
+  await asyncMethod();
+});
+fastify.addHook('onSend', async (request, reply, payload) => {
+  const newPayload = payload.replace('some-text', 'some-new-text');
+
+  return newPayload;
+});
+```
+
+<div class="flex flex-col ml-35">
+
 - onRequest
 - preParsing
 - preValidation
@@ -374,6 +428,8 @@ layout: default
 - onResponse
 - onTimeout
 - onRequestAbort
+</div>
+</div>
 
 <!-- // TODO: flow chart -->
 
