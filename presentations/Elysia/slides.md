@@ -5,7 +5,7 @@ highlighter: shiki
 layout: cover
 addons:
   - slidev-addon-qrcode
-twoslash: build
+twoslash: true
 export:
   timeout: 60000
   format: pdf
@@ -41,13 +41,12 @@ title: Обо мне
 <div class="flex flex-col flex-items-center w-full p-5">
     <h1 class="text-xl flex-self-start">Обо мне</h1>
     <ul class="flex-self-start">
-        <li>WIP</li>
-        <!-- <li>Учусь мб</li>
-        <li>Победитель хакатонов...</li>
-        <li>Любитель новых технологий</li>
-        <li>Любитель перекладывать жсоны</li>
-        <li>Проекты</li>
-        <li>Люблю ходить на митапы кста</li> -->
+        <li>Победитель двух этапов хакатона «Цифровой прорыв» и ещё нескольких</li>
+        <li>Люблю заниматься опенсорсом и пет-проектами</li>
+        <li>Занимаюсь разработкой фреймворка для телеграм ботов - GramIO</li>
+        <li>Учусь в «Московском индустриальном колледже»</li>
+        <li>Начал джаваскриптить ещё в 14 лет</li>
+        <li>И да я люблю перекладывать JSON'ы</li> 
     </ul>
 </div>
 
@@ -81,7 +80,7 @@ title: Express
 -   Из коробки почти ничего не имеет (микро-фреймворк)
 -   Написан в эру мамонтов
 -   Костыльный
--   Разработчики забили
+-   Разработчики заглохла
 
 </v-clicks>
 
@@ -101,7 +100,7 @@ title: Express
 [Click] Из коробки почти ничего не имеет (микро-фреймворк). ExpressJS по своей сути является микро-фреймворком, который предоставляет пользователю медленный роутинг и Middlewares. Какое-то время даже body-parser приходилось загружать отдельно.
 [Click] Написан в эру мамонтов. Как бы это не звучало, но ExpressJS невероятно старый.
 [Click] Костыльный. Последний мажор был выпущен до появления Promises так что теперь чтобы отловить ошибку брошенную в асинхронном Middleware нам приходится использовать хак
-[Click] Разработчики забили. Разработчики более не занимаются активной разработкой/поддержкой Express'а.
+[Click] Разработчики заглохла. Разработчики более не занимаются активной разработкой/поддержкой Express'а.
 -->
 
 ---
@@ -258,7 +257,7 @@ layout: full
 layout: default
 ---
 
-<SlideLogo framework="ExpressJS" title="Разработчики забили"/>
+<SlideLogo framework="ExpressJS" title="Разработчики заглохла" />
 
 -   4.18.3 (latest) - пару недель назад (спойлер - исправили 1 баг за год)
 -   4.18.2 - год назад
@@ -277,11 +276,18 @@ Express перестал активно обновляться. Как напр�
 -->
 
 ---
-layout: full
+layout: default
 ---
 
-<img class="w-full" src="/hyper-express.png" width="500"/>
+<SlideLogo framework="ExpressJS" title="HyperExpress"/>
 
+<img src="/hyper-express.png" width="600"/>
+
+<div class="absolute top-5 right-5">
+<QRCode type="svg" data="https://forbeslindesay.github.io/express-route-tester/" image="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M216 104v8a56.06 56.06 0 0 1-48.44 55.47A39.8 39.8 0 0 1 176 192v40a8 8 0 0 1-8 8h-64a8 8 0 0 1-8-8v-16H72a40 40 0 0 1-40-40a24 24 0 0 0-24-24a8 8 0 0 1 0-16a40 40 0 0 1 40 40a24 24 0 0 0 24 24h24v-8a39.8 39.8 0 0 1 8.44-24.53A56.06 56.06 0 0 1 56 112v-8a58.14 58.14 0 0 1 7.69-28.32A59.78 59.78 0 0 1 69.07 28A8 8 0 0 1 76 24a59.75 59.75 0 0 1 48 24h24a59.75 59.75 0 0 1 48-24a8 8 0 0 1 6.93 4a59.74 59.74 0 0 1 5.37 47.68A58 58 0 0 1 216 104'/%3E%3C/svg%3E"
+            :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :imageOptions="{ margin: 5 }" :width="150"
+            :height="150" />
+</div>
 ---
 layout: default
 title: Koa
@@ -407,10 +413,6 @@ layout: default
 <div class="flex">
 
 ```ts
-fastify.post("/", (request, reply) => {
-    // some logic
-});
-
 fastify.addHook('preParsing', async (request, reply, payload) => {
   await asyncMethod();
 
@@ -423,6 +425,10 @@ fastify.addHook('onSend', async (request, reply, payload) => {
   const newPayload = payload.replace('some-text', 'some-new-text');
 
   return newPayload;
+});
+
+fastify.post("/", (request, reply) => {
+    // some logic
 });
 ```
 
@@ -446,7 +452,7 @@ fastify.addHook('onSend', async (request, reply, payload) => {
 ---
 layout: default
 ---
-<SlideLogo framework="FastifyJS" title="Валидация и сериализация"/>
+<SlideLogo framework="FastifyJS" title="Валидация"/>
 
 ```ts twoslash
 // @noErrors
@@ -647,13 +653,6 @@ title: Elysia
 
 <!-- <img src="/feature-sheet.webp"/> -->
 
----
-layout: default
----
-
-<SlideLogo framework="ElysiaJS" title="Быстрый"/>
-
-// TODO: Здесь стоит рассказать о Powered by Bun Static code generation+TypeBox and etc
 
 ---
 layout: default
@@ -718,7 +717,9 @@ layout: full
 
 ---
 
-<SlideLogo framework="ElysiaJS" title="e2e type-safety | лучше разместить"/>
+<SlideLogo framework="ElysiaJS" title="e2e type-safety"/>
+
+<div class="flex gap-2 justify-around">
 
 ```ts twoslash
 import { Elysia, t } from "elysia";
@@ -727,7 +728,7 @@ const app = new Elysia()
     .post("/yandex/employee", () => {}, {
         body: t.Object({
             name: t.String(),
-            stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
+            stack: t.TemplateLiteral("{effector|react}"),
         }),
     })
     .listen(1997);
@@ -743,7 +744,7 @@ const app = new Elysia()
     .post("/yandex/employee", () => {}, {
         body: t.Object({
             name: t.String(),
-            stack: t.Array(t.TemplateLiteral("{Elysia|React|Effector}")),
+            stack: t.TemplateLiteral("{effector|react}"),
         }),
     })
     .listen(1997);
@@ -757,11 +758,11 @@ import type { App } from "./server";
 const eden = treaty<App>("http://localhost:1997");
 
 await eden.yandex.employee.post({
-    name: "Всеволод",
-    stack: ["Elysia", "Svelte"],
+    name: "Алексей",
+    stack: "svelte",
 });
 ```
-
+</div>
 ---
 layout: full
 ---
@@ -868,8 +869,20 @@ app
         };
     })
     .get("/", ({ bearer }) => bearer);
-```
 
+```
+<!-- <br/>
+
+```ts
+fastify.addHooj
+interface AuthenticatedUser { /* ... */ }
+
+declare module 'fastify' {
+  export interface FastifyRequest {
+    authenticatedUser?: AuthenticatedUser;
+  }
+}
+``` -->
 ---
 
 <SlideLogo framework="ElysiaJS" title="Affix"/>
@@ -925,14 +938,10 @@ app.use(plugin)
 ```
 
 ---
-layout: full
----
-
-<img src="/lifecycle.webp" />
-
----
 
 <SlideLogo framework="ElysiaJS" title="Life-cycle"/>
+
+<div class="flex items-center justify-between">
 
 ```ts twoslash
 import { isHtml } from "@elysiajs/html";
@@ -950,6 +959,20 @@ new Elysia()
     .listen(3000);
 ```
 
+<div class="flex flex-col mr-25">
+
+- Request
+- Parse
+- Transform
+- Before Handle
+- After Handle
+- Map Response
+- Error
+- Response
+- Trace
+
+</div>
+</div>
 ---
 
 <SlideLogo framework="ElysiaJS" title="Guard"/>
@@ -1157,6 +1180,8 @@ new Elysia()
 
 <SlideLogo framework="ElysiaJS" title="Websocket e2e type-safety"/>
 
+<div class="flex justify-between gap-2">
+
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -1174,7 +1199,7 @@ const app = new Elysia()
 export type App = typeof app;
 ```
 
-<br/>
+<skill-icons-typescript class="flex-self-center text-6xl" />
 
 ```ts twoslash
 import { treaty } from "@elysiajs/eden";
@@ -1203,6 +1228,7 @@ chat.subscribe((message) => {
 
 chat.send("hello from client");
 ```
+</div>
 
 ---
 

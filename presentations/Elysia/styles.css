@@ -5,3 +5,8 @@
 thead > tr > th {
     @apply !text-center;
 }
+
+code,
+pre {
+    overflow-x: hidden !important;
+}
