@@ -5,6 +5,7 @@ highlighter: shiki
 layout: cover
 addons:
   - slidev-addon-qrcode
+twoslash: build
 export:
   timeout: 60000
   format: pdf
@@ -124,6 +125,7 @@ layout: default
 <div class="flex items-center justify-center h-full">
 
 <img width="500px" src="/slow-express.png">
+
 </div>
 
 <!--
@@ -204,6 +206,13 @@ app.use((err, req, res, next) => {
 
 [Click] А ещё параметры error-handler Middleware становятся **any**. Хотя это есть в документации...
 -->
+
+---
+layout: full
+---
+
+<img src="/swagger-autogen.png"/>
+
 
 ---
 layout: default
@@ -1102,6 +1111,14 @@ new Elysia()
 <!-- 
 Elysia имеет плагин для работы c HTML/JSX. Он так же вам позволит защищаться от xss атак 
  -->
+
+---
+
+<div class="flex items-center justify-center h-full text-5xl">
+
+Спасибо за внимание! ✨
+
+</div>
 
 ---
 
