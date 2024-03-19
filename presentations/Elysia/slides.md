@@ -122,7 +122,7 @@ layout: default
 
 <SlideLogo framework="ExpressJS" title="Медленный роутинг"/>
 
-<div class="flex items-center justify-around h-full">
+<div class="flex items-center justify-around h-full -mt-7">
 
 <div class="flex flex-col justify-center items-center">
 /some/:value 
@@ -133,13 +133,17 @@ layout: default
 </div>
 <formkit-arrowdown class="text-4xl" />
 
-/^\/some\/(?:([^\/]+?))\/?$/i
+/^\/some\/(?:([^\/]+?))\/?$/
 </div>
 
-<QRCode type="svg" data="https://forbeslindesay.github.io/express-route-tester/"
-            :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :width="200"
-            :height="200" />
+<img src="/radix.png" width="400" class="invert -mr-5" />
 
+</div>
+
+<div class="absolute top-5 right-5">
+<QRCode type="svg" data="https://forbeslindesay.github.io/express-route-tester/"
+            :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :width="150"
+            :height="150" />
 </div>
 
 <!--
