@@ -27,7 +27,7 @@ const qrCodes: { data: string, image: string }[] = [{
 
 <template>
     <div class="flex flex-wrap gap-15 justify-center">
-        <QRCode v-for="qrCode in qrCodes" type="svg" :data="qrCode.data" :image="qrCode.image"
+        <QRCode v-for="qrCode in qrCodes" type="canvas" :data="qrCode.data" :image="qrCode.image"
             :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :imageOptions="{ margin: 10 }" :width="200"
             :height="200" />
     </div>
