@@ -339,7 +339,7 @@ KoaJS назывался «фреймворком нового поколени�
 ---
 layout: default
 title: Fastify
-src: ./pages/framework-cover/fastify.md
+src: ./pages/framework-cover/fastify/1.md
 ---
 
 ---
@@ -393,9 +393,48 @@ fastify.post("/", (request, reply) => {
 
 ---
 layout: default
+title: Fastify
+src: ./pages/framework-cover/fastify/2.md
 ---
 
-<SlideLogo framework="FastifyJS" title="Валидация"/>
+---
+layout: default
+---
+
+<SlideLogo framework="FastifyJS" title="fast-json-stringify"/>
+
+<div class="flex justify-around items-center -mt-7">
+
+```ts
+import fastJson from "fast-json-stringify";
+
+const stringify = fastJson({
+  type: 'object',
+  properties: {
+    firstName: {
+      type: 'string'
+    },
+    age: {
+      description: 'Age in years',
+      type: 'integer'
+    },
+  }
+});
+
+console.log(stringify({
+  firstName: "Name",
+  age: 32,
+}));
+```
+
+<img src="/fast-json-stringify.png" width="230" />
+</div>
+
+---
+layout: default
+---
+
+<SlideLogo framework="FastifyJS" title="Type-provider"/>
 
 ```ts twoslash
 // @noErrors
@@ -426,34 +465,12 @@ fastify.get(
 В Fastify под коробкой используется AJV, который обеспечивает валидацию.
 -->
 
+
+---
+layout: default
+src: ./pages/framework-cover/fastify/3.md
 ---
 
-<SlideLogo framework="FastifyJS" title="Decorate"/>
-
-https://fastify.dev/docs/latest/Reference/Decorators/#decorators
-
-```ts
-// Decorate request with a 'user' property
-fastify.decorateRequest("user", "");
-
-// Update our property
-fastify.addHook("preHandler", (req, reply, done) => {
-    req.user = "Bob Dylan";
-    done();
-});
-// And finally access it
-fastify.get("/", (req, reply) => {
-    reply.send(`Hello, ${req.user}!`);
-});
-
-declare module "fastify" {
-    export interface FastifyRequest {
-        user: string;
-    }
-}
-```
-
-Декорирование основных объектов с помощью этого API позволяет базовому движку JavaScript оптимизировать обработку объектов сервера, запросов и ответов. Это достигается путем определения формы всех таких экземпляров объектов до их создания и использования
 
 ---
 
@@ -505,6 +522,46 @@ https://github.com/fastify/fastify/issues/5116
 
 <p>И так далее...</p>
 
+</div>
+
+---
+layout: default
+src: ./pages/framework-cover/fastify/4.md
+---
+
+---
+
+<SlideLogo framework="FastifyJS" title="Decorate"/>
+
+<!-- https://fastify.dev/docs/latest/Reference/Decorators/#decorators -->
+
+```ts {all|13-17}
+fastify.decorateRequest("user", "");
+
+
+fastify.addHook("preHandler", (req, reply, done) => {
+    req.user = "Bob Dylan";
+    done();
+});
+
+fastify.get("/", (req, reply) => {
+    reply.send(`Hello, ${req.user}!`);
+});
+
+declare module "fastify" {
+    export interface FastifyRequest {
+        user: string;
+    }
+}
+```
+
+Декорирование основных объектов с помощью этого API позволяет оптимизировать обработку объектов сервера, запросов и ответов. Это достигается путем определения формы всех таких экземпляров объектов до их создания и использования
+
+---
+
+<div class="flex justify-center items-center h-full text-6xl">
+<img src="https://kita.js.org/logo.svg" width="100px" />
+<h1>KitaJS</h1>
 </div>
 
 ---
@@ -577,25 +634,29 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 ```
 
 ---
-layout: default
-title: Elysia
-src: ./pages/framework-cover/elysia.md
----
 
----
-
-<SlideLogo framework="ElysiaJS" title="overview"/>
+<SlideLogo framework="ElysiaJS" title="Факты"/>
 
 <div class="flex justify-between">
 <div>
-Тут история мб
-Интересный факт. Автор большой фанат игры Honkai impact 3 и Elysia названа в честь персонажа этой игры
-Сократить мб тезисно
+
+- Новый фреймворк с интересными идеями
+- Elysia (и не только) названа в честь персонажа из игры Honkai impact 3
+- В разработке почти 2 года
+- Раньше назывался KingsWorld
+- Можно сказать самый популярный Bun фреймворк
 </div>
 
 <img class="-mt-20 -mr-10 scale-90" width="450" src="/elysia-stack.png" />
 
 </div>
+
+---
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia.md
+---
+
 
 ---
 
