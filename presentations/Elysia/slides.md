@@ -378,7 +378,31 @@ fastify.get(
  -->
 
 ---
-layout: default
+
+<SlideLogo framework="FastifyJS" title="Inject properties"/>
+
+```ts 
+fastify.addHook('preHandler', async (request) => {
+  request.authenticatedUser = {
+    id: 42,
+    name: 'Jane Doe',
+    role: 'admin'
+  }
+});
+
+fastify.get('/me/is-admin', async function (req, reply) {
+  return { isAdmin: req.authenticatedUser?.role === 'admin' || false }
+});
+
+interface AuthenticatedUser { /* ... */ }
+
+declare module 'fastify' {
+  export interface FastifyRequest {
+    authenticatedUser?: AuthenticatedUser;
+  }
+}
+```
+
 ---
 
 <SlideLogo framework="FastifyJS" title="Миграция с Express"/>
@@ -502,8 +526,21 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 ---
 layout: default
 title: Elysia
-src: ./pages/framework-cover
+src: ./pages/framework-cover/elysia.md
 ---
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Elysia overview"/>
+
+<div class="flex justify-between">
+<div>
+Тут история мб
+</div>
+
+<img class="-mt-20 -mr-10 scale-90" width="450" src="/elysia-stack.png" /> 
+
+</div>
 
 ---
 layout: default
@@ -722,18 +759,7 @@ app
     .get("/", ({ bearer }) => bearer);
 
 ```
-<!-- <br/>
 
-```ts
-fastify.addHooj
-interface AuthenticatedUser { /* ... */ }
-
-declare module 'fastify' {
-  export interface FastifyRequest {
-    authenticatedUser?: AuthenticatedUser;
-  }
-}
-``` -->
 ---
 
 <SlideLogo framework="ElysiaJS" title="Affix"/>

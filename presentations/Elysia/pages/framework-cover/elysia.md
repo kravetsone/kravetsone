@@ -1,4 +1,4 @@
-<SlideLogo framework="ElysiaJS" title="Фичи"/>
+<SlideLogo framework="ElysiaJS" title="Плюсы и минусы"/>
 
 <p class="text-green">Плюсы</p>
 

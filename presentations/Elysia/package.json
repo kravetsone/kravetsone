@@ -17,7 +17,7 @@
         "@slidev/theme-seriph": "0.25.0",
         "slidev-addon-qrcode": "^1.0.2",
         "slidev-component-progress": "^1.0.3",
-        "slidev-theme-elysia": "^0.0.1",
+        "slidev-theme-elysia": "^0.0.2",
         "vue": "^3.4.21"
     },
     "devDependencies": {
