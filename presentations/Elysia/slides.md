@@ -4,12 +4,12 @@ mdc: true
 highlighter: shiki
 layout: cover
 addons:
-  - slidev-addon-qrcode
+    - slidev-addon-qrcode
 twoslash: true
 export:
-  timeout: 60000
-  format: pdf
-  dark: true
+    timeout: 60000
+    format: pdf
+    dark: true
 ---
 
 <div class="h-full flex flex-col justify-between">
@@ -37,6 +37,7 @@ export:
 layout: default
 title: Обо мне
 ---
+
 <div class="flex justify-between">
 <div class="flex flex-col flex-items-center w-full p-5">
     <h1 class="text-xl flex-self-start">Обо мне</h1>
@@ -69,14 +70,15 @@ title: Обо мне
 
 </div>
 
-- Чёт ещё 
+-   Чёт ещё
 
 *контекст - почему про это говорим, что хоти полезного дать (убеждающая агенда)
 *общая интерпритация (зона применения, что ты думаешь об инструменте, что должен понять слушатель)
-* переходы!!!!
-* в рассказе про Элизию нужна внутренняя структура (типы преимуществ
-* выводы
-* общая струкура (2 части - что было, до элизиума)
+
+-   переходы!!!!
+-   в рассказе про Элизию нужна внутренняя структура (типы преимуществ
+-   выводы
+-   общая струкура (2 части - что было, до элизиума)
 
 ---
 title: Express
@@ -104,7 +106,7 @@ layout: default
 <div class="flex items-center justify-around h-full -mt-7">
 
 <div class="flex flex-col justify-center items-center">
-/some/:value 
+/some/:value
 
 <formkit-arrowdown class="text-4xl" />
 <div>
@@ -113,6 +115,7 @@ layout: default
 <formkit-arrowdown class="text-4xl" />
 
 /^\/some\/(?:([^\/]+?))\/?$/
+
 </div>
 
 <p class="font-bold text-4xl">VS</p>
@@ -135,7 +138,7 @@ Express же использует библиотеку path-to-regexp котор
 
 ---
 layout: default
---- 
+---
 
 <SlideLogo framework="ExpressJS" title="Middleware"/>
 
@@ -168,6 +171,7 @@ app.get("/", (req, res) => {
     res.send(`Hello, ${req.user.name}!`);
 });
 ```
+
 <div class="flex flex-col items-center justify-center ml-35">
 Middleware (req, res, next)
 <formkit-arrowdown class="text-4xl" />
@@ -234,7 +238,6 @@ layout: full
 
 <img src="/swagger-autogen.png"/>
 
-
 ---
 layout: default
 ---
@@ -252,7 +255,9 @@ layout: default
 -   4.17.1 - 5 лет назад
 
 ...
+
 -   4.0.0 - 04.09.2014
+
 <!--
 Express перестал активно обновляться. Как например первая бета 5.0.0 вышла 2 года назад. И с того момента не получила никаких коммитов в ветке на гитхабе. Хотя документация во всю кричит «Документация версии 5.0.0 уже доступна».
 -->
@@ -270,6 +275,7 @@ layout: default
             :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :imageOptions="{ margin: 5 }" :width="150"
             :height="150" />
 </div>
+
 ---
 layout: default
 title: Koa
@@ -284,21 +290,21 @@ src: ./pages/framework-cover/koa.md
 var koa = require("koa");
 var app = koa();
 
-app.use(function *(next) {
-    var start = new Date;
+app.use(function* (next) {
+    var start = new Date();
     yield next;
-    var ms = new Date - start;
+    var ms = new Date() - start;
     console.log("%s %s - %s", this.method, this.url, ms);
 });
 
-app.use(function *(){
+app.use(function* () {
     this.body = "Hello world!";
 });
 
 app.listen(3000);
 ```
 
-<!-- 
+<!--
 KoaJS назывался «фреймворком нового поколения» и решал проблему callback hell ещё до появления сахара в виде async/await
 но после появления их появления люди так и остались на express
 -->
@@ -308,7 +314,6 @@ layout: default
 title: Fastify
 src: ./pages/framework-cover/fastify.md
 ---
-
 
 ---
 layout: default
@@ -321,18 +326,18 @@ layout: default
 <div class="flex">
 
 ```ts
-fastify.addHook('preParsing', async (request, reply, payload) => {
-  await asyncMethod();
+fastify.addHook("preParsing", async (request, reply, payload) => {
+    await asyncMethod();
 
-  return newPayload;
+    return newPayload;
 });
-fastify.addHook('preHandler', async (request, reply) => {
-  await asyncMethod();
+fastify.addHook("preHandler", async (request, reply) => {
+    await asyncMethod();
 });
-fastify.addHook('onSend', async (request, reply, payload) => {
-  const newPayload = payload.replace('some-text', 'some-new-text');
+fastify.addHook("onSend", async (request, reply, payload) => {
+    const newPayload = payload.replace("some-text", "some-new-text");
 
-  return newPayload;
+    return newPayload;
 });
 
 fastify.post("/", (request, reply) => {
@@ -342,24 +347,27 @@ fastify.post("/", (request, reply) => {
 
 <div class="flex flex-col ml-35">
 
-- onRequest
-- preParsing
-- preValidation
-- preHandler
-- preSerialization
-- onError
-- onSend
-- onResponse
-- onTimeout
-- onRequestAbort
+-   onRequest
+-   preParsing
+-   preValidation
+-   preHandler
+-   preSerialization
+-   onError
+-   onSend
+-   onResponse
+-   onTimeout
+-   onRequestAbort
 </div>
 </div>
 
-<!-- // TODO: flow chart -->
+<!--
+// TODO: flow chart
+-->
 
 ---
 layout: default
 ---
+
 <SlideLogo framework="FastifyJS" title="Валидация"/>
 
 ```ts twoslash
@@ -387,9 +395,9 @@ fastify.get(
 );
 ```
 
-<!-- 
-В Fastify под коробкой используется AJV, который обеспечивает валидацию. 
- -->
+<!--
+В Fastify под коробкой используется AJV, который обеспечивает валидацию.
+-->
 
 ---
 
@@ -397,25 +405,24 @@ fastify.get(
 
 https://fastify.dev/docs/latest/Reference/Decorators/#decorators
 
-```ts 
+```ts
 // Decorate request with a 'user' property
-fastify.decorateRequest('user', '')
+fastify.decorateRequest("user", "");
 
 // Update our property
-fastify.addHook('preHandler', (req, reply, done) => {
-  req.user = 'Bob Dylan'
-  done()
-})
+fastify.addHook("preHandler", (req, reply, done) => {
+    req.user = "Bob Dylan";
+    done();
+});
 // And finally access it
-fastify.get('/', (req, reply) => {
-  reply.send(`Hello, ${req.user}!`)
-})
+fastify.get("/", (req, reply) => {
+    reply.send(`Hello, ${req.user}!`);
+});
 
-
-declare module 'fastify' {
-  export interface FastifyRequest {
-    user: string;
-  }
+declare module "fastify" {
+    export interface FastifyRequest {
+        user: string;
+    }
 }
 ```
 
@@ -451,9 +458,9 @@ fastify.listen({ port: 3000 }, console.log);
 
 <!-- Очень интересно, что у Fastify есть плагин который обеспечивает совместимость с express -->
 
-<!-- ---
-
-https://github.com/fastify/fastify/issues/5116 -->
+<!--
+https://github.com/fastify/fastify/issues/5116
+-->
 
 ---
 
@@ -461,13 +468,13 @@ https://github.com/fastify/fastify/issues/5116 -->
 
 <div class="text-center">
 
-| <skill-icons-expressjs-light /> Middleware       | <simple-icons-fastify /> Plugin       |
-| ------------- |:-------------:|
-| helmet      | @fastify/helmet |
-| cors      | @fastify/cors      |
-| serve-static | @fastify/static      |
-| Passport.js | @fastify/passport |
-| multer | fastify-multer |
+| <skill-icons-expressjs-light /> Middleware | <simple-icons-fastify /> Plugin |
+| ------------------------------------------ | :-----------------------------: |
+| helmet                                     |         @fastify/helmet         |
+| cors                                       |          @fastify/cors          |
+| serve-static                               |         @fastify/static         |
+| Passport.js                                |        @fastify/passport        |
+| multer                                     |         fastify-multer          |
 
 <p>И так далее...</p>
 
@@ -501,22 +508,22 @@ src/routes
 import type { Body, Header } from "@kitajs/runtime";
 
 interface CreateUser {
-  /**
-   * The name of the user
-   *
-   * @minLength 3
-   * @maxLength 20
-   */
-  name: string;
+    /**
+     * The name of the user
+     *
+     * @minLength 3
+     * @maxLength 20
+     */
+    name: string;
 }
 
 // Creates a new user
 export function post(
-  data: Body<CreateUser>,
-  userAgent: Header<"user-agent">,
-  rawRequest: FastifyRequest
+    data: Body<CreateUser>,
+    userAgent: Header<"user-agent">,
+    rawRequest: FastifyRequest,
 ) {
-  // ...
+    // ...
 }
 ```
 
@@ -538,9 +545,10 @@ export type UserAgent = string | undefined;
  * other providers
  */
 export default function ({ headers }: FastifyRequest): UserAgent {
-  return headers["user-agent"];
+    return headers["user-agent"];
 }
 ```
+
 ---
 layout: default
 title: Elysia
@@ -558,7 +566,7 @@ src: ./pages/framework-cover/elysia.md
 Сократить мб тезисно
 </div>
 
-<img class="-mt-20 -mr-10 scale-90" width="450" src="/elysia-stack.png" /> 
+<img class="-mt-20 -mr-10 scale-90" width="450" src="/elysia-stack.png" />
 
 </div>
 
@@ -570,19 +578,21 @@ src: ./pages/framework-cover/elysia.md
 Поэтому вам необходимо соблюдать эту цепочку
 
 И если вы вдруг поделили то дедупликация происходит // подробнее
+
+<!-- prettier-ignore -->
 ```ts
 // setup.ts
-const setup = new Elysia({ name: 'setup' })
-    .decorate('a', 'a')
+const setup = new Elysia({ name: "setup" })
+    .decorate("a", "a");
 
 // index.ts
 const main = new Elysia()
-    .use(child)
+    .use(child);
 
 // child.ts
 const child = new Elysia()
     .use(setup)
-    .get('/', ({ a }) => a)
+    .get("/", ({ a }) => a);
 ```
 
 ---
@@ -614,7 +624,9 @@ new Elysia().post(
 );
 ```
 
-<!-- Валидация же представляет из себя typebox c расширенными возможностями -->
+<!--
+Валидация же представляет из себя typebox c расширенными возможностями
+-->
 
 ---
 
@@ -693,7 +705,9 @@ await eden.yandex.employee.post({
     stack: "svelte",
 });
 ```
+
 </div>
+
 ---
 layout: full
 ---
@@ -708,11 +722,10 @@ layout: full
 import { Elysia } from "elysia";
 import { Hono } from "hono";
 // ---cut---
-const elysia = new Elysia()
-    .get(
-        "/",
-        "Hello from Elysia inside Hono inside Elysia",
-    );
+const elysia = new Elysia().get(
+    "/",
+    "Hello from Elysia inside Hono inside Elysia",
+);
 
 const hono = new Hono()
     .get("/", (c) => c.text("Hello from Hono!"))
@@ -753,6 +766,7 @@ app.get(
 
 <SlideLogo framework="ElysiaJS" title="State & Decorate"/>
 
+<!-- prettier-ignore -->
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -765,6 +779,7 @@ app
 
 <br/>
 
+<!-- prettier-ignore -->
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -786,6 +801,7 @@ app
 
 <SlideLogo framework="ElysiaJS" title="Derive"/>
 
+<!-- prettier-ignore -->
 ```ts twoslash
 import { Elysia, t } from "elysia";
 
@@ -800,7 +816,6 @@ app
         };
     })
     .get("/", ({ bearer }) => bearer);
-
 ```
 
 ---
@@ -832,9 +847,10 @@ const app = new Elysia()
 
 <div class="flex justify-between">
 <div/>
-<img class="-mt-20 -mr-10 scale-90" width="500" src="/new-elysia-twitter.png" /> 
+<img class="-mt-20 -mr-10 scale-90" width="500" src="/new-elysia-twitter.png" />
 
 </div>
+
 ---
 
 <SlideLogo framework="ElysiaJS" title="Elysia plugin"/>
@@ -881,18 +897,19 @@ new Elysia()
 
 <div class="flex flex-col mr-25">
 
-- Request
-- Parse
-- Transform
-- Before Handle
-- After Handle
-- Map Response
-- Error
-- Response
-- Trace
+-   Request
+-   Parse
+-   Transform
+-   Before Handle
+-   After Handle
+-   Map Response
+-   Error
+-   Response
+-   Trace
 
 </div>
 </div>
+
 ---
 
 <SlideLogo framework="ElysiaJS" title="Guard"/>
@@ -1075,6 +1092,7 @@ describe("Elysia", () => {
 
 <SlideLogo framework="ElysiaJS" title="Macro"/>
 
+<!-- prettier-ignore -->
 ```ts twoslash
 import { Elysia } from "elysia";
 
@@ -1148,6 +1166,7 @@ chat.subscribe((message) => {
 
 chat.send("hello from client");
 ```
+
 </div>
 
 ---
@@ -1184,17 +1203,18 @@ new Elysia()
 
 <SlideLogo framework="ElysiaJS" title="JSX/HTML"/>
 
+<!-- prettier-ignore -->
 ```tsx twoslash
 // @jsx: react
 // @jsxFactory: Html.createElement
 // @jsxFragmentFactory: Html.Fragment
 // ---cut---
-import { Elysia } from 'elysia'
-import { html } from '@elysiajs/html' 
+import { Elysia } from "elysia";
+import { html } from "@elysiajs/html";
 
 new Elysia()
-    .use(html()) 
-    .get('/', () => (
+    .use(html())
+    .get("/", () => (
         <html lang="en">
             <head>
                 <title>Hello World</title>
@@ -1203,7 +1223,7 @@ new Elysia()
                 <h1>Hello World</h1>
             </body>
         </html>
-    ))
+    ));
 ```
 
 ---
