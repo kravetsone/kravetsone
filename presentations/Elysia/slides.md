@@ -42,7 +42,7 @@ title: Обо мне
 <div class="flex flex-col flex-items-center w-full p-5">
     <h1 class="text-xl flex-self-start">Обо мне</h1>
     <ul class="flex-self-start">
-        <li>Победитель двух этапов хакатона «Цифровой прорыв» и ещё нескольких</li>
+        <li>Победитель двух этапов хакатона «Цифровой прорыв»</li>
         <li>Люблю заниматься опенсорсом и пет-проектами</li>
         <li>Занимаюсь разработкой фреймворка для телеграм ботов - GramIO</li>
         <li>Учусь в «Московском индустриальном колледже»</li>
@@ -70,19 +70,25 @@ title: Обо мне
 
 </div>
 
--   Чёт ещё
+<div class="mt-7">
 
-*контекст - почему про это говорим, что хоти полезного дать (убеждающая агенда)
+-   Сравним плюсы и минусы
+-   Поговорим почему ExpressJS уже не актуален
+-   Посмотрим на фреймворки и их плюсы/минусы
+-   Попробуем фреймворка для Bun набирающий популярность
+
+</div>
+<!-- *контекст - почему про это говорим, что хоти полезного дать (убеждающая агенда)
 *общая интерпритация (зона применения, что ты думаешь об инструменте, что должен понять слушатель)
 
 -   переходы!!!!
 -   в рассказе про Элизию нужна внутренняя структура (типы преимуществ
 -   выводы
--   общая струкура (2 части - что было, до элизиума)
+-   общая струкура (2 части - что было, до элизиума) -->
 
 ---
 title: Express
-src: ./pages/framework-cover/express.md
+src: ./pages/framework-cover/express/1.md
 ---
 
 ---
@@ -135,6 +141,12 @@ TODO: переделать слайд визуально.
 В роутинге Express'а не применяется хитрых алгоритмов по типу RadixTree, которые можно встретить у конкурентов.
 Express же использует библиотеку path-to-regexp которая превращает ваш текст в регулярное выражение
 -->
+
+---
+title: Express
+src: ./pages/framework-cover/express/2.md
+---
+
 
 ---
 layout: default
@@ -203,6 +215,11 @@ TODO: flow-chart req => req => req => send
 </div>
 
 ---
+title: Express
+src: ./pages/framework-cover/express/3.md
+---
+
+---
 
 <SlideLogo framework="ExpressJS" title="Написан в эру мамонтов + костыльный"/>
 
@@ -233,16 +250,26 @@ app.use((err, req, res, next) => {
 -->
 
 ---
+title: Express
+src: ./pages/framework-cover/express/4.md
+---
+
+---
 layout: full
 ---
 
 <img src="/swagger-autogen.png"/>
 
 ---
+title: Express
+src: ./pages/framework-cover/express/5.md
+---
+
+---
 layout: default
 ---
 
-<SlideLogo framework="ExpressJS" title="Разработчики заглохла" />
+<SlideLogo framework="ExpressJS" title="Разработка заглохла" />
 
 -   4.18.3 (latest) - пару недель назад (спойлер - исправили 1 баг за год)
 -   4.18.2 - год назад

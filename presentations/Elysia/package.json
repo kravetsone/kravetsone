@@ -16,6 +16,7 @@
         "@slidev/cli": "0.48.3",
         "@slidev/theme-default": "0.25.0",
         "@slidev/theme-seriph": "0.25.0",
+        "pdf-officegen": "^3.0.0",
         "slidev-addon-qrcode": "^1.0.2",
         "slidev-component-progress": "^1.0.3",
         "slidev-theme-elysia": "^0.0.2",
