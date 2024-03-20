@@ -1,0 +1,38 @@
+
+<SlideLogo framework="FastifyJS" title="Плюсы и минусы"/>
+
+<p class="text-green">Плюсы</p>
+
+<v-clicks>
+
+-   Современный
+-   Life-cycle hooks
+-   Производительный
+-   fast-json-stringify
+-   Построен на JSON Schema и AJV
+-   Отличный DX и swagger одной строчкой
+-   express-compatibility plugin
+-   Удобная обработка ошибок
+
+</v-clicks>
+<p class="text-red">Минусы</p>
+<v-clicks>
+
+-   Не идеал типизации
+
+</v-clicks>
+
+<!--
+Давайте поговорим о FastifyJS. 
+
+**Начнём с плюсов:**
+
+[Click] Современный. Первая стабильная версия Fastify вышла 6 лет назад и новые версии всё ещё выходят. Вот-вот и выйдет v5
+[Click] Значительно быстрее ExpressJS. В Koa нет таких значительных проблем как в Express'е.
+
+**А теперь к минусам:**
+
+[Click] Middleware. Так как это буквально перерождение Express паттерн Middleware никуда не исчез.
+[Click] Плохая интеграция с OpenAPI. // TODO:
+[Click] Не особо популярен. Многие не видят в нём преимуществ перед Express // TODO: дописать додумать
+-->
