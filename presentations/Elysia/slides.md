@@ -122,7 +122,7 @@ layout: default
 </div>
 
 <div class="absolute top-5 right-5">
-<QRCode type="canvas" data="https://forbeslindesay.github.io/express-route-tester/"
+<QRCode type="svg" data="https://forbeslindesay.github.io/express-route-tester/"
             :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :width="150"
             :height="150" />
 </div>
@@ -192,7 +192,7 @@ TODO: flow-chart req => req => req => send
 
 <img src="/middleware-never-again.webp" width="500" />
 
-<QRCode type="canvas" data="https://youtu.be/RS8x73z4csI?si=BmdaXXEDSI2GUZ94" image="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.43em' height='1em' viewBox='0 0 256 180'%3E%3Cpath fill='%23f00' d='M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134'/%3E%3Cpath fill='%23fff' d='m102.421 128.06l66.328-38.418l-66.328-38.418z'/%3E%3C/svg%3E" :imageOptions="{ margin: 10 }"
+<QRCode type="svg" data="https://youtu.be/RS8x73z4csI?si=BmdaXXEDSI2GUZ94" image="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.43em' height='1em' viewBox='0 0 256 180'%3E%3Cpath fill='%23f00' d='M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134'/%3E%3Cpath fill='%23fff' d='m102.421 128.06l66.328-38.418l-66.328-38.418z'/%3E%3C/svg%3E" :imageOptions="{ margin: 10 }"
             :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :width="200"
             :height="200" />
 
@@ -266,7 +266,7 @@ layout: default
 <img src="/hyper-express.png" width="600"/>
 
 <div class="absolute top-5 right-5">
-<QRCode type="canvas" data="https://forbeslindesay.github.io/express-route-tester/" image="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M216 104v8a56.06 56.06 0 0 1-48.44 55.47A39.8 39.8 0 0 1 176 192v40a8 8 0 0 1-8 8h-64a8 8 0 0 1-8-8v-16H72a40 40 0 0 1-40-40a24 24 0 0 0-24-24a8 8 0 0 1 0-16a40 40 0 0 1 40 40a24 24 0 0 0 24 24h24v-8a39.8 39.8 0 0 1 8.44-24.53A56.06 56.06 0 0 1 56 112v-8a58.14 58.14 0 0 1 7.69-28.32A59.78 59.78 0 0 1 69.07 28A8 8 0 0 1 76 24a59.75 59.75 0 0 1 48 24h24a59.75 59.75 0 0 1 48-24a8 8 0 0 1 6.93 4a59.74 59.74 0 0 1 5.37 47.68A58 58 0 0 1 216 104'/%3E%3C/svg%3E"
+<QRCode type="svg" data="https://forbeslindesay.github.io/express-route-tester/" image="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 256 256'%3E%3Cpath fill='white' d='M216 104v8a56.06 56.06 0 0 1-48.44 55.47A39.8 39.8 0 0 1 176 192v40a8 8 0 0 1-8 8h-64a8 8 0 0 1-8-8v-16H72a40 40 0 0 1-40-40a24 24 0 0 0-24-24a8 8 0 0 1 0-16a40 40 0 0 1 40 40a24 24 0 0 0 24 24h24v-8a39.8 39.8 0 0 1 8.44-24.53A56.06 56.06 0 0 1 56 112v-8a58.14 58.14 0 0 1 7.69-28.32A59.78 59.78 0 0 1 69.07 28A8 8 0 0 1 76 24a59.75 59.75 0 0 1 48 24h24a59.75 59.75 0 0 1 48-24a8 8 0 0 1 6.93 4a59.74 59.74 0 0 1 5.37 47.68A58 58 0 0 1 216 104'/%3E%3C/svg%3E"
             :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :imageOptions="{ margin: 5 }" :width="150"
             :height="150" />
 </div>
