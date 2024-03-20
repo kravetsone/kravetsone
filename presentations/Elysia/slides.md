@@ -135,6 +135,8 @@ layout: default
 /^\/some\/(?:([^\/]+?))\/?$/
 </div>
 
+<p class="font-bold text-4xl">VS</p>
+
 <img src="/radix.png" width="400" class="invert -mr-5" />
 
 </div>
