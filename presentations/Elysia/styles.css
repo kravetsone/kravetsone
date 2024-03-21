@@ -10,3 +10,7 @@ code,
 pre {
     overflow-x: hidden !important;
 }
+
+.v-popper__popper.v-popper--theme-twoslash {
+    display: none;
+}
