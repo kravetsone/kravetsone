@@ -654,34 +654,8 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 ---
 layout: default
 title: Elysia
-src: ./pages/framework-cover/elysia.md
+src: ./pages/framework-cover/elysia/1.md
 ---
-
-
----
-
-<SlideLogo framework="ElysiaJS" title="chainable typings & type-safety"/>
-
-Один из кор принципов этого фреймворка это chainable типизация
-Поэтому вам необходимо соблюдать эту цепочку
-
-И если вы вдруг поделили то дедупликация происходит // подробнее
-
-<!-- prettier-ignore -->
-```ts
-// setup.ts
-const setup = new Elysia({ name: "setup" })
-    .decorate("a", "a");
-
-// index.ts
-const main = new Elysia()
-    .use(child);
-
-// child.ts
-const child = new Elysia()
-    .use(setup)
-    .get("/", ({ a }) => a);
-```
 
 ---
 layout: default
@@ -747,54 +721,71 @@ layout: full
 <img src="/scalar-dark-mode.webp" />
 
 ---
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia/2.md
+---
 
-<SlideLogo framework="ElysiaJS" title="e2e type-safety"/>
+---
 
-<div class="flex gap-2 justify-around">
+<SlideLogo framework="ElysiaJS" title="Life-cycle"/>
 
-```ts twoslash
-import { Elysia, t } from "elysia";
-
-const app = new Elysia()
-    .post("/yandex/employee", () => {}, {
-        body: t.Object({
-            name: t.String(),
-            stack: t.TemplateLiteral("{effector|react}"),
-        }),
-    })
-    .listen(1997);
-
-export type App = typeof app;
-```
+<div class="flex items-center justify-between">
 
 ```ts twoslash
-// @filename: server.ts
-import { Elysia, t } from "elysia";
+import { isHtml } from "@elysiajs/html";
+import { Elysia } from "elysia";
 
-const app = new Elysia()
-    .post("/yandex/employee", () => {}, {
-        body: t.Object({
-            name: t.String(),
-            stack: t.TemplateLiteral("{effector|react}"),
-        }),
-    })
-    .listen(1997);
-
-export type App = typeof app;
-// @filename: index.ts
 // ---cut---
-import { treaty } from "@elysiajs/eden";
-import type { App } from "./server";
-
-const eden = treaty<App>("http://localhost:1997");
-
-await eden.yandex.employee.post({
-    name: "Алексей",
-    stack: "svelte",
-});
+new Elysia()
+    .get("/none", () => "<h1>Hello World</h1>")
+    .onAfterHandle(({ response, set }) => {
+        if (isHtml(response))
+            set.headers["Content-Type"] = "text/html; charset=utf8";
+    })
+    .get("/", () => "<h1>Hello World</h1>")
+    .get("/hi", () => "<h1>Hello World</h1>")
+    .listen(3000);
 ```
+
+<div class="flex flex-col mr-25">
+
+-   Request
+-   Parse
+-   Transform
+-   Before Handle
+-   After Handle
+-   Map Response
+-   Error
+-   Response
+-   Trace
 
 </div>
+</div>
+
+
+
+
+---
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia/3.md
+---
+
+---
+layout: default
+---
+
+<SlideLogo framework="ElysiaJS" title="Производительность"/>
+
+<img class="mt-7" src="/benchmark.png"/>
+
+
+---
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia/4.md
+---
 
 ---
 layout: full
@@ -806,14 +797,16 @@ layout: full
 
 <SlideLogo framework="ElysiaJS" title="WinterCG"/>
 
+<!-- prettier-ignore -->
 ```ts twoslash
 import { Elysia } from "elysia";
 import { Hono } from "hono";
 // ---cut---
-const elysia = new Elysia().get(
-    "/",
-    "Hello from Elysia inside Hono inside Elysia",
-);
+const elysia = new Elysia()
+    .get(
+        "/",
+        "Hello from Elysia inside Hono inside Elysia",
+    );
 
 const hono = new Hono()
     .get("/", (c) => c.text("Hello from Hono!"))
@@ -824,6 +817,12 @@ const main = new Elysia()
     .mount("/hono", hono.fetch)
     .listen(3000);
 ```
+
+---
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia/5.md
+---
 
 ---
 
@@ -849,6 +848,38 @@ app.get(
     },
 );
 ```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="chainable typings & type-safety"/>
+
+<!-- Один из кор принципов этого фреймворка это chainable типизация
+Поэтому вам необходимо соблюдать эту цепочку
+
+И если вы вдруг поделили то дедупликация происходит // подробнее -->
+
+<!-- prettier-ignore -->
+```ts twoslash
+import { Elysia } from "elysia";
+// ---cut---
+const app = new Elysia()
+    .state('build', 1)
+    .get('/', ({ store: { build } }) => build)
+    //                                     ^?
+```
+
+<br/>
+
+```ts twoslash
+import { Elysia } from "elysia";
+// ---cut---
+const app = new Elysia()
+
+app.state('build', 1)
+
+app.get('/', ({ store: { build } }) => build)
+```
+
 
 ---
 
@@ -908,6 +939,62 @@ app
 
 ---
 
+<SlideLogo framework="ElysiaJS" title="Macro"/>
+
+<!-- prettier-ignore -->
+```ts twoslash
+import { Elysia } from "elysia";
+
+// ---cut---
+const plugin = new Elysia({ name: "plugin" }).macro(({ onBeforeHandle }) => {
+    return {
+        hi(word: string) {
+            onBeforeHandle(() => {
+                console.log(word);
+            });
+        },
+    };
+});
+
+new Elysia()
+    .use(plugin)
+    .get("/", () => "hi", {
+        hi: "Elysia",
+    });
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Model"/>
+
+```ts twoslash
+import { Elysia, t } from "elysia";
+
+// ---cut---
+new Elysia()
+    .model({
+        sign: t.Object({
+            username: t.String(),
+            password: t.String(),
+        }),
+    })
+    .post(
+        "/sign-in",
+        ({ body }) => body,
+        //            ^?
+        //
+        //
+        //
+        //
+        {
+            body: "sign",
+            response: "sign",
+        },
+    );
+```
+
+---
+
 <SlideLogo framework="ElysiaJS" title="Affix"/>
 
 <!-- prettier-ignore -->
@@ -943,6 +1030,7 @@ const app = new Elysia()
 
 <SlideLogo framework="ElysiaJS" title="Elysia plugin"/>
 
+<!-- prettier-ignore -->
 ```ts twoslash
 import { Elysia } from "elysia";
 
@@ -956,47 +1044,11 @@ const plugin = new Elysia()
     .decorate("yandex", new YandexController())
     .get("/", () => "Hello, Yandex!");
 
-app.use(plugin)
+app
+    .use(plugin)
     .post("/event", ({ yandex }) => yandex.createEvent("Я 💛 Фронтенд"))
     .listen(3000);
 ```
-
----
-
-<SlideLogo framework="ElysiaJS" title="Life-cycle"/>
-
-<div class="flex items-center justify-between">
-
-```ts twoslash
-import { isHtml } from "@elysiajs/html";
-import { Elysia } from "elysia";
-
-// ---cut---
-new Elysia()
-    .get("/none", () => "<h1>Hello World</h1>")
-    .onAfterHandle(({ response, set }) => {
-        if (isHtml(response))
-            set.headers["Content-Type"] = "text/html; charset=utf8";
-    })
-    .get("/", () => "<h1>Hello World</h1>")
-    .get("/hi", () => "<h1>Hello World</h1>")
-    .listen(3000);
-```
-
-<div class="flex flex-col mr-25">
-
--   Request
--   Parse
--   Transform
--   Before Handle
--   After Handle
--   Map Response
--   Error
--   Response
--   Trace
-
-</div>
-</div>
 
 ---
 
@@ -1024,15 +1076,15 @@ new Elysia().guard(
 
 ---
 
-<SlideLogo framework="ElysiaJS" title="Scoped плагины"/>
+<SlideLogo framework="ElysiaJS" title="Global hooks в плагинах"/>
 
 ```ts twoslash
 import { isHtml } from "@elysiajs/html";
 import { Elysia } from "elysia";
 
 // ---cut---
-const html = new Elysia({ scoped: true })
-    .onAfterHandle(({ set, response }) => {
+const html = new Elysia()
+    .onAfterHandle({ as: "global" }, ({ set, response }) => {
         if (isHtml(response))
             set.headers["Content-Type"] = "text/html; charset=utf8";
     })
@@ -1154,6 +1206,12 @@ new Elysia()
 ```
 
 ---
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia/6.md
+---
+
+---
 
 <SlideLogo framework="ElysiaJS" title="Tests with eden"/>
 
@@ -1178,29 +1236,54 @@ describe("Elysia", () => {
 
 ---
 
-<SlideLogo framework="ElysiaJS" title="Macro"/>
+<SlideLogo framework="ElysiaJS" title="e2e type-safety"/>
 
-<!-- prettier-ignore -->
+<div class="flex gap-2 justify-around">
+
 ```ts twoslash
-import { Elysia } from "elysia";
+import { Elysia, t } from "elysia";
 
-// ---cut---
-const plugin = new Elysia({ name: "plugin" }).macro(({ onBeforeHandle }) => {
-    return {
-        hi(word: string) {
-            onBeforeHandle(() => {
-                console.log(word);
-            });
-        },
-    };
-});
+const app = new Elysia()
+    .post("/yandex/employee", () => {}, {
+        body: t.Object({
+            name: t.String(),
+            stack: t.TemplateLiteral("{effector|react}"),
+        }),
+    })
+    .listen(1997);
 
-new Elysia()
-    .use(plugin)
-    .get("/", () => "hi", {
-        hi: "Elysia",
-    });
+export type App = typeof app;
 ```
+
+```ts twoslash
+// @filename: server.ts
+import { Elysia, t } from "elysia";
+
+const app = new Elysia()
+    .post("/yandex/employee", () => {}, {
+        body: t.Object({
+            name: t.String(),
+            stack: t.TemplateLiteral("{effector|react}"),
+        }),
+    })
+    .listen(1997);
+
+export type App = typeof app;
+// @filename: index.ts
+// ---cut---
+import { treaty } from "@elysiajs/eden";
+import type { App } from "./server";
+
+const eden = treaty<App>("http://localhost:1997");
+
+await eden.yandex.employee.post({
+    name: "Алексей",
+    stack: "svelte",
+});
+```
+
+</div>
+
 
 ---
 
@@ -1250,6 +1333,7 @@ const chat = client.chat.subscribe();
 
 chat.subscribe((message) => {
     console.log("got", message);
+    //                  ^?
 });
 
 chat.send("hello from client");
@@ -1257,35 +1341,12 @@ chat.send("hello from client");
 
 </div>
 
+
 ---
-
-<SlideLogo framework="ElysiaJS" title="Model"/>
-
-```ts twoslash
-import { Elysia, t } from "elysia";
-
-// ---cut---
-new Elysia()
-    .model({
-        sign: t.Object({
-            username: t.String(),
-            password: t.String(),
-        }),
-    })
-    .post(
-        "/sign-in",
-        ({ body }) => body,
-        //            ^?
-        //
-        //
-        //
-        //
-        {
-            body: "sign",
-            response: "sign",
-        },
-    );
-```
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia/7.md
+---
 
 ---
 
@@ -1313,6 +1374,8 @@ new Elysia()
         </html>
     ));
 ```
+
+<!-- мб привести пример с ejs -->
 
 ---
 
