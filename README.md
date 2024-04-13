@@ -2,16 +2,7 @@
 
 ## 👉 Мои проекты
 
-#### 1. [[`Мемология`](https://vk.com/app51712852)] - VK MINI APPS, который не одержал победы в VK FRESH CODE 2023
-
--   [Бекенд](https://github.com/kravetsone/memology-backend). Fastify, TypeScript, Prisma, Protobuf over HTTP
--   [Фронтенд](https://github.com/localhostov2/memology). React, TypeScript, Effector, Protobuf
-
-#### 2. [[`elysia-autoload`](https://github.com/kravetsone/elysia-autoload)] - Плагин для [Elysia](https://elysiajs.com), который загружает все endpoints в папке и генерирует типы для [Eden](https://elysiajs.com/eden/overview.html)
-
-#### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle, Husky и выбор плагинов. Авто-обновление зависимостей (включая те которые используются в генерации шаблона) с помощью Renovate
-
-#### 4. [[`GramIO`](https://github.com/gramiojs)] - WIP Telegram Bot API фреймворк для создания ботов с удобством!
+#### 1. [[`GramIO`](https://github.com/gramiojs)] - WIP Telegram Bot API фреймворк для создания ботов с удобством!
 
 -   [[`keyboards`](https://github.com/gramiojs/keyboards)] - Фреймворк-агностик библиотека для создания клавиатур телеграм ботам с многими классными возможностями!
 
@@ -29,6 +20,10 @@
 
 -   [[`prompt`](https://github.com/gramiojs/prompt)] - Плагин реализующий "Вопрос-Ответ" в [GramIO](https://github.com/gramiojs)
 
+#### 2. [[`elysia-autoload`](https://github.com/kravetsone/elysia-autoload)] - Плагин для [Elysia](https://elysiajs.com), который загружает все endpoints в папке и генерирует типы для [Eden](https://elysiajs.com/eden/overview.html)
+
+#### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle, Husky и выбор плагинов. Авто-обновление зависимостей (включая те которые используются в генерации шаблона) с помощью Renovate
+
 #### 5. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
 #### 6. [[`slidev-addon-qrcode`](https://github.com/kravetsone/slidev-addon-qrcode)] - Аддон для [slidev](https://sli.dev/), который предоставляет QRCode компонент (обёртка над [qr-code-styling](https://github.com/kozakdenys/qr-code-styling))
@@ -41,11 +36,16 @@
 
 ### Проекты с [хакатонов](#-хакатоны-и-другие-мероприятия)
 
-#### 1. [[`driveIT-backend`](https://github.com/kravetsone/driveIT-backend)] - Бекенд для веб-платформы ЦОДД, который публикует телеметрию судов и отдаёт различную информацию (REST, WEBSOCKET, PROTOBUF)
+#### 1. [[`Мемология`](https://vk.com/app51712852)] - VK MINI APPS, который не одержал победы в VK FRESH CODE 2023
 
-#### 2. [[`rosatom-backend`](https://github.com/kravetsone/rosatom-backend)] - Бекенд для управления сущностями (CRUD с импортом и экспортом) и формированием телеметрии судов
+-   [Бекенд](https://github.com/kravetsone/memology-backend). Fastify, TypeScript, Prisma, Protobuf over HTTP
+-   [Фронтенд](https://github.com/localhostov2/memology). React, TypeScript, Effector, Protobuf
 
-#### 3. [[`pro.fipro`](https://github.com/kravetsone/pro.firpo)] - Репозиторий с бекендом, который разрабатывался в качестве подготовки к чемпионату. Стек - Express & TypeORM и фронтендом для этого бекенда на React
+#### 2. [[`driveIT-backend`](https://github.com/kravetsone/driveIT-backend)] - Бекенд для веб-платформы ЦОДД, который публикует телеметрию судов и отдаёт различную информацию (REST, WEBSOCKET, PROTOBUF)
+
+#### 3. [[`rosatom-backend`](https://github.com/kravetsone/rosatom-backend)] - Бекенд для управления сущностями (CRUD с импортом и экспортом) и формированием телеметрии судов
+
+#### 4. [[`pro.fipro`](https://github.com/kravetsone/pro.firpo)] - Репозиторий с бекендом, который разрабатывался в качестве подготовки к чемпионату. Стек - Express & TypeORM и фронтендом для этого бекенда на React
 
 ## 📖 Моя статистика в GitHub (![](https://komarev.com/ghpvc/?username=kravetsine&color=a960ff))
 
