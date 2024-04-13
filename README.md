@@ -4,15 +4,21 @@
 
 #### 1. [[`GramIO`](https://github.com/gramiojs)] - WIP Telegram Bot API фреймворк для создания ботов с удобством!
 
+-   [[`types`](https://github.com/gramiojs/types)] - Авто-обновляемая и кодогенерируемая библиотека с типами [Telegram Bot API](https://core.telegram.org/bots/api) с помощью Github Actions
+
 -   [[`keyboards`](https://github.com/gramiojs/keyboards)] - Фреймворк-агностик библиотека для создания клавиатур телеграм ботам с многими классными возможностями!
 
--   [[`types`](https://github.com/gramiojs/types)] - Авто-обновляемая и кодогенерируемая библиотека с типами [Telegram Bot API](https://core.telegram.org/bots/api) с помощью Github Actions
+-   [[`documentation`](https://gramio.netlify.app/)] - Документация на [VitePress](https://vitepress.dev/) с авто-деплоем на [Netlify](https://www.netlify.com/)
+
+-   [[`media-cache`](https://github.com/gramiojs/prompt)] - Плагин, который предотвращает лишние загрузки файлов сохраняя их `file_id` в [GramIO](https://github.com/gramiojs)
+
+-   [[`create-gramio`](https://github.com/gramiojs/create-gramio)] - Скаффолдер, который позволяет развернуть проект с [GramIO](https://github.com/gramiojs) и окружением очень легко
+
+-   [[`auto-retry`](https://github.com/gramiojs/prompt)] - Плагин, который повторяет запросы получившие `retry_after` параметр в [GramIO](https://github.com/gramiojs)
 
 -   [[`format`](https://github.com/gramiojs/format)] - Библиотека для форматирования текста
 
 -   [[`files`](https://github.com/gramiojs/files)] - Библиотека для удобной работой с загрузкой файлов для Telegram Bot API (работает под капотом GramIO)
-
--   [[`documentation`](https://gramio.netlify.app/)] - Документация на [VitePress](https://vitepress.dev/) с авто-деплоем на [Netlify](https://www.netlify.com/)
 
 -   [[`autoload`](https://github.com/gramiojs/autoload)] - Плагин для автозагрузки команд и т.д. из файлов в [GramIO](https://github.com/gramiojs)
 
