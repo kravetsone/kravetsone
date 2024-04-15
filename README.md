@@ -1,5 +1,19 @@
 # Привет, я [Kravets](https://github.com/kravetsone/) 👋
 
+## ✨ Навыки
+
+#### 🖌️ Фронтенд
+
+![Tech stack](https://skillicons.dev/icons?i=typescript,javascript,regex,electron,tauri,react,svelte,tailwind,vue,html,css,md)
+
+### ⚙️ Бекенд
+
+![Tech stack](https://skillicons.dev/icons?i=nodejs,bun,typescript,javascript,py,regex,elysia,express,postgres,prisma,sequelize,redis,ros)
+
+### 🛠 Инструменты
+
+![Tools I use](https://skillicons.dev/icons?i=vscode,webstorm,windows,rollup,vite,vercel,netlify,cloudflare,git,github,discord,githubactions,npm,obsidian,postman,sentry)
+
 ## 👉 Мои проекты
 
 #### 1. [[`GramIO`](https://github.com/gramiojs)] - WIP Telegram Bot API фреймворк для создания ботов с удобством!
