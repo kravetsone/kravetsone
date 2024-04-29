@@ -44,7 +44,7 @@
 
 #### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle, Husky и выбор плагинов. Авто-обновление зависимостей (включая те которые используются в генерации шаблона) с помощью Renovate
 
-#### 4. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя 42+ адаптера под различные сервиса
+#### 4. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя ** 45+** адаптера под различные сервиса
 
 #### 5. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
@@ -63,11 +63,16 @@
 -   [Бекенд](https://github.com/kravetsone/memology-backend). Fastify, TypeScript, Prisma, Protobuf over HTTP
 -   [Фронтенд](https://github.com/localhostov2/memology). React, TypeScript, Effector, Protobuf
 
-#### 2. [[`driveIT-backend`](https://github.com/kravetsone/driveIT-backend)] - Бекенд для веб-платформы ЦОДД, который публикует телеметрию судов и отдаёт различную информацию (REST, WEBSOCKET, PROTOBUF)
+#### 2. [[`webauthn-store`](https://github.com/noname-to/nuclear-linker)] - приложение, которое [эмулирует флешку с ключом безопасности](https://github.com/bulwarkid/virtual-fido) и сохраняет его на сервере для кросс-девайс авторизации по протоколу [webauthn](https://developer.mozilla.org/en-US/docs/Web/API/Web_Authentication_API)
 
-#### 3. [[`rosatom-backend`](https://github.com/kravetsone/rosatom-backend)] - Бекенд для управления сущностями (CRUD с импортом и экспортом) и формированием телеметрии судов
+-   [Бекенд](https://github.com/kravetsone/webauthn-store-backend). Elysia, TypeScript, Drizzle
+-   [Приложение](https://github.com/kravetsone/webauthn-store-app). [Wails](https://wails.io/), GoLang, Svelte, TypeScript, Effector, Protobuf, [Virtual FIDO](https://github.com/bulwarkid/virtual-fido)
 
-#### 4. [[`pro.fipro`](https://github.com/kravetsone/pro.firpo)] - Репозиторий с бекендом, который разрабатывался в качестве подготовки к чемпионату. Стек - Express & TypeORM и фронтендом для этого бекенда на React
+#### 3. [[`driveIT-backend`](https://github.com/kravetsone/driveIT-backend)] - Бекенд для веб-платформы ЦОДД, который публикует телеметрию судов и отдаёт различную информацию (REST, WEBSOCKET, PROTOBUF)
+
+#### 4. [[`rosatom-backend`](https://github.com/kravetsone/rosatom-backend)] - Бекенд для управления сущностями (CRUD с импортом и экспортом) и формированием телеметрии судов
+
+#### 5. [[`pro.fipro`](https://github.com/kravetsone/pro.firpo)] - Репозиторий с бекендом, который разрабатывался в качестве подготовки к чемпионату. Стек - Express & TypeORM и фронтендом для этого бекенда на React
 
 ## 📖 Моя статистика в GitHub (![](https://komarev.com/ghpvc/?username=kravetsine&color=a960ff))
 
