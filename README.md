@@ -40,21 +40,29 @@
 
 -   [[`prompt`](https://github.com/gramiojs/prompt)] - Плагин реализующий "Вопрос-Ответ" в [GramIO](https://github.com/gramiojs)
 
+-   [[`i18n`](https://github.com/gramiojs/i18n)] - Плагин, который позволяет удобно работать с локализацией
+
+-   [[`media-group`](https://github.com/gramiojs/i18n)] - Плагин, который позволяет собрать медиа группу благодаря debounce
+
 #### 2. [[`elysia-autoload`](https://github.com/kravetsone/elysia-autoload)] - Плагин для [Elysia](https://elysiajs.com), который загружает все endpoints в папке и генерирует типы для [Eden](https://elysiajs.com/eden/overview.html)
 
 #### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle, Husky и выбор плагинов. Авто-обновление зависимостей (включая те которые используются в генерации шаблона) с помощью Renovate
 
-#### 4. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя ** 45+** адаптера под различные сервиса
+#### 4. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя **45+** адаптера под различные сервиса
 
 #### 5. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
-#### 6. [[`slidev-addon-qrcode`](https://github.com/kravetsone/slidev-addon-qrcode)] - Аддон для [slidev](https://sli.dev/), который предоставляет QRCode компонент (обёртка над [qr-code-styling](https://github.com/kozakdenys/qr-code-styling))
+#### 6. [[`fluent2ts`](https://github.com/kravetsone/fluent2ts)] - CLI утилита, которая позволяет генерировать типы для [Fluent](https://projectfluent.org/) (`.ftl`) файлов локализации
 
-#### 7. [[`Code Syntax Highlighter`](https://github.com/kravetsone/Code-Syntax-Highlighter)] - Плагин/Виджет для [Figma](https://www.figma.com/) который отрендерит текст с подсветкой синтаксиса. Поддерживаются многие языки и множество тем.
+#### 7. [[`slidev-addon-qrcode`](https://github.com/kravetsone/slidev-addon-qrcode)] - Аддон для [slidev](https://sli.dev/), который предоставляет QRCode компонент (обёртка над [qr-code-styling](https://github.com/kozakdenys/qr-code-styling))
 
-#### 8. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
+#### 8. [[`aigram-monorepo`](https://github.com/kravetsone/aigram-monorepo)] - MVP мессенджера в монорепе с e2e type-safety. ([Svelte](https://svelte.dev/) + [Effector](https://effector.dev/) и [ElysiaJS](https://elysiajs.com/) + [Drizzle](https://orm.drizzle.team/))
 
-#### 9. [[`rustore_notify`](https://github.com/kravetsone/rustore_notify)] - Телеграм бот написанный на [Rust](https://www.rust-lang.org/) с использованием [teloxide](https://github.com/teloxide/teloxide) (магазин приложений **RuSt**ore в виде бота)
+#### 9. [[`Code Syntax Highlighter`](https://github.com/kravetsone/Code-Syntax-Highlighter)] - Плагин/Виджет для [Figma](https://www.figma.com/) который отрендерит текст с подсветкой синтаксиса. Поддерживаются многие языки и множество тем благодаря [Shiki](https://shiki.style/guide/).
+
+#### 10. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
+
+#### 11. [[`rustore_notify`](https://github.com/kravetsone/rustore_notify)] - Телеграм бот написанный на [Rust](https://www.rust-lang.org/) с использованием [Teloxide](https://github.com/teloxide/teloxide) (магазин приложений **RuSt**ore в виде бота)
 
 ### Проекты с [хакатонов](#-хакатоны-и-другие-мероприятия)
 
