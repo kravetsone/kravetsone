@@ -4,12 +4,12 @@ mdc: true
 highlighter: shiki
 layout: cover
 addons:
-    - slidev-addon-qrcode
+  - slidev-addon-qrcode
 twoslash: true
 export:
-    timeout: 60000
-    format: pdf
-    dark: true
+  timeout: 60000
+  format: pdf
+  dark: true
 ---
 
 <div class="h-full flex flex-col justify-between">
