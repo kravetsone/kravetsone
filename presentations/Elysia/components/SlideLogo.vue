@@ -18,7 +18,7 @@ const props = defineProps<{
 
         <div class="flex flex-row items-center gap-1">
             <span class="text-xl">{{ props.framework }} - </span>
-            <span class="text-elysia-purple">
+            <span class="text-elysia-indigo-purple">
                 {{ props.title }}
             </span>
         </div>

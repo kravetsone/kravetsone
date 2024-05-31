@@ -10,15 +10,16 @@ export:
   timeout: 60000
   format: pdf
   dark: true
+contextMenu: false
 ---
 
 <div class="h-full flex flex-col justify-between">
 
-<h1 class="w-2xl">Познаём Elysia и Bun — фреймворк, сделанный для людей</h1>
+<h1 class="w-2xl text-elysia-sky-indigo">Познаём Elysia и Bun — фреймворк, сделанный для людей</h1>
 
 <div class="flex items-center justify-between">
 
-<div class="flex flex-col gap-0 pt-25 text-xl">
+<div class="flex flex-col gap-0 pt-70 text-xl">
     <span class="font-bold">Всеволод Деткин</span>
     <span>Бекенд разработчик, Элитриум</span>
 </div>
@@ -72,20 +73,19 @@ title: Обо мне
 
 <div class="mt-7">
 
--   Сравним плюсы и минусы
 -   Поговорим почему ExpressJS уже не актуален
--   Посмотрим на фреймворки и их плюсы/минусы
+-   Посмотрим на существующие фреймворки и их плюсы/минусы
 -   Попробуем фреймворк для Bun, который набирает популярность
 
 </div>
 
 <!-- *контекст - почему про это говорим, что хоти полезного дать (убеждающая агенда)
-*общая интерпритация (зона применения, что ты думаешь об инструменте, что должен понять слушатель)
+*общая интерпретация (зона применения, что ты думаешь об инструменте, что должен понять слушатель)
 
 -   переходы!!!!
 -   в рассказе про Элизию нужна внутренняя структура (типы преимуществ
 -   выводы
--   общая струкура (2 части - что было, до элизиума) -->
+-   общая структура (2 части - что было, до элизиума) -->
 
 ---
 
@@ -279,7 +279,10 @@ layout: default
 
 <SlideLogo framework="ExpressJS" title="Разработка заглохла" />
 
--   4.18.3 (latest) - пару недель назад (спойлер - исправили 1 баг за год)
+-   4.19.2 (latest) - 2 месяца назад
+
+...
+
 -   4.18.2 - год назад
 -   4.18.1 - 2 года назад
 -   4.18.0 - 2 года назад
@@ -554,6 +557,49 @@ src: ./pages/framework-cover/fastify/4.md
 
 ---
 
+<SlideLogo framework="FastifyJS" title="Matteo Collina"/>
+
+<div class="flex gap-10 justify-center items-center">
+
+<img src="https://nodeland.dev/profile.jpg" width="400px">
+
+<div>
+
+- Член Node.js Technical Steering Committee
+- Активно выступает с докладами (спикер более **60** конференций)
+- Со-автор книги по разработке с Fastify
+
+</div>
+
+
+</div>
+
+---
+
+<SlideLogo framework="FastifyJS" title="Matteo Collina"/>
+
+<div class="flex flex-col gap-10 justify-center items-center">
+
+
+
+<img src="/fastify-youtube.png" width="500px"/>
+
+
+</div>
+
+<div class="absolute top-5 right-5">
+<QRCode type="canvas" data="https://www.youtube.com/watch?v=gltzZjKYK1I" image="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1.43em' height='1em' viewBox='0 0 256 180'%3E%3Cpath fill='%23f00' d='M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134'/%3E%3Cpath fill='%23fff' d='m102.421 128.06l66.328-38.418l-66.328-38.418z'/%3E%3C/svg%3E" :imageOptions="{ margin: 10 }"
+            :dotsOptions="{ type: 'extra-rounded', color: 'purple' }" :width="180"
+            :height="180" />
+</div>
+
+---
+layout: default
+src: ./pages/framework-cover/fastify/5.md
+---
+
+---
+
 <SlideLogo framework="FastifyJS" title="Decorate"/>
 
 <!-- https://fastify.dev/docs/latest/Reference/Decorators/#decorators -->
@@ -668,6 +714,9 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 <SlideLogo framework="ElysiaJS" title="Факты"/>
 
 <div class="flex justify-between">
+
+<div class="flex flex-col items-center gap-5">
+
 <div>
 
 - Новый фреймворк с интересными идеями
@@ -675,6 +724,10 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 - В разработке почти 2 года
 - Раньше назывался KingsWorld
 - Можно сказать самый популярный Bun фреймворк
+</div>
+
+<img src="https://elysiajs.com/assets/elysia_v.webp" width="300px" class="opacity-80"/>
+
 </div>
 
 <img class="-mt-20 -mr-10 scale-90" width="450" src="/elysia-stack.png" />
@@ -888,6 +941,8 @@ app.get(
 
 И если вы вдруг поделили то дедупликация происходит // подробнее -->
 
+✅
+
 <!-- prettier-ignore -->
 ```ts twoslash
 import { Elysia } from "elysia";
@@ -899,6 +954,8 @@ const app = new Elysia()
 ```
 
 <br/>
+
+❌ Типы потеряны
 
 ```ts twoslash
 import { Elysia } from "elysia";
@@ -1402,6 +1459,18 @@ new Elysia()
 ```
 
 <!-- мб привести пример с ejs -->
+
+---
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia/7.md
+---
+
+---
+layout: full
+---
+
+<img class="w-full" src="/documentation.png"/>
 
 ---
 
