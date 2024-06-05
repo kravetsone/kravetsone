@@ -48,9 +48,11 @@
 
 #### 3. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle, Husky и выбор плагинов. Авто-обновление зависимостей (включая те которые используются в генерации шаблона) с помощью Renovate
 
-#### 4. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя **45+** адаптера под различные сервиса
+#### 4. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя **45+** адаптера под различные сервисы
 
 #### 5. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
+
+#### 6. [[`vscode-publint`](https://github.com/kravetsone/vscode-publint)] - Расширение для [VS Code](https://code.visualstudio.com/), которое позволяет линтить `package.json`, добавляя интеграцию с [publint.dev](https://publint.dev)
 
 #### 6. [[`fluent2ts`](https://github.com/kravetsone/fluent2ts)] - CLI утилита, которая позволяет генерировать типы для [Fluent](https://projectfluent.org/) (`.ftl`) файлов локализации
 
