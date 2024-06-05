@@ -91,3 +91,17 @@ pre {
 h1 {
     @apply text-elysia-sky-indigo;
 }
+
+.text-bun {
+    color: #fbf0df;
+}
+
+.center-icon li {
+    display: flex;
+    align-items: center;
+}
+
+.center-icon li::marker {
+    content: "✝ ";
+    font-size: 1.2em;
+}

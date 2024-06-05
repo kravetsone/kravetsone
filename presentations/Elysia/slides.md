@@ -43,12 +43,14 @@ title: Обо мне
 <div class="flex flex-col flex-items-center w-full p-5">
     <h1 class="text-xl flex-self-start">Обо мне</h1>
     <ul class="flex-self-start">
+    <v-clicks>
         <li>Победитель двух этапов хакатона «Цифровой прорыв»</li>
         <li>Люблю заниматься опенсорсом и пет-проектами</li>
         <li>Занимаюсь разработкой фреймворка для телеграм ботов - GramIO</li>
-        <li>Учусь в «Московском индустриальном колледже»</li>
+        <li>Заканчиваю «Московский индустриальный колледж»</li>
         <li>Начал джаваскриптить ещё в 14 лет</li>
         <li>И да я люблю перекладывать JSON'ы</li> 
+    </v-clicks>
     </ul>
 </div>
 
@@ -130,6 +132,7 @@ layout: default
 
 /^\/some\/(?:([^\/]+?))\/?$/
 
+<p class="font-bold">⚠️ potential ReDoS attacks</p>
 </div>
 
 <p class="font-bold text-4xl">VS</p>
@@ -538,13 +541,13 @@ https://github.com/fastify/fastify/issues/5116
 
 <div class="text-center">
 
-| <skill-icons-expressjs-light /> Middleware | <simple-icons-fastify /> Plugin |
-| ------------------------------------------ | :-----------------------------: |
-| helmet                                     |         @fastify/helmet         |
-| cors                                       |          @fastify/cors          |
-| serve-static                               |         @fastify/static         |
-| Passport.js                                |        @fastify/passport        |
-| multer                                     |         fastify-multer          |
+| <skill-icons-expressjs-light /> Middleware |  | <simple-icons-fastify /> Plugin |
+| ------------------------------------------ | ------------------------------------------ | :-----------------------------: |
+| helmet                                     | |        @fastify/helmet         |
+| cors                                       | |         @fastify/cors          |
+| serve-static                               | |        @fastify/static         |
+| Passport.js                                | |       @fastify/passport        |
+| multer                                     | |        fastify-multer          |
 
 <p>И так далее...</p>
 
@@ -720,10 +723,10 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 <div>
 
 - Новый фреймворк с интересными идеями
-- Elysia (и не только) названа в честь персонажа из игры Honkai impact 3
-- В разработке почти 2 года
-- Раньше назывался KingsWorld
-- Можно сказать самый популярный Bun фреймворк
+- `Elysia` (и не только) названа в честь персонажа из игры `Honkai impact 3`
+- В разработке около **2** лет
+- Раньше назывался `KingsWorld`
+- Можно сказать самый популярный `Bun` фреймворк
 </div>
 
 <img src="https://elysiajs.com/assets/elysia_v.webp" width="300px" class="opacity-80"/>
@@ -863,22 +866,87 @@ layout: default
 
 <img class="mt-7" src="/benchmark.png"/>
 
-
 ---
 layout: default
 title: Elysia
 src: ./pages/framework-cover/elysia/4.md
 ---
 
----
-layout: full
----
 
-<img class="w-full" src="/WinterCG.png"/>
 
 ---
 
-<SlideLogo framework="ElysiaJS" title="WinterCG"/>
+<SlideLogo framework="ElysiaJS" title="о Bun"/>
+
+<div class="flex gap-5 justify-around items-center h-full mt--7"> 
+
+<div class="flex flex-col items-center">
+
+<logos-bun class="text-9xl"/> 
+
+<p class="font-bold text-4xl text-bun">Bun</p>
+
+</div>
+
+<div class="flex gap-3 list-square center-icon">
+<v-clicks>
+
+- Новый <span mx-2>**runtime**</span> основанный на <span ml-2>**JavaScriptCore**</span>
+- <span mr-2>`1.0`</span>   вышел 8 сентября 2023 года
+- Предоставляет <span mx-2>**Bun.\* API**</span>
+- Из коробки работает с <span ml-2>**TS**, **JSX**</span>
+- Главные принципы - «**Just works**»
+- Выступает как <span ml-2>**All-in-one toolkit**</span>
+- Может работать как <span mx-2>**Bundler**</span> и <span ml-2>**пакетный менеджер**</span>
+- <span mr-2>**Node.js@22**</span> перенял опыт <span mx-2>**Bun**</span> по <span mx-2>`require(esm)`</span>
+- "<logos-nodejs-icon class="text-4xl"/>".replace("<logos-nodejs-icon class="text-4xl"/>", "<logos-bun class="text-4xl"/>")
+- Написан на <devicon-zig-wordmark class="text-5xl ml-2"/>
+</v-clicks>
+
+</div>
+
+</div>
+
+---
+layout: default
+title: Elysia
+src: ./pages/framework-cover/elysia/5.md
+---
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Построен на Web API"/>
+
+```ts
+new Elysia().all("/download", async ({ request }) => {
+	if (request.method !== "GET")
+		return new Response(
+			`You cannot download the file using ${request.method}`,
+			{
+				status: 418,
+				statusText: "use GET",
+				headers: {
+					"x-required-method": "GET",
+				},
+			},
+		);
+
+	return new File([await fs.readFile("./cute-cat.png")], "cute-cat.png");
+});
+```
+❌
+
+```ts
+import { FastifyRequest } from "fastify";
+// or
+import { Request } from "express"; // Перекрывает Request из Web API
+// or
+import { Request } from "koa"; // Перекрывает Request из Web API
+```
+
+---
+
+<SlideLogo framework="ElysiaJS" title="Построен на Web API"/>
 
 <!-- prettier-ignore -->
 ```ts twoslash
@@ -904,7 +972,7 @@ const main = new Elysia()
 ---
 layout: default
 title: Elysia
-src: ./pages/framework-cover/elysia/5.md
+src: ./pages/framework-cover/elysia/6.md
 ---
 
 ---
@@ -1291,7 +1359,7 @@ new Elysia()
 ---
 layout: default
 title: Elysia
-src: ./pages/framework-cover/elysia/6.md
+src: ./pages/framework-cover/elysia/7.md
 ---
 
 ---
@@ -1428,7 +1496,7 @@ chat.send("hello from client");
 ---
 layout: default
 title: Elysia
-src: ./pages/framework-cover/elysia/7.md
+src: ./pages/framework-cover/elysia/8.md
 ---
 
 ---
@@ -1463,7 +1531,7 @@ new Elysia()
 ---
 layout: default
 title: Elysia
-src: ./pages/framework-cover/elysia/7.md
+src: ./pages/framework-cover/elysia/9.md
 ---
 
 ---
