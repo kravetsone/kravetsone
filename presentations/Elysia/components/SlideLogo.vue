@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const props = defineProps<{
-    framework: "ExpressJS" | "KoaJS" | "FastifyJS" | "KitaJS" | "ElysiaJS",
+    framework: "ExpressJS" | "KoaJS" | "FastifyJS" | "KitaJS" | "HonoJS" | "NestJS" | "ElysiaJS",
     title: string
 }>()
 
@@ -12,6 +12,8 @@ const props = defineProps<{
             <skill-icons-expressjs-light v-if="props.framework === 'ExpressJS'" />
             <simple-icons-koa v-if="props.framework === 'KoaJS'" />
             <simple-icons-fastify v-if="props.framework === 'FastifyJS'" />
+            <logos-hono v-if="props.framework === 'HonoJS'" />
+            <logos-nestjs v-if="props.framework === 'NestJS'" />
             <img src="https://kita.js.org/logo.svg" width="40px" v-if="props.framework === 'KitaJS'" />
             <img src="https://elysiajs.com/assets/elysia.svg" width="40px" v-if="props.framework === 'ElysiaJS'" />
         </div>

@@ -75,9 +75,12 @@ title: Обо мне
 
 <div class="mt-7">
 
+<v-clicks>
+
 -   Поговорим почему ExpressJS уже не актуален
 -   Посмотрим на существующие фреймворки и их плюсы/минусы
 -   Попробуем фреймворк для Bun, который набирает популярность
+</v-clicks>
 
 </div>
 
@@ -567,11 +570,13 @@ src: ./pages/framework-cover/fastify/4.md
 <img src="https://nodeland.dev/profile.jpg" width="400px">
 
 <div>
+<v-clicks>
 
 - Член Node.js Technical Steering Committee
 - Активно выступает с докладами (спикер более **60** конференций)
 - Со-автор книги по разработке с Fastify
 
+</v-clicks>
 </div>
 
 
@@ -712,13 +717,14 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 <h1>ElysiaJS</h1>
 </div>
 
+
 ---
 
 <SlideLogo framework="ElysiaJS" title="Факты"/>
 
-<div class="flex justify-between">
+<div class="flex justify-between gap-5">
 
-<div class="flex flex-col items-center gap-5">
+<div class="flex flex-col items-center">
 
 <div>
 
@@ -729,11 +735,22 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 - Можно сказать самый популярный `Bun` фреймворк
 </div>
 
+
+
+
 <img src="https://elysiajs.com/assets/elysia_v.webp" width="300px" class="opacity-80"/>
 
 </div>
 
-<img class="-mt-20 -mr-10 scale-90" width="450" src="/elysia-stack.png" />
+<SlidevVideo autoplay muted loop class="h-full mt--30" width="280px">
+  <!-- Anything that can go in a HTML video element. -->
+  <source src="/subway.mp4" type="video/mp4" />
+  <p>
+    Your browser does not support videos. You may download it
+    <a href="/myMovie.mp4">here</a>.
+  </p>
+</SlidevVideo>
+<!-- <img class="-mt-20 -mr-10 scale-90" width="450" src="/elysia-stack.png" /> -->
 
 </div>
 
@@ -1492,6 +1509,47 @@ chat.send("hello from client");
 
 </div>
 
+---
+
+<SlideLogo framework="ElysiaJS" title="Переиспользование models на клиенте"/>
+
+<div class="flex gap-2 justify-around">
+
+```ts
+new Elysia()
+    .model({
+        signIn: t.Object({
+            username: t.String(),
+            password: t.String(),
+        }),
+    })
+    .post(
+        "/sign-in",
+        ({ body }) => body,
+        {
+            body: "signIn",
+            response: "signIn",
+        },
+    );
+
+export const { models } = app;
+```
+
+```ts
+import { models } from "./server";
+
+const value = models.sign.parse({
+    username: "admin",
+    password: "admin"
+});
+
+const { data, error } = models.sign.safeParse({
+    username: "admin",
+    password: "admin"
+});
+```
+
+</div>
 
 ---
 layout: default
