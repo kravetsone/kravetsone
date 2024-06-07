@@ -23,7 +23,7 @@ jobs:
               uses: oven-sh/setup-bun@v1
 
             - name: Build
-              run: cd ./presentations/Elysia && bun install && bun run build
+              run: cd ./presentations/Elysia && bun install && bun run build -- --base /kravetsone/
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
