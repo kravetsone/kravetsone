@@ -728,7 +728,7 @@ title: ElysiaJS
 
 ---
 
-<SlideLogo framework="ElysiaJS" title="Факты"/>
+<SlideLogo framework="ElysiaJS" title="Кто такой?"/>
 
 <div class="flex justify-between">
 
@@ -737,7 +737,7 @@ title: ElysiaJS
 <div>
 
 - Новый фреймворк с интересными идеями
-- `Elysia` (и не только) названа в честь персонажа из игры `Honkai impact 3`
+- `Elysia` названа в честь персонажа из игры `Honkai impact 3`
 - В разработке около **2** лет
 - Раньше назывался `KingsWorld`
 - Можно сказать самый популярный `Bun` фреймворк
@@ -1074,6 +1074,7 @@ const app = new Elysia();
 app
     .state("requests", 1)
     .get("/increment", ({ store }) => ++store.requests);
+    //                                          ^?
 ```
 
 <br/>
@@ -1115,6 +1116,7 @@ app
         };
     })
     .get("/", ({ bearer }) => bearer);
+    //                          ^?
 ```
 
 ---
@@ -1608,11 +1610,29 @@ layout: full
 
 ---
 
-<div class="flex items-center justify-center h-full text-5xl">
 
-Спасибо за внимание! ✨
+| **Критерии**                 | <skill-icons-expressjs-light /> | <simple-icons-koa /> | <simple-icons-fastify /> | <img src="https://elysiajs.com/assets/elysia.svg" width="20px" />  |
+| ------------------ | ------------------------------- | -------------------- | ------------------------ | --- |
+| Производительность | ❌                              | ✅                   | ✅                       | ✅✅ |
+| Удобство           | ❌                              | ⚠️                   | ✅                       | ✅✅  |
+| Система плагинов   | ❌                              | ❌                   | ✅                       | ✅  |
+| Генерация OpenAPI  | ❌                              | ❌                   | ✅                       | ✅  |
+| Стабильность       | ✅                              | ✅                   | ✅                       | ⚠️  |
+| Хуки               | ❌                              | ❌                   | ✅                       | ✅  |
+| Мощь TypeScript    | ❌                              | ❌                   | ❌                       | ✅  | 
+| Web API   | ❌                              | ❌                   | ❌                       | ✅  |
 
-</div>
+<style>
+
+* {
+    @apply text-center
+}
+
+th:last-of-type {
+    @apply flex justify-center items-center
+}
+
+</style>
 
 ---
 
