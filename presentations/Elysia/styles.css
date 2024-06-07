@@ -11,9 +11,9 @@ pre {
     overflow-x: hidden !important;
 }
 
-.v-popper__popper.v-popper--theme-twoslash {
+/* .v-popper__popper.v-popper--theme-twoslash {
     display: none;
-}
+} */
 
 :root {
     --slidev-theme-primary: #5d8392;
@@ -85,9 +85,6 @@ pre {
     @apply h-full;
 }
 
-.slidev-layout h1 {
-}
-
 h1 {
     @apply text-elysia-sky-indigo;
 }
@@ -104,4 +101,8 @@ h1 {
 .center-icon li::marker {
     content: "✝ ";
     font-size: 1.2em;
+}
+
+.progress {
+    z-index: 999;
 }

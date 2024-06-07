@@ -7,7 +7,8 @@
     "dev": "slidev --open",
     "export": "slidev export --with-clicks",
     "screenshot": "slidev export --format png --dark --range 51",
-    "pptx": "slidev export --format pptx --timeout 1000000"
+    "pptx": "slidev export --format pptx --timeout 1000000",
+    "t": "slidev export --format pptx --timeout 1000000 --range 42"
   },
   "dependencies": {
     "@elysiajs/swagger": "1.0.5",

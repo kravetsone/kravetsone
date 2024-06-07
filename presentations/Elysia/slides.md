@@ -5,6 +5,7 @@ highlighter: shiki
 layout: cover
 addons:
   - slidev-addon-qrcode
+  - slidev-component-progress
 twoslash: true
 export:
   timeout: 60000
@@ -36,7 +37,6 @@ contextMenu: false
 
 ---
 layout: default
-title: Обо мне
 ---
 
 <div class="flex justify-between">
@@ -92,6 +92,8 @@ title: Обо мне
 -   выводы
 -   общая структура (2 части - что было, до элизиума) -->
 
+---
+title: ExpressJS
 ---
 
 <div class="flex justify-center items-center h-full text-6xl gap-5">
@@ -321,6 +323,8 @@ layout: default
 </div>
 
 ---
+title: KoaJS
+---
 
 <div class="flex justify-center items-center h-full text-6xl gap-5">
 <simple-icons-koa  />
@@ -361,6 +365,8 @@ KoaJS назывался «фреймворком нового поколени�
 но после появления их появления люди так и остались на express
 -->
 
+---
+title: FastifyJS
 ---
 
 <div class="flex justify-center items-center h-full text-6xl gap-5">
@@ -711,6 +717,8 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 ```
 
 ---
+title: ElysiaJS
+---
 
 <div class="flex justify-center items-center h-full text-6xl gap-5">
 <img src="https://elysiajs.com/assets/elysia.svg" width="100" />
@@ -722,9 +730,9 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 
 <SlideLogo framework="ElysiaJS" title="Факты"/>
 
-<div class="flex justify-between gap-5">
+<div class="flex justify-between">
 
-<div class="flex flex-col items-center">
+<div class="flex flex-col items-center gap-8">
 
 <div>
 
@@ -742,7 +750,7 @@ export default function ({ headers }: FastifyRequest): UserAgent {
 
 </div>
 
-<SlidevVideo autoplay muted loop class="h-full mt--30" width="280px">
+<SlidevVideo autoplay muted loop class="h-full mt--30 mr--14" width="280px">
   <!-- Anything that can go in a HTML video element. -->
   <source src="/subway.mp4" type="video/mp4" />
   <p>
@@ -1509,7 +1517,7 @@ chat.send("hello from client");
 
 </div>
 
----
+<!-- ---
 
 <SlideLogo framework="ElysiaJS" title="Переиспользование models на клиенте"/>
 
@@ -1549,7 +1557,7 @@ const { data, error } = models.sign.safeParse({
 });
 ```
 
-</div>
+</div> -->
 
 ---
 layout: default
