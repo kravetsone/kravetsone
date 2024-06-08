@@ -1,3 +1,3 @@
 <template>
-    <Progress position="top" level="2" />
+    <!-- <Progress position="top" level="2" /> -->
 </template>

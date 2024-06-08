@@ -11,9 +11,9 @@ pre {
     overflow-x: hidden !important;
 }
 
-/* .v-popper__popper.v-popper--theme-twoslash {
+.v-popper__popper.v-popper--theme-twoslash {
     display: none;
-} */
+}
 
 :root {
     --slidev-theme-primary: #5d8392;
