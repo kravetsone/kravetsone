@@ -1,6 +1,6 @@
 # Привет, я [Kravets](https://github.com/kravetsone/) 👋
 
--   Спикер [Я 💛 Фронтенд 2024](https://www.youtube.com/watch?v=XD2jA53CXQw), с докладом про Elysia + Bun и о остальных фреймворках для серверных приложений.
+-   Спикер [Я 💛 Фронтенд 2024](https://www.youtube.com/watch?v=XD2jA53CXQw), с докладом про Elysia + Bun и о остальных бекенд фреймворках.
 
 ## ✨ Навыки
 
@@ -18,11 +18,28 @@
 
 ## 👉 Мои проекты
 
-#### 1. [[`GramIO`](https://github.com/gramiojs)] - WIP Telegram Bot API фреймворк для создания ботов с удобством!
+#### 1. [[`GramIO`](https://github.com/gramiojs)] - Telegram Bot API фреймворк для создания ботов с удобством!
+
+[![Bot API](https://img.shields.io/badge/Bot%20API-8.1+-blue?logo=telegram&style=flat&labelColor=000&color=3b82f6)](https://core.telegram.org/bots/api)
+[![npm](https://img.shields.io/npm/v/gramio?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/gramio)
+[![npm downloads](https://img.shields.io/npm/dw/gramio?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/gramio)
+[![JSR](https://jsr.io/badges/@gramio/core)](https://jsr.io/@gramio/core)
+[![JSR Score](https://jsr.io/badges/@gramio/core/score)](https://jsr.io/@gramio/core)
 
 -   [[`types`](https://github.com/gramiojs/types)] - Авто-обновляемая и кодогенерируемая библиотека с типами [Telegram Bot API](https://core.telegram.org/bots/api) с помощью Github Actions
 
+[![Bot API](https://img.shields.io/badge/Bot%20API-8.1+-blue?logo=telegram&style=flat&labelColor=000&color=3b82f6)](https://core.telegram.org/bots/api)
+[![npm](https://img.shields.io/npm/v/@gramio/types?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/types)
+[![npm downloads](https://img.shields.io/npm/dw/@gramio/types?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/types)
+[![JSR](https://jsr.io/badges/@gramio/types)](https://jsr.io/@gramio/types)
+[![JSR Score](https://jsr.io/badges/@gramio/types/score)](https://jsr.io/@gramio/types)
+
 -   [[`keyboards`](https://github.com/gramiojs/keyboards)] - Фреймворк-агностик библиотека для создания клавиатур телеграм ботам с многими классными возможностями!
+
+[![npm](https://img.shields.io/npm/v/@gramio/keyboards?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/keyboards)
+[![npm downloads](https://img.shields.io/npm/dw/@gramio/keyboards?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/keyboards)
+[![JSR](https://jsr.io/badges/@gramio/keyboards)](https://jsr.io/@gramio/keyboards)
+[![JSR Score](https://jsr.io/badges/@gramio/keyboards/score)](https://jsr.io/@gramio/keyboards)
 
 -   [[`documentation`](https://gramio.netlify.app/)] - Документация на [VitePress](https://vitepress.dev/) с авто-деплоем на [Netlify](https://www.netlify.com/)
 
@@ -48,15 +65,45 @@
 
 #### 2. [[`t-kassa-api`](https://github.com/kravetsone/t-kassa-api)] - Библиотека для взаимодействия с [API Т-Кассы](https://www.tbank.ru/kassa/dev/payments/index.html). Генерируется из OpenAPI спецификации и имеет удобную работу с webhook и умными фильтрами.
 
+[![npm](https://img.shields.io/npm/v/t-kassa-api?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/t-kassa-api)
+[![npm downloads](https://img.shields.io/npm/dw/t-kassa-api?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/t-kassa-api)
+[![JSR](https://jsr.io/badges/@kravets/t-kassa-api)](https://jsr.io/@kravets/t-kassa-api)
+[![JSR Score](https://jsr.io/badges/@kravets/t-kassa-api/score)](https://jsr.io/@kravets/t-kassa-api)
+
 #### 3. [[`vscode-publint`](https://github.com/kravetsone/vscode-publint)] - Расширение для [VS Code](https://code.visualstudio.com/), которое позволяет линтить `package.json`, добавляя интеграцию с [publint.dev](https://publint.dev) ([о расширении даже рассказали в Twitter](https://x.com/bluwyoo/status/1802594411647537254))
+
+<a href="https://marketplace.visualstudio.com/items?itemName=kravets.vscode-publint" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/v/kravets.vscode-publint.svg?color=4EC5D4&amp;label=VS%20Code%20Marketplace&logo=visual-studio-code" alt="Visual Studio Marketplace Version" /></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=kravets.vscode-publint" target="__blank"><img src="https://img.shields.io/visual-studio-marketplace/d/kravets.vscode-publint.svg?color=2B90B6" alt="Visual Studio Marketplace Downloads" /></a>
 
 ![сообщение из твиттера](./vscode-publint.png)
 
 #### 4. [[`elysia-autoload`](https://github.com/kravetsone/elysia-autoload)] - Плагин для [Elysia](https://elysiajs.com), который загружает все endpoints в папке и генерирует типы для [Eden](https://elysiajs.com/eden/overview.html)
 
+[![npm](https://img.shields.io/npm/v/elysia-autoload?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/elysia-autoload)
+[![npm downloads](https://img.shields.io/npm/dw/elysia-autoload?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/elysia-autoload)
+
 #### 5. [[`create-elysiajs`](https://github.com/kravetsone/create-elysiajs)] - Модуль, который позволяет развернуть проект с [ElysiaJS](https://elysiajs.com) фреймворком и настроить его окружение простой командой `bun create elysiajs`. Biome, ESLint, Prisma, Drizzle, Husky и выбор плагинов. Авто-обновление зависимостей (включая те которые используются в генерации шаблона) с помощью Renovate
 
+[![npm](https://img.shields.io/npm/v/create-elysiajs?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/create-elysiajs)
+[![npm downloads](https://img.shields.io/npm/dw/create-elysiajs?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/create-elysiajs)
+
 #### 6. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя **45+** адаптера под различные сервисы
+
+[![npm](https://img.shields.io/npm/v/elysia-oauth2?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/elysia-oauth2)
+[![npm downloads](https://img.shields.io/npm/dw/elysia-oauth2?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/elysia-oauth2)
+
+#### 7. [[`jobify`](https://github.com/kravetsone/jobify)] - Удобная обёртка над [BullMQ](https://bullmq.io/)
+
+[![npm](https://img.shields.io/npm/v/jobify?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/jobify)
+[![npm downloads](https://img.shields.io/npm/dw/jobify?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/jobify)
+[![JSR](https://jsr.io/badges/@kravets/jobify)](https://jsr.io/@kravets/jobify)
+[![JSR Score](https://jsr.io/badges/@kravets/jobify/score)](https://jsr.io/@kravets/jobify)
+
+#### 8. [[`webhook-openapi`](https://github.com/kravetsone/webhook-openapi)] - Библиотека нацеленная на помощь в реализации Webhook сервера с генерацией OpenAPI, плагинами и так далее
+
+[![npm](https://img.shields.io/npm/v/webhook-openapi?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/webhook-openapi)
+[![JSR](https://jsr.io/badges/webhook-openapi)](https://jsr.io/@kravets/webhook-openapi)
+[![JSR Score](https://jsr.io/badges/webhook-openapi/score)](https://jsr.io/@kravets/webhook-openapi)
 
 #### 7. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
@@ -88,7 +135,7 @@
 
 #### 4. [[`rosatom-backend`](https://github.com/kravetsone/rosatom-backend)] - Бекенд для управления сущностями (CRUD с импортом и экспортом) и формированием телеметрии судов
 
-#### 5. [[`pro.fipro`](https://github.com/kravetsone/pro.firpo)] - Репозиторий с бекендом, который разрабатывался в качестве подготовки к чемпионату. Стек - Express & TypeORM и фронтендом для этого бекенда на React
+#### 5. [[`pro.fipro`](https://github.com/kravetsone/pro.firpo)] - Репозиторий с бекендом, который разрабатывался в качестве подготовки к чемпионату (с ограниченным стеком и без интернета). Стек - Express & TypeORM и фронтендом для этого бекенда на React
 
 ## 📖 Моя статистика в GitHub (![](https://komarev.com/ghpvc/?username=kravetsine&color=a960ff))
 
@@ -101,15 +148,6 @@
 ## ❓ Как со мной связаться?
 
 [![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/noname2544)
-
-## 🧑‍💻 Хакатоны и другие мероприятия
-
-Участвую в разных активностях вместе со своей командой «[Безымянные](https://t.me/team_noname)»
-![фотокарточка безымянных](https://github.com/kravetsone/kravetsone/assets/57632712/5d94c8f2-bbc2-4d50-b027-437192ab1153)
-
-Наш телеграм канал - [@team_noname](https://t.me/team_noname) ([пост с победами](https://t.me/team_noname/137))
-
-Наш GitHub - [@noname-to](https://github.com/noname-to/)
 
 ## 🎧 Моя недавно прослушанная музыка
 
