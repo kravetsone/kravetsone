@@ -152,4 +152,3 @@
 ## 🎧 Моя недавно прослушанная музыка
 
 [![](https://spotify-recently-played-readme.vercel.app/api?user=jdex6213e4kct1lmdg1f7t6qq&unique=1)](https://open.spotify.com/user/jdex6213e4kct1lmdg1f7t6qq?si=42a42941db0d4afc)
-
