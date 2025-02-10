@@ -87,37 +87,54 @@
 [![npm](https://img.shields.io/npm/v/create-elysiajs?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/create-elysiajs)
 [![npm downloads](https://img.shields.io/npm/dw/create-elysiajs?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/create-elysiajs)
 
-#### 6. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя **45+** адаптера под различные сервисы
+#### 6. [[`elysia-oauth2`](https://github.com/kravetsone/elysia-oauth2)] - Плагин для [Elysia](https://elysiajs.com), который реализует удобную работу с авторизацией по протоколу [OAuth 2.0](https://en.wikipedia.org/wiki/OAuth), предоставляя **53+** адаптера под различные сервисы
 
 [![npm](https://img.shields.io/npm/v/elysia-oauth2?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/elysia-oauth2)
 [![npm downloads](https://img.shields.io/npm/dw/elysia-oauth2?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/elysia-oauth2)
 
-#### 7. [[`jobify`](https://github.com/kravetsone/jobify)] - Удобная обёртка над [BullMQ](https://bullmq.io/)
+#### 7. [[`elysia-react-router`](https://github.com/kravetsone/elysia-react-router)] - Плагин для [Elysia](https://elysiajs.com), который помогает интегрировать [React Router](https://reactrouter.com/) в [Elysia](https://elysiajs.com)
+
+[![npm](https://img.shields.io/npm/v/elysia-react-router?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/elysia-react-router)
+[![npm downloads](https://img.shields.io/npm/dw/elysia-react-router?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/elysia-react-router)
+
+#### 8. [[`jobify`](https://github.com/kravetsone/jobify)] - Удобная обёртка над [BullMQ](https://bullmq.io/)
 
 [![npm](https://img.shields.io/npm/v/jobify?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/jobify)
 [![npm downloads](https://img.shields.io/npm/dw/jobify?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/jobify)
 [![JSR](https://jsr.io/badges/@kravets/jobify)](https://jsr.io/@kravets/jobify)
 [![JSR Score](https://jsr.io/badges/@kravets/jobify/score)](https://jsr.io/@kravets/jobify)
 
-#### 8. [[`webhook-openapi`](https://github.com/kravetsone/webhook-openapi)] - Библиотека нацеленная на помощь в реализации Webhook сервера с генерацией OpenAPI, плагинами и так далее
+#### 9. [[`webhook-openapi`](https://github.com/kravetsone/webhook-openapi)] - Библиотека нацеленная на помощь в реализации Webhook сервера с генерацией OpenAPI, плагинами и так далее
 
 [![npm](https://img.shields.io/npm/v/webhook-openapi?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/webhook-openapi)
 [![JSR](https://jsr.io/badges/webhook-openapi)](https://jsr.io/@kravets/webhook-openapi)
 [![JSR Score](https://jsr.io/badges/webhook-openapi/score)](https://jsr.io/@kravets/webhook-openapi)
 
-#### 7. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
+#### 10. [[`enkaNetwork`](https://github.com/kravetsone/enkaNetwork)] - TypeScript модуль, который позволяет удобно работать с [enka.network](https://enka.network/) добавляя локализацию и работу с асетами (например, авто-обновление)
 
-#### 8. [[`fluent2ts`](https://github.com/kravetsone/fluent2ts)] - CLI утилита, которая позволяет генерировать типы для [Fluent](https://projectfluent.org/) (`.ftl`) файлов локализации
+[![npm](https://img.shields.io/npm/v/enkaNetwork?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/enkaNetwork)
+[![npm downloads](https://img.shields.io/npm/dw/enkaNetwork?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/enkaNetwork)
 
-#### 9. [[`slidev-addon-qrcode`](https://github.com/kravetsone/slidev-addon-qrcode)] - Аддон для [slidev](https://sli.dev/), который предоставляет QRCode компонент (обёртка над [qr-code-styling](https://github.com/kozakdenys/qr-code-styling))
+#### 11. [[`fluent2ts`](https://github.com/kravetsone/fluent2ts)] - CLI утилита, которая позволяет генерировать типы для [Fluent](https://projectfluent.org/) (`.ftl`) файлов локализации
 
-#### 10. [[`aigram-monorepo`](https://github.com/kravetsone/aigram-monorepo)] - MVP мессенджера в монорепе с e2e type-safety. ([Svelte](https://svelte.dev/) + [Effector](https://effector.dev/) и [ElysiaJS](https://elysiajs.com/) + [Drizzle](https://orm.drizzle.team/))
+[![npm](https://img.shields.io/npm/v/fluent2ts?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/fluent2ts)
+[![npm downloads](https://img.shields.io/npm/dw/fluent2ts?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/fluent2ts)
 
-#### 11. [[`Code Syntax Highlighter`](https://github.com/kravetsone/Code-Syntax-Highlighter)] - Плагин/Виджет для [Figma](https://www.figma.com/) который отрендерит текст с подсветкой синтаксиса. Поддерживаются многие языки и множество тем благодаря [Shiki](https://shiki.style/guide/).
+#### 12. [[`slidev-addon-qrcode`](https://github.com/kravetsone/slidev-addon-qrcode)] - Аддон для [slidev](https://sli.dev/), который предоставляет QRCode компонент (обёртка над [qr-code-styling](https://github.com/kozakdenys/qr-code-styling))
 
-#### 12. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
+[![npm](https://img.shields.io/npm/v/slidev-addon-qrcode?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/slidev-addon-qrcode)
+[![npm downloads](https://img.shields.io/npm/dw/slidev-addon-qrcode?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/slidev-addon-qrcode)
 
-#### 13. [[`rustore_notify`](https://github.com/kravetsone/rustore_notify)] - Телеграм бот написанный на [Rust](https://www.rust-lang.org/) с использованием [Teloxide](https://github.com/teloxide/teloxide) (магазин приложений **RuSt**ore в виде бота)
+#### 13. [[`aigram-monorepo`](https://github.com/kravetsone/aigram-monorepo)] - MVP мессенджера в монорепе с e2e type-safety. ([Svelte](https://svelte.dev/) + [Effector](https://effector.dev/) и [ElysiaJS](https://elysiajs.com/) + [Drizzle](https://orm.drizzle.team/))
+
+#### 14. [[`Code Syntax Highlighter`](https://github.com/kravetsone/Code-Syntax-Highlighter)] - Плагин/Виджет для [Figma](https://www.figma.com/) который отрендерит текст с подсветкой синтаксиса. Поддерживаются многие языки и множество тем благодаря [Shiki](https://shiki.style/guide/).
+
+#### 15. [[`PAYOK`](https://github.com/kravetsone/payok)] - TypeScript модуль, который позволяет принимать платежи агрегатора [payok.io](https://payok.io/)
+
+[![npm](https://img.shields.io/npm/v/payok?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/payok)
+[![npm downloads](https://img.shields.io/npm/dw/payok?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/payok)
+
+#### 16. [[`rustore_notify`](https://github.com/kravetsone/rustore_notify)] - Телеграм бот написанный на [Rust](https://www.rust-lang.org/) с использованием [Teloxide](https://github.com/teloxide/teloxide) (магазин приложений **RuSt**ore в виде бота)
 
 ### Проекты с [хакатонов](#-хакатоны-и-другие-мероприятия)
 
