@@ -47,6 +47,9 @@
 
 -   [[`create-gramio`](https://github.com/gramiojs/create-gramio)] - Скаффолдер, который позволяет развернуть проект с [GramIO](https://github.com/gramiojs) и окружением очень легко
 
+[![npm](https://img.shields.io/npm/v/create-gramio?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/create-gramio)
+[![npm downloads](https://img.shields.io/npm/dw/create-gramio?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/create-gramio)
+
 -   [[`auto-retry`](https://github.com/gramiojs/prompt)] - Плагин, который повторяет запросы получившие `retry_after` параметр в [GramIO](https://github.com/gramiojs)
 
 -   [[`format`](https://github.com/gramiojs/format)] - Библиотека для форматирования текста
@@ -55,13 +58,24 @@
 
 -   [[`autoload`](https://github.com/gramiojs/autoload)] - Плагин для автозагрузки команд и т.д. из файлов в [GramIO](https://github.com/gramiojs)
 
+[![npm](https://img.shields.io/npm/v/@gramio/autoload?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/autoload)
+[![npm downloads](https://img.shields.io/npm/dw/@gramio/autoload?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/autoload)
+[![JSR](https://jsr.io/badges/@gramio/autoload)](https://jsr.io/@gramio/autoload)
+[![JSR Score](https://jsr.io/badges/@gramio/autoload/score)](https://jsr.io/@gramio/autoload)
+
 -   [[`session`](https://github.com/gramiojs/session)] - Плагин для сессий в [GramIO](https://github.com/gramiojs)
 
 -   [[`prompt`](https://github.com/gramiojs/prompt)] - Плагин реализующий "Вопрос-Ответ" в [GramIO](https://github.com/gramiojs)
 
 -   [[`i18n`](https://github.com/gramiojs/i18n)] - Плагин, который позволяет удобно работать с локализацией
 
+[![npm](https://img.shields.io/npm/v/@gramio/i18n?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/i18n)
+[![npm downloads](https://img.shields.io/npm/dw/@gramio/i18n?logo=npm&style=flat&labelColor=000&color=3b82f6)](https://www.npmjs.org/package/@gramio/i18n)
+[![JSR](https://jsr.io/badges/@gramio/i18n)](https://jsr.io/@gramio/i18n)
+[![JSR Score](https://jsr.io/badges/@gramio/i18n/score)](https://jsr.io/@gramio/i18n)
+
 -   [[`media-group`](https://github.com/gramiojs/i18n)] - Плагин, который позволяет собрать медиа группу благодаря debounce
+
 
 #### 2. [[`t-kassa-api`](https://github.com/kravetsone/t-kassa-api)] - Библиотека для взаимодействия с [API Т-Кассы](https://www.tbank.ru/kassa/dev/payments/index.html). Генерируется из OpenAPI спецификации и имеет удобную работу с webhook и умными фильтрами.
 
